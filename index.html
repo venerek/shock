@@ -162,21 +162,283 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <!-- TAB 0: DISTRIBUTIVE -->
 <div class="tab-content active" id="tab0">
 <div class="sub-tabs">
-<button class="sub-tab active" onclick="switchSub(0,0)">Pathophysiology</button>
-<button class="sub-tab" onclick="switchSub(0,1)">Hemodynamics</button>
-<button class="sub-tab" onclick="switchSub(0,2)">Etiologies</button>
-<button class="sub-tab" onclick="switchSub(0,3)">Pharmacology</button>
+<button class="sub-tab active" onclick="switchSub(0,0)">Etiologies</button>
+<button class="sub-tab" onclick="switchSub(0,1)">Pathophysiology</button>
+<button class="sub-tab" onclick="switchSub(0,2)">Hemodynamics</button>
+<button class="sub-tab" onclick="switchSub(0,3)">Management</button>
 <button class="sub-tab" onclick="switchSub(0,4)">Assessment</button>
-<button class="sub-tab" onclick="switchSub(0,5)">NEE Applicability</button>
-<button class="sub-tab" onclick="switchSub(0,6)">Rehab</button>
+<button class="sub-tab" onclick="switchSub(0,5)">Rehab</button>
+<button class="sub-tab" onclick="switchSub(0,6)">NEE Applicability</button>
 </div>
-<div class="sub-content active" id="sub0-0"><div class="card"><h3>🔬 Pathophysiology of Distributive Shock</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Distributive shock is characterized by inappropriate systemic vasodilation leading to maldistribution of blood flow, decreased SVR, and inadequate tissue oxygen utilization despite often preserved or elevated cardiac output. [1]</p><div class="param-grid"><div class="param-item"><div class="param-name">Vasodilatory Mechanism</div><div class="param-def">Excess proinflammatory mediators and cytokines enter systemic circulation → vasoplegia and organ dysfunction. The main deficit lies in the periphery — decreased SVR and altered oxygen extraction. [1][2]</div></div><div class="param-item"><div class="param-name">Nitric Oxide (NO) Pathway</div><div class="param-def">Lactic acidosis impairs vascular tone via intracellular signaling and increased iNOS expression → decreased responsiveness to endogenous and exogenous catecholamines. [5]</div></div><div class="param-item"><div class="param-name">Cytokine Cascade</div><div class="param-def">In septic shock: TNF-α, IL-1, IL-6 drive endothelial activation, capillary leak, microcirculatory dysfunction. [2]</div></div><div class="param-item"><div class="param-name">Relative Hypovolemia</div><div class="param-def">Vasodilation + capillary leakage → relative intravascular volume depletion even without absolute fluid loss → ↓ venous return and preload. [1][6]</div></div><div class="param-item"><div class="param-name">Capillary Leak</div><div class="param-def">Inflammatory mediators damage endothelial integrity → plasma extravasation → interstitial edema → ↓ effective circulating volume + impaired O₂ diffusion. [1][5]</div></div><div class="param-item"><div class="param-name">Microcirculatory Dysfunction</div><div class="param-def">↓ Capillary density, ↓ perfused capillaries, ↑ heterogeneity of flow. Persistence associated with worse outcomes. [4]</div></div></div></div></div>
-<div class="sub-content" id="sub0-1"><div class="card"><h3>📊 Hemodynamic Profile</h3><table><tr><th>Parameter</th><th>Distributive</th><th>Cardiogenic</th><th>Hypovolemic</th><th>Obstructive</th></tr><tr><td><strong>CO</strong></td><td>↑/Normal</td><td>↓↓</td><td>↓</td><td>↓</td></tr><tr><td><strong>SVR</strong></td><td>↓↓</td><td>↑↑</td><td>↑</td><td>↑</td></tr><tr><td><strong>CVP</strong></td><td>↓/Normal</td><td>↑↑</td><td>↓↓</td><td>↑</td></tr><tr><td><strong>PCWP</strong></td><td>↓/Normal</td><td>↑↑</td><td>↓</td><td>Variable</td></tr><tr><td><strong>SvO₂</strong></td><td>↑/Normal</td><td>↓↓</td><td>↓</td><td>↓</td></tr><tr><td><strong>Extremities</strong></td><td>Warm (early)</td><td>Cool</td><td>Cool</td><td>Cool</td></tr></table><h4 style="margin-top:1rem">Early vs. Late Septic Shock</h4><div class="good-box"><strong>Early ("Warm"):</strong> Hyperdynamic — ↑CO, ↓SVR, warm extremities, bounding pulses, wide pulse pressure. SvO₂ may be elevated (impaired extraction). [5][6]</div><div class="bad-box"><strong>Late ("Cold"):</strong> Myocardial depression → ↓CO, mottled skin, poor cap refill. Catecholamine-induced myocardial injury. [5]</div></div></div>
-<div class="sub-content" id="sub0-2"><div class="card"><h3>🦠 Etiologies</h3><details class="collapsible" open><summary>Septic Shock (62% of all shock) [1]</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Definition (Sepsis-3):</strong> Lactate >2 mmol/L AND hypotension requiring vasoconstrictors to maintain MAP >65 mmHg despite adequate volume resuscitation. [5]</p><p style="font-size:0.82rem"><strong>Management:</strong> Early antibiotics + source control → IV fluids → norepinephrine → vasopressin → hydrocortisone if refractory. [5][2]</p></div></details><details class="collapsible"><summary>Anaphylactic Shock</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Pathophysiology:</strong> Mast cell degranulation → histamine → massive vasodilation, bronchospasm, capillary leak. [5]</p><p style="font-size:0.82rem"><strong>Management:</strong> STOP offending agent → IM Epinephrine 0.3–0.5mg → fluids → airway. [5]</p></div></details><details class="collapsible"><summary>Neurogenic Shock</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Pathophysiology:</strong> Loss of descending sympathetic pathways → unopposed parasympathetic → vasodilation + bradycardia. [5]</p><p style="font-size:0.82rem"><strong>Management:</strong> Surgical stabilization → MAP 80–90 mmHg → norepinephrine or phenylephrine. [5]</p></div></details><details class="collapsible"><summary>Adrenal Crisis</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Management:</strong> IV Hydrocortisone 200mg/day — accelerates shock resolution, decreases vasopressor requirements. [2][5]</p></div></details></div></div>
-<div class="sub-content" id="sub0-3"><div class="card"><h3>💊 Pharmacology & Escalation</h3><table><tr><th>Agent</th><th>α1</th><th>β1</th><th>β2</th><th>Other</th><th>Effect</th></tr><tr><td><strong>Norepinephrine</strong></td><td>++++</td><td>++</td><td>+</td><td>—</td><td>Vasoconstriction + inotropy</td></tr><tr><td><strong>Vasopressin</strong></td><td>—</td><td>—</td><td>—</td><td>V1,V2</td><td>Non-catecholamine vasoconstriction</td></tr><tr><td><strong>Epinephrine</strong></td><td>+++</td><td>++++</td><td>+++</td><td>—</td><td>Dose-dependent: low=β, high=α</td></tr><tr><td><strong>Phenylephrine</strong></td><td>++++</td><td>—</td><td>—</td><td>—</td><td>Pure vasoconstriction</td></tr><tr><td><strong>Angiotensin II</strong></td><td>—</td><td>—</td><td>—</td><td>AT1</td><td>RAAS vasoconstriction</td></tr><tr><td><strong>Dobutamine</strong></td><td>+</td><td>++++</td><td>++</td><td>—</td><td>Inotropy (may ↓SVR)</td></tr></table><h4 style="margin-top:1rem">Escalation Pathway [2][5]</h4><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Norepinephrine (First-Line)</span></div><div class="abg-problem">"We consider norepinephrine the vasopressor of first choice" [1]. Target MAP ≥65 mmHg. [4]</div></div><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Vasopressin (0.01–0.04 U/min)</span></div><div class="abg-problem">Non-catecholamine; V1 receptors. Catecholamine-sparing. Delay associated with ~20% ↑ mortality per 10 mcg/min NE. [5]</div><div class="abg-safety">⚠️ Do not exceed 0.04 U/min. [1]</div></div><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Adjuncts: AngII / Epinephrine / Hydrocortisone</span></div><div class="abg-problem"><strong>AngII:</strong> ATHOS-3 [7]. <strong>Epinephrine:</strong> Refractory/inotropy needed [1]. <strong>Hydrocortisone 200mg/d:</strong> Accelerates shock resolution. [2][5]</div></div><div class="abg-card deescalate"><div class="abg-header"><span class="abg-direction deescalate">↓ DE-ESCALATION</span><span class="abg-title">Weaning Vasopressors</span></div><div class="abg-problem">Phase 4: wean vasoactives, promote negative fluid balance. [1]</div></div></div></div>
-<div class="sub-content" id="sub0-4"><div class="card"><h3>🔍 Assessment & Monitoring</h3><h4>Three "Windows" of Perfusion [1][4]</h4><div class="param-grid"><div class="param-item"><div class="param-name">🧠 Neurologic</div><div class="param-def">Altered mental state — obtundation, disorientation, confusion.</div></div><div class="param-item"><div class="param-name">🩸 Renal</div><div class="param-def">UOP <0.5 mL/kg/hr. Rising creatinine indicates AKI. [6]</div></div><div class="param-item"><div class="param-name">🖐️ Cutaneous</div><div class="param-def">CRT, skin temperature, mottling. CRT-guided resuscitation beneficial (ANDROMEDA-SHOCK). [4]</div></div></div><h4 style="margin-top:1rem">Biochemical Markers</h4><div class="param-grid"><div class="param-item"><div class="param-name">Lactate</div><div class="param-def">Target ≥20% decrease over 2hrs. Even small increases >2.0 associated with ↑ mortality. [4]</div></div><div class="param-item"><div class="param-name">ScvO₂</div><div class="param-def">Low (<65%) = inadequate delivery. Persistently high also poor (impaired extraction). [4]</div></div><div class="param-item"><div class="param-name">Pv-aCO₂</div><div class="param-def">>6 mmHg suggests persistent inadequate flow. [4]</div></div></div><h4 style="margin-top:1rem">Echo & Fluid Responsiveness</h4><p style="font-size:0.82rem;color:var(--text2)">First-line imaging. After initial resuscitation, assess fluid responsiveness via PLR or PPV. [4]</p></div></div>
-<div class="sub-content" id="sub0-5"><div class="card"><h3>🧮 NEE Applicability</h3><div class="eq-box"><div class="eq-main">NEE (mcg/kg/min) = NE + Epi + (Dopa÷100) + (Phenyl×0.06) + (Vaso×2.5) + (AngII×0.0025) + (MB×0.2)</div><div class="eq-cite">Kotani et al. 2023 [7]</div></div><h4 style="margin-top:1rem">MAP/NEE Ratio [8]</h4><table><tr><th>Tertile</th><th>Score</th><th>MIMIC-III</th><th>eICU</th></tr><tr class="severity-low"><td>≥325</td><td>1 pt</td><td>~20%</td><td>~18%</td></tr><tr class="severity-mid"><td>136–324</td><td>2 pts</td><td>~35%</td><td>~32%</td></tr><tr class="severity-high"><td><136</td><td>3 pts</td><td>~55%</td><td>~52%</td></tr></table><div class="warn-box">⚠️ <strong>Validated in septic shock only.</strong> [7][8]</div></div></div>
-<div class="sub-content" id="sub0-6"><div class="card"><h3>💪 Rehab Considerations</h3><div class="warn-box"><strong>Key Principle:</strong> Never determine readiness by an isolated number. Integrate trajectory, stability, respiratory status, and response to support. [6]</div><div class="context-domain"><h4>Vasoactive Context — Not Dichotomous Cutoffs</h4><p>Minimize dichotomous decision making. Clinical context, dosage <em>trends</em>, and individual response are more pertinent. [6]</p></div><h4>Evidence for Early Mobility in Septic Shock</h4><ul class="checklist"><li class="checklist-item"><span class="checklist-icon primary">1</span><div class="checklist-content"><strong>Hickmann 2018</strong><div class="checklist-detail">Very early PT preserved muscle fiber CSA, reduced catabolic markers. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">2</span><div class="checklist-content"><strong>Liu 2022</strong><div class="checklist-detail">Early mobilization ≤3 days → lower in-hospital mortality. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">3</span><div class="checklist-content"><strong>Sakai 2025</strong><div class="checklist-detail">↓ ICU-acquired weakness at discharge. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">4</span><div class="checklist-content"><strong>BEAT-SHOCK 2025</strong><div class="checklist-detail">Earlier functional milestones. No ↑ 28/90-day mortality. [6]</div></div></li></ul><h4 style="margin-top:1rem">Post-Sepsis Syndrome</h4><div class="context-domain"><h4>Long-term Impairments</h4><p>19% depression, 39% anxiety, 8% PTSD. 48% did not return to work. Only 33% returned to independent living by 6 months. [6]</p></div></div></div>
+
+<!-- ===== ETIOLOGIES (NEW FIRST TAB) ===== -->
+<div class="sub-content active" id="sub0-0"><div class="card"><h3>🦠 Etiologies of Distributive Shock</h3>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Distributive shock accounts for the majority of shock presentations in the ICU. Understanding the specific etiology is essential because it directly determines management — from source control in sepsis to IM epinephrine in anaphylaxis. [1][5]</p>
+
+<h4>⚡ Quick Differentiation</h4>
+<table>
+<tr><th>Feature</th><th>Septic</th><th>Anaphylactic</th><th>Neurogenic</th><th>Adrenal</th></tr>
+<tr><td><strong>Onset</strong></td><td>Hours (insidious)</td><td>Minutes</td><td>Immediate post-injury</td><td>Hours–days</td></tr>
+<tr><td><strong>HR</strong></td><td>↑↑ Tachycardia</td><td>↑↑ Tachycardia</td><td>↓ Bradycardia</td><td>↑ Tachycardia</td></tr>
+<tr><td><strong>Temperature</strong></td><td>Fever or hypothermia</td><td>Normal</td><td>Poikilothermia</td><td>May be febrile</td></tr>
+<tr><td><strong>Key Clue</strong></td><td>Infectious source + fever</td><td>Exposure + urticaria/angioedema</td><td>Spinal injury level + warm below</td><td>Steroid hx + hyponatremia</td></tr>
+<tr><td><strong>First Treatment</strong></td><td>Abx + fluids + NE</td><td>IM Epinephrine</td><td>NE or Phenylephrine</td><td>IV Hydrocortisone</td></tr>
+</table>
+
+<button class="expand-toggle" onclick="toggleAllDetails(this)" style="margin-top:0.75rem">📂 Expand All</button>
+
+<details class="collapsible" open><summary>Septic Shock (62% of all shock)</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Definition (Sepsis-3):</strong> Sepsis with persisting hypotension requiring vasopressors to maintain MAP ≥65 mmHg AND lactate >2 mmol/L despite adequate volume resuscitation. [1][5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Dysregulated host response to infection → systemic cytokine release (TNF-α, IL-1, IL-6) → endothelial activation → vasodilation + capillary leak + microthrombosis → organ dysfunction. [2][5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Common Sources:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
+<li><strong>Pulmonary</strong> — pneumonia (most common), empyema</li>
+<li><strong>Abdominal</strong> — peritonitis, cholangitis, abscess, ischemic bowel</li>
+<li><strong>Urinary</strong> — pyelonephritis, obstructed infected system</li>
+<li><strong>Skin/Soft tissue</strong> — necrotizing fasciitis, cellulitis</li>
+<li><strong>Line-related</strong> — central line-associated bloodstream infection (CLABSI)</li>
+<li><strong>CNS</strong> — meningitis (less common)</li>
+</ul>
+<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management Priorities:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
+<li>Early broad-spectrum antibiotics (ideally within 1 hour) [5][2]</li>
+<li>Source control (surgical, IR, or procedural) as soon as feasible [5]</li>
+<li>IV crystalloid resuscitation (30 mL/kg within first 3 hours per SSC; individualize) [4]</li>
+<li>Norepinephrine for MAP ≥65 mmHg [1][4]</li>
+<li>Vasopressin as second agent [5]</li>
+<li>Hydrocortisone 200mg/day if refractory [2][5]</li>
+</ul>
+<div class="warn-box" style="margin-top:0.5rem">⚠️ <strong>Time-sensitive:</strong> Each hour delay in appropriate antibiotics associated with measurable increase in mortality. [5]</div>
+</div></details>
+
+<details class="collapsible"><summary>Anaphylactic Shock</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> IgE-mediated mast cell and basophil degranulation → massive histamine release → profound vasodilation + bronchospasm + capillary leak + mucosal edema. Non-IgE (anaphylactoid) reactions also possible. [5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Clinical Features:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
+<li>Rapid onset (seconds to minutes after exposure)</li>
+<li>Urticaria, angioedema, flushing (cutaneous in ~90%)</li>
+<li>Bronchospasm, stridor, laryngeal edema (airway)</li>
+<li>Hypotension, tachycardia, cardiovascular collapse</li>
+<li>GI: nausea, vomiting, cramping</li>
+</ul>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Common Triggers:</strong> Drugs (antibiotics, NSAIDs, NMBAs), foods (nuts, shellfish), insect stings, latex, contrast media, blood products.</p>
+<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
+<li><strong>STOP</strong> the offending agent immediately</li>
+<li><strong>IM Epinephrine 0.3–0.5mg</strong> (anterolateral thigh) — repeat q5–15 min [5]</li>
+<li>Aggressive IV fluid resuscitation (1–2L bolus crystalloid)</li>
+<li>Secure airway early (intubation if laryngeal edema)</li>
+<li>Adjuncts: H1/H2 blockers, corticosteroids (prevent biphasic), nebulized albuterol for bronchospasm</li>
+<li>Refractory: IV epinephrine infusion, vasopressin [5]</li>
+</ul>
+<div class="bad-box" style="margin-top:0.5rem"><strong>⚠️ Do NOT substitute antihistamines or steroids for epinephrine.</strong> Epinephrine is the ONLY first-line treatment.</div>
+</div></details>
+
+<details class="collapsible"><summary>Neurogenic Shock</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Disruption of descending sympathetic pathways (typically cervical or high thoracic spinal cord injury T6 and above) → loss of vascular tone + loss of cardiac accelerator fibers → vasodilation + bradycardia. Unopposed vagal tone. [5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Distinguishing Features:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
+<li>Hypotension + <strong>bradycardia</strong> (unlike all other shock types which are tachycardic)</li>
+<li>Warm, flushed skin <strong>below</strong> the level of injury</li>
+<li>Poikilothermia (inability to regulate temperature)</li>
+<li>Often concurrent with spinal shock (areflexia below level)</li>
+</ul>
+<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
+<li>Spinal stabilization and surgical decompression as indicated [5]</li>
+<li>Target MAP 85–90 mmHg for spinal cord perfusion (first 5–7 days) [5]</li>
+<li>Norepinephrine or phenylephrine first-line</li>
+<li>Atropine or isoproterenol for symptomatic bradycardia</li>
+<li>Careful volume — these patients are euvolemic but vasodilated</li>
+</ul>
+<div class="warn-box" style="margin-top:0.5rem">⚠️ <strong>Rule out hemorrhage.</strong> Trauma patients with spinal injury may have concurrent hemorrhagic shock — do not attribute all hypotension to neurogenic cause without excluding bleeding.</div>
+</div></details>
+
+<details class="collapsible"><summary>Adrenal Crisis (Relative Adrenal Insufficiency)</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Inadequate cortisol response to physiologic stress → impaired vascular tone, decreased catecholamine sensitivity, inability to mount appropriate stress response. Can be primary (adrenal destruction) or secondary (chronic steroid suppression). [2][5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Clinical Clues:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
+<li>History of chronic corticosteroid use (most common cause in ICU)</li>
+<li>Refractory hypotension despite adequate fluids and vasopressors</li>
+<li>Hyponatremia, hyperkalemia (primary)</li>
+<li>Hypoglycemia</li>
+<li>Eosinophilia</li>
+</ul>
+<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
+<li><strong>IV Hydrocortisone 200mg/day</strong> (50mg q6h or 200mg continuous infusion) [2][5]</li>
+<li>Dramatic improvement in vasopressor responsiveness often seen within hours</li>
+<li>In septic shock: consider stress-dose steroids if on ≥2 vasopressors or escalating doses [2]</li>
+</ul>
+</div></details>
+
+<details class="collapsible"><summary>Post-Cardiopulmonary Bypass Vasoplegia</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Contact activation with the bypass circuit → systemic inflammatory response → NO-mediated vasoplegia. Incidence 5–25% post-CPB. [9]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Risk Factors:</strong> Longer CPB time, preoperative ACEi/ARB, low LVEF, preoperative vasopressors.</p>
+<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
+<li>Norepinephrine first-line</li>
+<li>Vasopressin (early addition)</li>
+<li>Methylene blue 1–2 mg/kg IV (inhibits guanylate cyclase/NO pathway)</li>
+<li>Hydroxocobalamin (NO scavenger) — emerging evidence [9]</li>
+</ul>
+</div></details>
+
+<details class="collapsible"><summary>Drug-Induced Distributive Shock</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Common Culprits:</strong></p>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
+<li><strong>Calcium channel blockers</strong> — profound vasodilation + negative inotropy</li>
+<li><strong>Sedatives/anesthetics</strong> — propofol, volatile agents, dexmedetomidine</li>
+<li><strong>Vasodilators</strong> — nitroprusside, nitroglycerin, hydralazine</li>
+<li><strong>ACEi/ARB</strong> — can contribute to refractory vasoplegia</li>
+<li><strong>Cytokine release syndrome</strong> — post CAR-T or immunotherapy</li>
+</ul>
+<p style="font-size:0.82rem"><strong>Key Principle:</strong> Identify and discontinue offending agent. Supportive vasopressor therapy. For CCB overdose: high-dose insulin euglycemic therapy, IV calcium, lipid emulsion.</p>
+</div></details>
+
+</div></div>
+
+<!-- ===== PATHOPHYSIOLOGY ===== -->
+<div class="sub-content" id="sub0-1"><div class="card"><h3>🔬 Pathophysiology of Distributive Shock</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Distributive shock is characterized by inappropriate systemic vasodilation leading to maldistribution of blood flow, decreased SVR, and inadequate tissue oxygen utilization despite often preserved or elevated cardiac output. The primary defect is in the periphery. [1]</p><div class="param-grid"><div class="param-item"><div class="param-name">Vasodilatory Mechanism</div><div class="param-def">Excess proinflammatory mediators and cytokines enter systemic circulation → vasoplegia and organ dysfunction. The main deficit lies in the periphery — decreased SVR and altered oxygen extraction. [1][2]</div></div><div class="param-item"><div class="param-name">Nitric Oxide (NO) Pathway</div><div class="param-def">Inflammatory signaling upregulates iNOS → excessive NO production → activates guanylate cyclase → smooth muscle relaxation → vasodilation. Also: lactic acidosis opens K-ATP channels → membrane hyperpolarization → catecholamine resistance. [5]</div></div><div class="param-item"><div class="param-name">Cytokine Cascade</div><div class="param-def">In septic shock: TNF-α, IL-1, IL-6 drive endothelial activation, capillary leak, microcirculatory dysfunction, and activation of coagulation cascades. [2]</div></div><div class="param-item"><div class="param-name">Relative Hypovolemia</div><div class="param-def">Vasodilation dramatically increases venous capacitance → blood pools peripherally → effective circulating volume decreases even without absolute fluid loss → ↓ venous return and preload. [1][6]</div></div><div class="param-item"><div class="param-name">Capillary Leak & Glycocalyx Injury</div><div class="param-def">Inflammatory mediators damage the endothelial glycocalyx and tight junctions → plasma extravasation → interstitial edema → ↓ effective circulating volume + impaired O₂ diffusion distance. [1][5]</div></div><div class="param-item"><div class="param-name">Microcirculatory Dysfunction</div><div class="param-def">↓ Capillary density, ↓ perfused capillaries, ↑ heterogeneity of flow. Results in "shunting" — blood bypasses exchange vessels. Persistence predicts poor outcomes independent of macrovascular correction. [4]</div></div><div class="param-item"><div class="param-name">Myocardial Depression</div><div class="param-def">Circulating myocardial depressant factors (TNF-α, IL-1β, NO) → biventricular dilation with reduced EF. Often reversible. Contributes to "cold" (late) septic shock phenotype. [5]</div></div></div></div></div>
+
+<!-- ===== HEMODYNAMICS ===== -->
+<div class="sub-content" id="sub0-2"><div class="card"><h3>📊 Hemodynamic Profile</h3><p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">💡 Tap any cell to compare that parameter across all shock types</p><table class="hemo-table" id="hemoTable0" data-active-col="1"><tr><th>Parameter</th><th class="hemo-active">Distributive</th><th class="hemo-dim">Cardiogenic</th><th class="hemo-dim">Hypovolemic</th><th class="hemo-dim">Obstructive</th></tr><tr><td><strong>CO</strong></td><td class="hemo-active">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>SVR</strong></td><td class="hemo-active">↓↓</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↑</td><td class="hemo-dim">↑</td></tr><tr><td><strong>CVP</strong></td><td class="hemo-active">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↑</td></tr><tr><td><strong>PCWP</strong></td><td class="hemo-active">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↓</td><td class="hemo-dim">Variable</td></tr><tr><td><strong>SvO₂</strong></td><td class="hemo-active">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>Extremities</strong></td><td class="hemo-active">Warm (early)</td><td class="hemo-dim">Cool</td><td class="hemo-dim">Cool</td><td class="hemo-dim">Cool</td></tr></table>
+
+<h4 style="margin-top:1rem">Early vs. Late Septic Shock</h4>
+<div class="good-box"><strong>Early ("Warm" / Hyperdynamic):</strong> ↑CO, ↓↓SVR, warm/flushed extremities, bounding pulses, wide pulse pressure. SvO₂ may be paradoxically elevated due to impaired peripheral oxygen extraction. This is the classic distributive phenotype. [5][6]</div>
+<div class="bad-box"><strong>Late ("Cold" / Hypodynamic):</strong> Myocardial depression → ↓CO, ↑SVR (compensatory), mottled/cool skin, narrow pulse pressure, poor capillary refill. Represents catecholamine-induced myocardial injury or progression to mixed shock. Carries worse prognosis. [5]</div>
+
+<div class="warn-box">⚠️ <strong>Clinical Pearl:</strong> A "warm" shocked patient with low SVR and preserved/high CO = distributive until proven otherwise. A "cold" shocked patient with low CO may be cardiogenic, hypovolemic, OR late distributive — echo and clinical context differentiate.</div>
+</div></div>
+
+<!-- ===== MANAGEMENT (combined Pharm + Medical) ===== -->
+<div class="sub-content" id="sub0-3"><div class="card"><h3>💊 Medical & Pharmacologic Management</h3>
+
+<h4>Initial Resuscitation</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Volume Resuscitation</div><div class="param-def">IV crystalloid 30 mL/kg within first 3 hours (SSC guideline). However: individualize based on fluid responsiveness. Avoid aggressive ongoing fluid in non-responsive patients — excess fluid worsens outcomes. [4][5]</div></div>
+<div class="param-item"><div class="param-name">Source Control</div><div class="param-def">Identify and control the source as early as feasible: drain abscesses, debride necrotic tissue, remove infected devices, repair perforated viscus. Every hour of delay matters. [5]</div></div>
+<div class="param-item"><div class="param-name">Antimicrobials</div><div class="param-def">Empiric broad-spectrum antibiotics within 1 hour of recognition. Obtain cultures first if possible without delaying treatment. De-escalate based on culture results. [5][2]</div></div>
+</div>
+
+<h4 style="margin-top:1rem">Vasopressor Receptor Pharmacology</h4>
+<table><tr><th>Agent</th><th>α1</th><th>β1</th><th>β2</th><th>Other</th><th>Primary Effect</th></tr><tr><td><strong>Norepinephrine</strong></td><td>++++</td><td>++</td><td>+</td><td>—</td><td>Vasoconstriction + mild inotropy</td></tr><tr><td><strong>Vasopressin</strong></td><td>—</td><td>—</td><td>—</td><td>V1,V2</td><td>Non-catecholamine vasoconstriction</td></tr><tr><td><strong>Epinephrine</strong></td><td>+++</td><td>++++</td><td>+++</td><td>—</td><td>Dose-dependent: low=β, high=α</td></tr><tr><td><strong>Phenylephrine</strong></td><td>++++</td><td>—</td><td>—</td><td>—</td><td>Pure vasoconstriction (no inotropy)</td></tr><tr><td><strong>Angiotensin II</strong></td><td>—</td><td>—</td><td>—</td><td>AT1</td><td>RAAS-mediated vasoconstriction</td></tr><tr><td><strong>Dobutamine</strong></td><td>+</td><td>++++</td><td>++</td><td>—</td><td>Inotropy (may ↓SVR via β2)</td></tr></table>
+
+<h4 style="margin-top:1rem">Escalation Pathway [2][5]</h4>
+<p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">👆 Mark current step to highlight relevant guidance:</p>
+<div class="esc-stepper" id="escStepper">
+<button class="esc-step-btn" onclick="setEscStep(0)">Step 1: NE</button>
+<button class="esc-step-btn" onclick="setEscStep(1)">Step 2: Vaso</button>
+<button class="esc-step-btn" onclick="setEscStep(2)">Step 3: Adjuncts</button>
+<button class="esc-step-btn" onclick="setEscStep(3)">De-escalation</button>
+</div>
+
+<div class="abg-card escalate" id="escCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Norepinephrine (First-Line Vasopressor)</span></div><div class="abg-problem">"We consider norepinephrine the vasopressor of first choice" [1]. Strong α1 agonism restores SVR; modest β1 effect supports cardiac output. Target MAP ≥65 mmHg (individualize to ≥70–80 in chronic HTN or if signs of inadequate perfusion persist). [4]</div></div>
+
+<div class="abg-card escalate" id="escCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Vasopressin (0.01–0.04 U/min)</span></div><div class="abg-problem">Non-catecholamine mechanism (V1 receptors on vascular smooth muscle). Catecholamine-sparing — reduces NE requirements. Acts on catecholamine-resistant vasodilation pathways. Endogenous vasopressin is depleted in prolonged septic shock. [5]</div><div class="abg-safety">⚠️ Do not exceed 0.04 U/min — doses above associated with splanchnic/digital ischemia. Do not titrate to MAP. [1]</div></div>
+
+<div class="abg-card escalate" id="escCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Adjunctive Agents</span></div><div class="abg-problem"><strong>Angiotensin II:</strong> ATHOS-3 trial — effective in vasodilatory shock refractory to high-dose NE + vasopressin. RAAS pathway, non-catecholamine. [7]<br><strong>Epinephrine:</strong> When inotropy needed (septic cardiomyopathy) or refractory vasodilation. Increases HR, contractility, and SVR at higher doses. [1]<br><strong>Hydrocortisone 200mg/day:</strong> Consider if on ≥2 vasopressors or escalating NE. Accelerates shock resolution, decreases time on vasopressors. [2][5]<br><strong>Methylene Blue:</strong> Inhibits NO/guanylate cyclase pathway. Consider in refractory vasoplegia (post-CPB, late septic). [9]</div></div>
+
+<div class="abg-card deescalate" id="escCard3"><div class="abg-header"><span class="abg-direction deescalate">↓ DE-ESCALATION</span><span class="abg-title">Weaning Vasopressors</span></div><div class="abg-problem"><strong>Phase 4 of resuscitation:</strong> Once shock resolves — wean vasoactives systematically, target negative fluid balance, transition to enteral medications. [1]<br><strong>Weaning order (typical):</strong> Wean adjuncts first → vasopressin (keep fixed at 0.03–0.04 until NE is low) → NE last.<br><strong>Signal to de-escalate:</strong> MAP at target on stable/decreasing doses, lactate normalizing, UOP improving, NEE trending down. [4]</div></div>
+
+</div></div>
+
+<!-- ===== ASSESSMENT (RESTRUCTURED) ===== -->
+<div class="sub-content" id="sub0-4"><div class="card"><h3>🔍 Assessment & Monitoring</h3>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Assessment in distributive shock is not a one-time event — it is a continuous feedback loop: assess perfusion → intervene → reassess response → adjust. Structure your evaluation by domain and timeframe. [1][4]</p>
+
+<h4>🕐 Initial Assessment (First 1–3 Hours)</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Hemodynamic Stabilization</div><div class="param-def"><strong>MAP target:</strong> ≥65 mmHg (higher if chronic HTN or persistent hypoperfusion signs). Assess: Is MAP achieved? At what vasopressor dose? What is the trajectory? [4]</div></div>
+<div class="param-item"><div class="param-name">Volume Status</div><div class="param-def"><strong>Initial:</strong> 30 mL/kg crystalloid (SSC). <strong>Then assess fluid responsiveness:</strong> PLR (gold standard if spontaneous breathing), PPV/SVV (if mechanically ventilated, regular rhythm), mini-fluid challenge. [4]<br><strong>If responsive → more fluid. If not → vasopressors/inotropes.</strong></div></div>
+<div class="param-item"><div class="param-name">Source Identification</div><div class="param-def">Cultures (blood ×2, urine, sputum, wound, CSF as indicated) BEFORE antibiotics if obtainable within minutes. Imaging as indicated (CT, US). Assess for surgical source control needs. [5]</div></div>
+</div>
+
+<h4 style="margin-top:1rem">🫀 Perfusion Assessment — Three "Windows" [1][4]</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">🧠 Neurologic Window</div><div class="param-def">Mental status changes: confusion, agitation, obtundation, delirium. Often earliest and most sensitive sign of hypoperfusion. Assess with RASS, CAM-ICU. Resolution indicates improving perfusion. [1]</div></div>
+<div class="param-item"><div class="param-name">🩸 Renal Window</div><div class="param-def"><strong>UOP target:</strong> ≥0.5 mL/kg/hr. Oliguria is an early sign of renal hypoperfusion. Rising creatinine indicates established AKI. [6] Trend is more informative than a single value.</div></div>
+<div class="param-item"><div class="param-name">🖐️ Cutaneous Window</div><div class="param-def"><strong>Capillary refill time (CRT):</strong> Target ≤3 seconds. CRT-guided resuscitation non-inferior to lactate-guided (ANDROMEDA-SHOCK). [4]<br><strong>Mottling:</strong> Score 0–5 (knees → beyond). Progression indicates worsening.<br><strong>Skin temperature:</strong> Cool extremities in "warm" shock = transition to cold phenotype.</div></div>
+</div>
+
+<h4 style="margin-top:1rem">🧪 Metabolic & Biochemical Markers</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Lactate</div><div class="param-def"><strong>Target:</strong> ≥20% decrease every 2 hours until normalized. [4]<br><strong>Interpretation:</strong> Reflects anaerobic metabolism + impaired clearance. Persistence >2 mmol/L after 24h = poor prognosis. Even small increases (>2.0) associated with significant mortality increase. Serial trending more valuable than single values. [4]</div></div>
+<div class="param-item"><div class="param-name">ScvO₂ (Central Venous O₂ Saturation)</div><div class="param-def"><strong>Low (<65%):</strong> Inadequate oxygen delivery relative to demand (↓CO, anemia, hypoxemia).<br><strong>Normal/High (>70% in sepsis):</strong> May indicate impaired peripheral extraction (mitochondrial dysfunction) or redistribution of flow — NOT reassuring in context of shock. [4]</div></div>
+<div class="param-item"><div class="param-name">Pv-aCO₂ (Venous-Arterial CO₂ Gap)</div><div class="param-def"><strong>>6 mmHg:</strong> Suggests persistent inadequate cardiac output relative to metabolic demand, even if ScvO₂ is normal. Indicates need for optimization of flow (fluids or inotropes). [4]</div></div>
+<div class="param-item"><div class="param-name">Base Deficit & pH</div><div class="param-def">Worsening metabolic acidosis (↑ base deficit, ↓ pH) reflects ongoing tissue hypoxia. Improvement = positive response to resuscitation.</div></div>
+</div>
+
+<h4 style="margin-top:1rem">🫁 Imaging — Echocardiography</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Bedside Echo / POCUS</div><div class="param-def"><strong>First-line imaging in shock.</strong> In distributive shock expect: hyperdynamic LV (small cavity, high EF), IVC variability (suggests fluid responsiveness or low filling), normal/small RV. [4]<br><strong>Red flags for mixed/alternative diagnosis:</strong> Dilated poorly-contracting LV (cardiogenic), RV dilation (PE/obstructive), pericardial effusion (tamponade).<br>Serial echo guides fluid vs. vasopressor vs. inotrope decision-making.</div></div>
+</div>
+
+<h4 style="margin-top:1rem">💊 Vasopressor Responsiveness & NEE Monitoring</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">NEE Trend</div><div class="param-def"><strong>Escalating NEE</strong> = worsening shock, inadequate source control, or new complication. <strong>Decreasing NEE</strong> = resolving shock, effective treatment. Track NEE over time as a composite vasopressor burden metric. [7]</div></div>
+<div class="param-item"><div class="param-name">MAP/NEE Ratio</div><div class="param-def">Integrates both the MAP achieved AND the vasopressor cost to achieve it. <strong>Higher ratio = better</strong> (good MAP at low vasopressor dose). [8]<br>• Tertile 1 (≥325): ~20% mortality<br>• Tertile 2 (136–324): ~35% mortality<br>• Tertile 3 (<136): ~55% mortality<br>Validated in septic shock only. [8]</div></div>
+<div class="param-item"><div class="param-name">Adequacy of Response</div><div class="param-def"><strong>Ask:</strong> Is MAP at target? Is NEE stable or escalating? Are perfusion windows improving? Is lactate clearing?<br><strong>If MAP at target but perfusion still poor</strong> → microcirculatory dysfunction, consider targeting higher MAP, optimizing CO, or evaluating for complications.</div></div>
+</div>
+
+<h4 style="margin-top:1rem">🔄 Ongoing Monitoring & Reassessment Triggers</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Routine Re-evaluation (q2–6h)</div><div class="param-def">• Lactate trend<br>• UOP<br>• Vasopressor doses/NEE<br>• Perfusion windows (CRT, mental status)<br>• Fluid balance (input vs. output)<br>• Assess need for fluid responsiveness testing before additional boluses [4]</div></div>
+<div class="param-item"><div class="param-name">Reassessment Triggers</div><div class="param-def"><strong>Escalate evaluation if:</strong><br>• New vasopressor requirement or ↑ doses<br>• Rising lactate after initial clearance<br>• New organ dysfunction (↓UOP, ↑Cr, ↓mental status)<br>• Failure to improve at 6–12 hours<br><strong>Consider:</strong> Inadequate source control? New infection? Unrecognized bleeding? Adrenal insufficiency? Wrong shock type?</div></div>
+<div class="param-item"><div class="param-name">De-Resuscitation Signals</div><div class="param-def"><strong>When to transition from aggressive resuscitation to de-resuscitation:</strong><br>• MAP at target on stable/decreasing vasopressors<br>• Lactate normalizing<br>• UOP adequate<br>• No longer fluid responsive<br>• Target: negative fluid balance in Phase 4 to avoid volume overload complications (pulmonary edema, abdominal compartment syndrome) [1][4]</div></div>
+</div>
+
+</div></div>
+
+<!-- ===== REHAB ===== -->
+<div class="sub-content" id="sub0-5"><div class="card"><h3>💪 Rehab Considerations</h3>
+<div class="warn-box"><strong>Key Principle:</strong> Never determine readiness by an isolated number. Integrate trajectory, stability, respiratory status, and response to support. [6]</div>
+
+<!-- 2F: Readiness Checklist -->
+<div class="readiness-checklist">
+<h4>📋 Structured Readiness Assessment</h4>
+<p style="font-size:0.72rem;color:var(--text2);margin-bottom:0.75rem">Not a score — a structured framework for clinical reasoning</p>
+<div class="readiness-item" id="ri0"><input type="checkbox" id="rc0" onchange="updateReadiness()"><label for="rc0">Hemodynamically stable with routine care (no acute decompensation)</label></div>
+<div class="readiness-item" id="ri1"><input type="checkbox" id="rc1" onchange="updateReadiness()"><label for="rc1">Vasopressor dose trending down or stable (not actively titrating up)</label></div>
+<div class="readiness-item" id="ri2"><input type="checkbox" id="rc2" onchange="updateReadiness()"><label for="rc2">No new/active titration in last 2+ hours</label></div>
+<div class="readiness-item" id="ri3"><input type="checkbox" id="rc3" onchange="updateReadiness()"><label for="rc3">Adequate oxygenation on current respiratory support</label></div>
+<div class="readiness-item" id="ri4"><input type="checkbox" id="rc4" onchange="updateReadiness()"><label for="rc4">Patient responsive/arousable to voice or light stimulation</label></div>
+<div class="readiness-item" id="ri5"><input type="checkbox" id="rc5" onchange="updateReadiness()"><label for="rc5">No active hemorrhage or new concerning clinical change</label></div>
+<div class="readiness-summary" id="readinessSummary">0 of 6 considerations met</div>
+</div>
+
+<div class="context-domain"><h4>Vasoactive Context — Not Dichotomous Cutoffs</h4><p>Minimize dichotomous decision making. Clinical context, dosage <em>trends</em>, and individual response are more pertinent than any single threshold. A patient on stable NE 0.15 mcg/kg/min trending down is very different from one on NE 0.08 mcg/kg/min trending up. [6]</p></div>
+
+<h4>Evidence for Early Mobility in Septic Shock</h4>
+<ul class="checklist">
+<li class="checklist-item"><span class="checklist-icon primary">1</span><div class="checklist-content"><strong>Hickmann 2018</strong><div class="checklist-detail">Very early PT preserved muscle fiber CSA, reduced catabolic markers. [6]</div></div></li>
+<li class="checklist-item"><span class="checklist-icon primary">2</span><div class="checklist-content"><strong>Liu 2022</strong><div class="checklist-detail">Early mobilization ≤3 days → lower in-hospital mortality. [6]</div></div></li>
+<li class="checklist-item"><span class="checklist-icon primary">3</span><div class="checklist-content"><strong>Sakai 2025</strong><div class="checklist-detail">↓ ICU-acquired weakness at discharge. [6]</div></div></li>
+<li class="checklist-item"><span class="checklist-icon primary">4</span><div class="checklist-content"><strong>BEAT-SHOCK 2025</strong><div class="checklist-detail">Earlier functional milestones. No ↑ 28/90-day mortality. [6]</div></div></li>
+</ul>
+
+<h4 style="margin-top:1rem">Post-Sepsis Syndrome</h4>
+<div class="context-domain"><h4>Long-term Impairments</h4><p>19% depression, 39% anxiety, 8% PTSD. 48% did not return to work. Only 33% returned to independent living by 6 months. Significant cognitive impairment and physical deconditioning persist for years. Early rehabilitation may mitigate these long-term sequelae. [6]</p></div>
+</div></div>
+
+<!-- ===== NEE APPLICABILITY ===== -->
+<div class="sub-content" id="sub0-6"><div class="card"><h3>🧮 NEE Applicability</h3>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">The Norepinephrine Equivalent (NEE) provides a single composite metric for total vasopressor burden, enabling standardized communication, severity tracking, and prognostication. [7]</p>
+<div class="eq-box"><div class="eq-main">NEE (mcg/kg/min) = NE + Epi + (Dopa÷100) + (Phenyl×0.06) + (Vaso×2.5) + (AngII×0.0025) + (MB×0.2)</div><div class="eq-cite">Kotani et al. 2023 [7]</div></div>
+
+<h4 style="margin-top:1rem">Clinical Applications</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Severity Quantification</div><div class="param-def">Standardizes vasopressor burden regardless of which agents are used. Enables comparison across patients and timepoints. [7]</div></div>
+<div class="param-item"><div class="param-name">Trajectory Tracking</div><div class="param-def">Serial NEE values reveal direction of illness: Rising NEE = worsening; Falling NEE = resolving. More informative than individual agent doses. [7]</div></div>
+<div class="param-item"><div class="param-name">Communication</div><div class="param-def">"NEE 0.35 and rising" communicates severity instantly to any clinician regardless of which vasopressor combination is used.</div></div>
+<div class="param-item"><div class="param-name">Rehab Contextualization</div><div class="param-def">Provides objective framework for mobility decisions — not as a cutoff, but as context for clinical reasoning about vasopressor burden and trajectory. [6]</div></div>
+</div>
+
+<h4 style="margin-top:1rem">MAP/NEE Ratio [8]</h4>
+<table><tr><th>Tertile</th><th>Score</th><th>MIMIC-III</th><th>eICU</th></tr><tr class="severity-low"><td>≥325</td><td>1 pt</td><td>~20%</td><td>~18%</td></tr><tr class="severity-mid"><td>136–324</td><td>2 pts</td><td>~35%</td><td>~32%</td></tr><tr class="severity-high"><td><136</td><td>3 pts</td><td>~55%</td><td>~52%</td></tr></table>
+<div class="warn-box">⚠️ <strong>Validated in septic shock only.</strong> c-statistic 0.65–0.68. Useful for prognostication and severity benchmarking but should not be used in isolation for clinical decisions. [7][8]</div>
+</div></div>
+
 <p class="cite">[1] Vincent & De Backer 2013 – NEJM · [2] Manson et al. 2023 – ATS Scholar · [3] Nakata et al. 2023 · [4] Monnet et al. 2025 – ESICM · [5] Khorsand et al. 2023 · [6] CSM Shock 2026 · [7] Kotani et al. 2023 · [8] Bosch et al. 2020 · [9] Bellumkonda 2025</p>
 </div>
 <!-- TAB 1: CARDIOGENIC -->
