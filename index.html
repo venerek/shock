@@ -27,11 +27,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .app-header{text-align:center;padding:1.5rem 1rem 0.5rem}
 .app-header h1{font-size:1.4rem;font-weight:700}
 .main-tabs{display:flex;border-bottom:2px solid var(--border);background:var(--bg2);position:sticky;top:0;z-index:100;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.main-tab{flex:1;padding:0.75rem 0.5rem;text-align:center;cursor:pointer;font-size:0.78rem;font-weight:600;border:none;border-bottom:3px solid transparent;background:none;color:var(--text2);white-space:nowrap;transition:all 0.2s}
+.main-tab{flex:1;padding:0.75rem 0.5rem;text-align:center;cursor:pointer;font-size:0.78rem;font-weight:600;border:none;border-bottom:3px solid transparent;background:none;color:var(--text2);white-space:nowrap;transition:all 0.2s;position:relative}
 .main-tab.active{color:var(--tab-accent);border-bottom-color:var(--tab-accent)}
 .tab-content{display:none;max-width:800px;margin:0 auto;padding:1rem}
 .tab-content.active{display:block}
-.sub-tabs{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem;padding:0.5rem;background:var(--bg2);border-radius:8px}
+.sub-tabs{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem;padding:0.5rem;background:var(--bg2);border-radius:8px;position:sticky;top:42px;z-index:90;box-shadow:0 2px 4px rgba(0,0,0,0.05)}
 .sub-tab{padding:0.4rem 0.75rem;border-radius:20px;font-size:0.72rem;font-weight:600;cursor:pointer;background:var(--pill-bg);color:var(--text2);border:none;transition:all 0.2s;white-space:nowrap}
 .sub-tab.active{background:var(--pill-active);color:var(--pill-active-text)}
 .sub-content{display:none}.sub-content.active{display:block}
@@ -75,9 +75,6 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 @media(prefers-color-scheme:dark){.abg-card .abg-direction.escalate{background:#7f1d1d;color:#fca5a5}.abg-card .abg-direction.deescalate{background:#064e3b;color:#6ee7b7}}
 .abg-card .abg-title{font-weight:700;font-size:0.88rem;color:var(--text1)}
 .abg-card .abg-problem{font-size:0.8rem;color:var(--text2);margin-bottom:0.5rem}
-.abg-card .abg-action-block{background:var(--bg2);border-radius:8px;padding:0.5rem 0.75rem;margin-bottom:0.4rem}
-.abg-card .abg-action-block .abg-action-label{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text2);margin-bottom:0.15rem}
-.abg-card .abg-action-block .abg-action-text{font-size:0.85rem;font-weight:600;color:var(--text1)}
 .abg-card .abg-safety{font-size:0.76rem;color:var(--amber);font-weight:500;margin-top:0.4rem;padding-top:0.4rem;border-top:1px solid var(--border)}
 .collapsible>summary{cursor:pointer;user-select:none;font-weight:600;font-size:0.95rem;color:var(--tab-accent);list-style:none;display:flex;align-items:center;gap:0.5rem}
 .collapsible>summary::-webkit-details-marker{display:none}
@@ -96,6 +93,50 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 #tab2 .card{border-left:4px solid #f39c12}
 #tab3 .card{border-left:4px solid #9b59b6}
 #tab4 .card{border-left:4px solid #27ae60}
+/* 2J: Hemodynamic column highlight */
+.hemo-table th.hemo-active,.hemo-table td.hemo-active{background:rgba(231,76,60,0.1);font-weight:700;color:var(--text1)}
+.hemo-table th.hemo-active{color:var(--tab-accent);border-bottom:3px solid var(--tab-accent)}
+.hemo-table th.hemo-dim,.hemo-table td.hemo-dim{opacity:0.55}
+.hemo-table td{cursor:pointer;transition:background 0.15s}
+.hemo-table td:hover{background:rgba(231,76,60,0.06)}
+@media(prefers-color-scheme:dark){.hemo-table th.hemo-active,.hemo-table td.hemo-active{background:rgba(248,113,113,0.12)}.hemo-table td:hover{background:rgba(248,113,113,0.08)}}
+/* 2B: Quick Compare */
+.qc-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center;padding:1rem}
+.qc-overlay.show{display:flex}
+.qc-card{background:var(--card);border-radius:12px;padding:1.25rem;max-width:400px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+.qc-card h4{font-size:0.95rem;color:var(--tab-accent);margin-bottom:0.75rem}
+.qc-close{position:absolute;top:0.5rem;right:0.75rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--text2);padding:0.25rem}
+.qc-row{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.qc-row:last-child{border-bottom:none}
+.qc-row .qc-label{font-weight:600;min-width:90px}
+.qc-row .qc-val{text-align:right;color:var(--text2)}
+.qc-row.qc-highlight{background:rgba(231,76,60,0.08);border-radius:6px;padding:0.5rem;margin:0.15rem -0.25rem}
+.qc-row.qc-highlight .qc-val{color:var(--tab-accent);font-weight:700}
+@media(prefers-color-scheme:dark){.qc-row.qc-highlight{background:rgba(248,113,113,0.1)}}
+/* 2C: NEE dot */
+.nee-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-left:4px;vertical-align:middle;background:var(--border);transition:background 0.3s}
+.nee-dot.dot-none{background:var(--border)}.nee-dot.dot-low{background:var(--green)}.nee-dot.dot-mod{background:var(--amber)}.nee-dot.dot-high{background:#ea580c}.nee-dot.dot-extreme{background:var(--red)}
+/* 2D: Escalation stepper */
+.esc-stepper{display:flex;gap:0.3rem;margin-bottom:1rem;flex-wrap:wrap}
+.esc-step-btn{padding:0.35rem 0.7rem;border-radius:16px;font-size:0.7rem;font-weight:600;cursor:pointer;border:2px solid var(--border);background:var(--card);color:var(--text2);transition:all 0.2s}
+.esc-step-btn.esc-current{border-color:var(--tab-accent);background:var(--tab-accent);color:#fff}
+.esc-step-btn.esc-past{border-color:var(--green);background:#d1fae5;color:#065f46;opacity:0.7}
+@media(prefers-color-scheme:dark){.esc-step-btn.esc-past{background:#064e3b;color:#6ee7b7}}
+.abg-card.esc-dimmed{opacity:0.4;transform:scale(0.98)}
+.abg-card.esc-active{border-left-color:var(--tab-accent);box-shadow:0 0 0 2px rgba(231,76,60,0.2)}
+/* 2F: Readiness checklist */
+.readiness-checklist{background:var(--pill-bg);border-radius:10px;padding:1rem;margin-bottom:1rem;border:2px solid var(--border)}
+.readiness-checklist h4{font-size:0.88rem;color:var(--tab-accent);margin-bottom:0.75rem}
+.readiness-item{display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.readiness-item:last-child{border-bottom:none}
+.readiness-item input[type="checkbox"]{width:18px;height:18px;accent-color:var(--green);cursor:pointer;flex-shrink:0}
+.readiness-item label{cursor:pointer;color:var(--text1)}
+.readiness-item.checked label{color:var(--green);text-decoration:line-through;opacity:0.7}
+.readiness-summary{margin-top:0.5rem;font-size:0.75rem;color:var(--text2);text-align:center;font-weight:600}
+/* 2H: Expand toggle */
+.expand-toggle{display:inline-flex;align-items:center;gap:0.3rem;padding:0.3rem 0.7rem;border-radius:6px;font-size:0.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--pill-bg);color:var(--text2);margin-bottom:0.75rem;transition:all 0.2s}
+.expand-toggle:hover{border-color:var(--tab-accent);color:var(--tab-accent)}
+/* NEE Calculator */
 .nee-formula-bar{background:var(--pill-bg);border:2px solid var(--border);color:var(--text1);text-align:center;font-family:'SF Mono',monospace;font-size:0.7rem;padding:0.75rem;border-radius:8px;margin-bottom:1rem;line-height:1.6}
 .nee-agent-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
 @media(max-width:600px){.nee-agent-grid{grid-template-columns:1fr}}
@@ -127,17 +168,14 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 .nee-contribution-bar{height:12px;background:var(--green);border-radius:3px;min-width:2px;transition:width 0.3s}
 .nee-reset-btn{display:block;margin:1rem auto 0;padding:0.5rem 1.5rem;border-radius:8px;border:2px solid var(--border);background:var(--card);color:var(--text1);font-weight:600;cursor:pointer;font-size:0.82rem}
 .nee-reset-btn:active{background:var(--pill-bg)}
-/* === NEW: Mode tabs for NEE calculator === */
 .nee-mode-tabs{display:flex;gap:0.4rem;margin-bottom:1rem;padding:0.5rem;background:var(--bg2);border-radius:8px}
 .nee-mode-tab{flex:1;padding:0.5rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:600;cursor:pointer;background:var(--pill-bg);color:var(--text2);border:none;transition:all 0.2s;text-align:center}
 .nee-mode-tab.active{background:var(--pill-active);color:var(--pill-active-text)}
-.nee-mode-content{display:none}
-.nee-mode-content.active{display:block}
-/* Single-agent converter */
+.nee-mode-content{display:none}.nee-mode-content.active{display:block}
 .sa-converter{background:var(--pill-bg);border-radius:10px;padding:1rem;border:2px solid var(--border)}
 .sa-converter .sa-desc{font-size:0.8rem;color:var(--text2);margin-bottom:1rem}
 .sa-row{display:grid;grid-template-columns:1fr auto 1fr;gap:0.75rem;align-items:start}
-@media(max-width:500px){.sa-row{grid-template-columns:1fr;}.sa-arrow{transform:rotate(90deg)}}
+@media(max-width:500px){.sa-row{grid-template-columns:1fr}.sa-arrow{transform:rotate(90deg)}}
 .sa-box{background:var(--card);border:2px solid var(--border);border-radius:8px;padding:0.75rem}
 .sa-box h4{font-size:0.78rem;font-weight:600;color:var(--tab-accent);margin-bottom:0.5rem}
 .sa-box select,.sa-box input{width:100%;padding:0.5rem;border:2px solid var(--border);border-radius:6px;font-size:0.85rem;background:var(--card);color:var(--text1);-webkit-appearance:none;margin-bottom:0.4rem}
@@ -157,9 +195,19 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <button class="main-tab" onclick="switchMain(1)">💔 Cardiogenic</button>
 <button class="main-tab" onclick="switchMain(2)">🩸 Hypovolemic</button>
 <button class="main-tab" onclick="switchMain(3)">🫁 Obstructive</button>
-<button class="main-tab" onclick="switchMain(4)">🧮 NEE Calc</button>
+<button class="main-tab" onclick="switchMain(4)">🧮 NEE Calc<span class="nee-dot dot-none" id="neeDot"></span></button>
 </nav>
-<!-- TAB 0: DISTRIBUTIVE -->
+
+<!-- 2B: Quick Compare Overlay -->
+<div class="qc-overlay" id="qcOverlay" onclick="closeQC(event)">
+<div class="qc-card" style="position:relative">
+<button class="qc-close" onclick="document.getElementById('qcOverlay').classList.remove('show')">&times;</button>
+<h4 id="qcTitle">—</h4>
+<div id="qcBody"></div>
+</div>
+</div>
+
+<!-- TAB 0: DISTRIBUTIVE (NEW ORDER) -->
 <div class="tab-content active" id="tab0">
 <div class="sub-tabs">
 <button class="sub-tab active" onclick="switchSub(0,0)">Etiologies</button>
@@ -171,7 +219,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <button class="sub-tab" onclick="switchSub(0,6)">NEE Applicability</button>
 </div>
 
-<!-- ===== ETIOLOGIES (NEW FIRST TAB) ===== -->
+<!-- ETIOLOGIES -->
 <div class="sub-content active" id="sub0-0"><div class="card"><h3>🦠 Etiologies of Distributive Shock</h3>
 <p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Distributive shock accounts for the majority (~66%) of shock in ICU. Identifying the specific etiology directly determines management. [1][5]</p>
 
@@ -223,177 +271,115 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 </div></details>
 </div></div>
 	
-<!-- ===== PATHOPHYSIOLOGY ===== -->
-<div class="sub-content" id="sub0-1"><div class="card"><h3>🔬 Pathophysiology of Distributive Shock</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Distributive shock is characterized by inappropriate systemic vasodilation leading to maldistribution of blood flow, decreased SVR, and inadequate tissue oxygen utilization despite often preserved or elevated cardiac output. The primary defect is in the periphery. [1]</p><div class="param-grid"><div class="param-item"><div class="param-name">Vasodilatory Mechanism</div><div class="param-def">Excess proinflammatory mediators and cytokines enter systemic circulation → vasoplegia and organ dysfunction. The main deficit lies in the periphery — decreased SVR and altered oxygen extraction. [1][2]</div></div><div class="param-item"><div class="param-name">Nitric Oxide (NO) Pathway</div><div class="param-def">Inflammatory signaling upregulates iNOS → excessive NO production → activates guanylate cyclase → smooth muscle relaxation → vasodilation. Also: lactic acidosis opens K-ATP channels → membrane hyperpolarization → catecholamine resistance. [5]</div></div><div class="param-item"><div class="param-name">Cytokine Cascade</div><div class="param-def">In septic shock: TNF-α, IL-1, IL-6 drive endothelial activation, capillary leak, microcirculatory dysfunction, and activation of coagulation cascades. [2]</div></div><div class="param-item"><div class="param-name">Relative Hypovolemia</div><div class="param-def">Vasodilation dramatically increases venous capacitance → blood pools peripherally → effective circulating volume decreases even without absolute fluid loss → ↓ venous return and preload. [1][6]</div></div><div class="param-item"><div class="param-name">Capillary Leak & Glycocalyx Injury</div><div class="param-def">Inflammatory mediators damage the endothelial glycocalyx and tight junctions → plasma extravasation → interstitial edema → ↓ effective circulating volume + impaired O₂ diffusion distance. [1][5]</div></div><div class="param-item"><div class="param-name">Microcirculatory Dysfunction</div><div class="param-def">↓ Capillary density, ↓ perfused capillaries, ↑ heterogeneity of flow. Results in "shunting" — blood bypasses exchange vessels. Persistence predicts poor outcomes independent of macrovascular correction. [4]</div></div><div class="param-item"><div class="param-name">Myocardial Depression</div><div class="param-def">Circulating myocardial depressant factors (TNF-α, IL-1β, NO) → biventricular dilation with reduced EF. Often reversible. Contributes to "cold" (late) septic shock phenotype. [5]</div></div></div></div></div>
+<!-- PATHOPHYSIOLOGY -->
+<div class="sub-content" id="sub0-1"><div class="card"><h3>🔬 Pathophysiology of Distributive Shock</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">The primary defect is in the periphery — inappropriate vasodilation with maldistribution of blood flow, decreased SVR, and impaired oxygen utilization despite preserved or elevated cardiac output. [1]</p><div class="param-grid"><div class="param-item"><div class="param-name">Vasodilatory Mechanism</div><div class="param-def">Proinflammatory mediators enter systemic circulation → vasoplegia and organ dysfunction. The main deficit: decreased SVR and altered oxygen extraction. [1][2]</div></div><div class="param-item"><div class="param-name">Nitric Oxide (NO) Pathway</div><div class="param-def">Inflammatory signaling upregulates iNOS → excessive NO → activates guanylate cyclase → smooth muscle relaxation. Also: acidosis opens K-ATP channels → membrane hyperpolarization → catecholamine resistance. [5]</div></div><div class="param-item"><div class="param-name">Cytokine Cascade</div><div class="param-def">TNF-α, IL-1, IL-6 drive endothelial activation, capillary leak, microcirculatory dysfunction, and coagulation activation. [2]</div></div><div class="param-item"><div class="param-name">Relative Hypovolemia</div><div class="param-def">Vasodilation increases venous capacitance → blood pools peripherally → effective circulating volume decreases without absolute fluid loss → ↓ venous return. [1][6]</div></div><div class="param-item"><div class="param-name">Capillary Leak & Glycocalyx Injury</div><div class="param-def">Inflammatory mediators damage endothelial glycocalyx and tight junctions → plasma extravasation → interstitial edema → ↓ effective volume + impaired O₂ diffusion. [1][5]</div></div><div class="param-item"><div class="param-name">Microcirculatory Dysfunction</div><div class="param-def">↓ Capillary density, ↓ perfused capillaries, ↑ flow heterogeneity. Blood "shunts" past exchange vessels. Persistence predicts poor outcomes independent of macrovascular correction. [4]</div></div><div class="param-item"><div class="param-name">Myocardial Depression</div><div class="param-def">Circulating depressant factors (TNF-α, IL-1β, NO) → biventricular dilation with reduced EF. Often reversible. Contributes to "cold"/late septic shock phenotype. [5]</div></div></div></div></div>
 
-<!-- ===== HEMODYNAMICS ===== -->
-<div class="sub-content" id="sub0-2"><div class="card"><h3>📊 Hemodynamic Profile</h3><p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">💡 Tap any cell to compare that parameter across all shock types</p><table class="hemo-table" id="hemoTable0" data-active-col="1"><tr><th>Parameter</th><th class="hemo-active">Distributive</th><th class="hemo-dim">Cardiogenic</th><th class="hemo-dim">Hypovolemic</th><th class="hemo-dim">Obstructive</th></tr><tr><td><strong>CO</strong></td><td class="hemo-active">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>SVR</strong></td><td class="hemo-active">↓↓</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↑</td><td class="hemo-dim">↑</td></tr><tr><td><strong>CVP</strong></td><td class="hemo-active">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↑</td></tr><tr><td><strong>PCWP</strong></td><td class="hemo-active">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↓</td><td class="hemo-dim">Variable</td></tr><tr><td><strong>SvO₂</strong></td><td class="hemo-active">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>Extremities</strong></td><td class="hemo-active">Warm (early)</td><td class="hemo-dim">Cool</td><td class="hemo-dim">Cool</td><td class="hemo-dim">Cool</td></tr></table>
+<!-- HEMODYNAMICS -->
+<div class="sub-content" id="sub0-2"><div class="card"><h3>📊 Hemodynamic Profile</h3><p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">💡 Tap any cell to compare across all shock types</p><table class="hemo-table" id="hemoTable0" data-active-col="1"><tr><th>Parameter</th><th class="hemo-active">Distributive</th><th class="hemo-dim">Cardiogenic</th><th class="hemo-dim">Hypovolemic</th><th class="hemo-dim">Obstructive</th></tr><tr><td><strong>CO</strong></td><td class="hemo-active">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>SVR</strong></td><td class="hemo-active">↓↓</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↑</td><td class="hemo-dim">↑</td></tr><tr><td><strong>CVP</strong></td><td class="hemo-active">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↑</td></tr><tr><td><strong>PCWP</strong></td><td class="hemo-active">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↓</td><td class="hemo-dim">Variable</td></tr><tr><td><strong>SvO₂</strong></td><td class="hemo-active">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>Extremities</strong></td><td class="hemo-active">Warm (early)</td><td class="hemo-dim">Cool</td><td class="hemo-dim">Cool</td><td class="hemo-dim">Cool</td></tr></table><h4 style="margin-top:1rem">Early vs. Late Septic Shock</h4><div class="good-box"><strong>Early ("Warm"):</strong> Hyperdynamic — ↑CO, ↓↓SVR, warm extremities, bounding pulses, wide pulse pressure. SvO₂ elevated (impaired extraction). [5][6]</div><div class="bad-box"><strong>Late ("Cold"):</strong> Myocardial depression → ↓CO, mottled skin, poor cap refill, narrow pulse pressure. Worse prognosis. [5]</div><div class="warn-box">⚠️ <strong>Pearl:</strong> "Warm" + low SVR + preserved CO = distributive. "Cold" + low CO may be cardiogenic, hypovolemic, OR late distributive — echo differentiates.</div></div></div>
 
-<h4 style="margin-top:1rem">Early vs. Late Septic Shock</h4>
-<div class="good-box"><strong>Early ("Warm" / Hyperdynamic):</strong> ↑CO, ↓↓SVR, warm/flushed extremities, bounding pulses, wide pulse pressure. SvO₂ may be paradoxically elevated due to impaired peripheral oxygen extraction. This is the classic distributive phenotype. [5][6]</div>
-<div class="bad-box"><strong>Late ("Cold" / Hypodynamic):</strong> Myocardial depression → ↓CO, ↑SVR (compensatory), mottled/cool skin, narrow pulse pressure, poor capillary refill. Represents catecholamine-induced myocardial injury or progression to mixed shock. Carries worse prognosis. [5]</div>
-
-<div class="warn-box">⚠️ <strong>Clinical Pearl:</strong> A "warm" shocked patient with low SVR and preserved/high CO = distributive until proven otherwise. A "cold" shocked patient with low CO may be cardiogenic, hypovolemic, OR late distributive — echo and clinical context differentiate.</div>
-</div></div>
-
-<!-- ===== MANAGEMENT (combined Pharm + Medical) ===== -->
+<!-- MANAGEMENT -->
 <div class="sub-content" id="sub0-3"><div class="card"><h3>💊 Medical & Pharmacologic Management</h3>
-
 <h4>Initial Resuscitation</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">Volume Resuscitation</div><div class="param-def">IV crystalloid 30 mL/kg within first 3 hours (SSC guideline). However: individualize based on fluid responsiveness. Avoid aggressive ongoing fluid in non-responsive patients — excess fluid worsens outcomes. [4][5]</div></div>
-<div class="param-item"><div class="param-name">Source Control</div><div class="param-def">Identify and control the source as early as feasible: drain abscesses, debride necrotic tissue, remove infected devices, repair perforated viscus. Every hour of delay matters. [5]</div></div>
-<div class="param-item"><div class="param-name">Antimicrobials</div><div class="param-def">Empiric broad-spectrum antibiotics within 1 hour of recognition. Obtain cultures first if possible without delaying treatment. De-escalate based on culture results. [5][2]</div></div>
-</div>
+<div class="param-grid"><div class="param-item"><div class="param-name">Volume Resuscitation</div><div class="param-def">IV crystalloid 30 mL/kg within first 3 hours (SSC). Individualize — assess fluid responsiveness before additional boluses. Excess fluid worsens outcomes. [4][5]</div></div><div class="param-item"><div class="param-name">Source Control</div><div class="param-def">Drain abscesses, debride necrotic tissue, remove infected devices, repair perforations. Every hour of delay matters. [5]</div></div><div class="param-item"><div class="param-name">Antimicrobials</div><div class="param-def">Empiric broad-spectrum within 1 hour. Cultures first if possible without delaying. De-escalate on results. [5][2]</div></div></div>
 
-<h4 style="margin-top:1rem">Vasopressor Receptor Pharmacology</h4>
-<table><tr><th>Agent</th><th>α1</th><th>β1</th><th>β2</th><th>Other</th><th>Primary Effect</th></tr><tr><td><strong>Norepinephrine</strong></td><td>++++</td><td>++</td><td>+</td><td>—</td><td>Vasoconstriction + mild inotropy</td></tr><tr><td><strong>Vasopressin</strong></td><td>—</td><td>—</td><td>—</td><td>V1,V2</td><td>Non-catecholamine vasoconstriction</td></tr><tr><td><strong>Epinephrine</strong></td><td>+++</td><td>++++</td><td>+++</td><td>—</td><td>Dose-dependent: low=β, high=α</td></tr><tr><td><strong>Phenylephrine</strong></td><td>++++</td><td>—</td><td>—</td><td>—</td><td>Pure vasoconstriction (no inotropy)</td></tr><tr><td><strong>Angiotensin II</strong></td><td>—</td><td>—</td><td>—</td><td>AT1</td><td>RAAS-mediated vasoconstriction</td></tr><tr><td><strong>Dobutamine</strong></td><td>+</td><td>++++</td><td>++</td><td>—</td><td>Inotropy (may ↓SVR via β2)</td></tr></table>
+<h4 style="margin-top:1rem">Vasopressor Pharmacology</h4>
+<table><tr><th>Agent</th><th>α1</th><th>β1</th><th>β2</th><th>Other</th><th>Effect</th></tr><tr><td><strong>Norepinephrine</strong></td><td>++++</td><td>++</td><td>+</td><td>—</td><td>Vasoconstriction + mild inotropy</td></tr><tr><td><strong>Vasopressin</strong></td><td>—</td><td>—</td><td>—</td><td>V1,V2</td><td>Non-catecholamine vasoconstriction</td></tr><tr><td><strong>Epinephrine</strong></td><td>+++</td><td>++++</td><td>+++</td><td>—</td><td>Dose-dependent: low=β, high=α</td></tr><tr><td><strong>Phenylephrine</strong></td><td>++++</td><td>—</td><td>—</td><td>—</td><td>Pure vasoconstriction</td></tr><tr><td><strong>Angiotensin II</strong></td><td>—</td><td>—</td><td>—</td><td>AT1</td><td>RAAS vasoconstriction</td></tr><tr><td><strong>Dobutamine</strong></td><td>+</td><td>++++</td><td>++</td><td>—</td><td>Inotropy (may ↓SVR)</td></tr></table>
 
 <h4 style="margin-top:1rem">Escalation Pathway [2][5]</h4>
-<p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">👆 Mark current step to highlight relevant guidance:</p>
-<div class="esc-stepper" id="escStepper">
-<button class="esc-step-btn" onclick="setEscStep(0)">Step 1: NE</button>
-<button class="esc-step-btn" onclick="setEscStep(1)">Step 2: Vaso</button>
-<button class="esc-step-btn" onclick="setEscStep(2)">Step 3: Adjuncts</button>
-<button class="esc-step-btn" onclick="setEscStep(3)">De-escalation</button>
-</div>
-
-<div class="abg-card escalate" id="escCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Norepinephrine (First-Line Vasopressor)</span></div><div class="abg-problem">"We consider norepinephrine the vasopressor of first choice" [1]. Strong α1 agonism restores SVR; modest β1 effect supports cardiac output. Target MAP ≥65 mmHg (individualize to ≥70–80 in chronic HTN or if signs of inadequate perfusion persist). [4]</div></div>
-
-<div class="abg-card escalate" id="escCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Vasopressin (0.01–0.04 U/min)</span></div><div class="abg-problem">Non-catecholamine mechanism (V1 receptors on vascular smooth muscle). Catecholamine-sparing — reduces NE requirements. Acts on catecholamine-resistant vasodilation pathways. Endogenous vasopressin is depleted in prolonged septic shock. [5]</div><div class="abg-safety">⚠️ Do not exceed 0.04 U/min — doses above associated with splanchnic/digital ischemia. Do not titrate to MAP. [1]</div></div>
-
-<div class="abg-card escalate" id="escCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Adjunctive Agents</span></div><div class="abg-problem"><strong>Angiotensin II:</strong> ATHOS-3 trial — effective in vasodilatory shock refractory to high-dose NE + vasopressin. RAAS pathway, non-catecholamine. [7]<br><strong>Epinephrine:</strong> When inotropy needed (septic cardiomyopathy) or refractory vasodilation. Increases HR, contractility, and SVR at higher doses. [1]<br><strong>Hydrocortisone 200mg/day:</strong> Consider if on ≥2 vasopressors or escalating NE. Accelerates shock resolution, decreases time on vasopressors. [2][5]<br><strong>Methylene Blue:</strong> Inhibits NO/guanylate cyclase pathway. Consider in refractory vasoplegia (post-CPB, late septic). [9]</div></div>
-
-<div class="abg-card deescalate" id="escCard3"><div class="abg-header"><span class="abg-direction deescalate">↓ DE-ESCALATION</span><span class="abg-title">Weaning Vasopressors</span></div><div class="abg-problem"><strong>Phase 4 of resuscitation:</strong> Once shock resolves — wean vasoactives systematically, target negative fluid balance, transition to enteral medications. [1]<br><strong>Weaning order (typical):</strong> Wean adjuncts first → vasopressin (keep fixed at 0.03–0.04 until NE is low) → NE last.<br><strong>Signal to de-escalate:</strong> MAP at target on stable/decreasing doses, lactate normalizing, UOP improving, NEE trending down. [4]</div></div>
-
+<p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">👆 Mark current step:</p>
+<div class="esc-stepper" id="escStepper"><button class="esc-step-btn" onclick="setEscStep(0)">Step 1: NE</button><button class="esc-step-btn" onclick="setEscStep(1)">Step 2: Vaso</button><button class="esc-step-btn" onclick="setEscStep(2)">Step 3: Adjuncts</button><button class="esc-step-btn" onclick="setEscStep(3)">De-escalation</button></div>
+<div class="abg-card escalate" id="escCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Norepinephrine (First-Line)</span></div><div class="abg-problem">"We consider norepinephrine the vasopressor of first choice" [1]. Target MAP ≥65 mmHg. [4]</div></div>
+<div class="abg-card escalate" id="escCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Vasopressin (0.01–0.04 U/min)</span></div><div class="abg-problem">Non-catecholamine; V1 receptors. Catecholamine-sparing. Delay associated with ~20% ↑ mortality per 10 mcg/min NE. [5]</div><div class="abg-safety">⚠️ Do not exceed 0.04 U/min. Do not titrate to MAP. [1]</div></div>
+<div class="abg-card escalate" id="escCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Adjuncts: AngII / Epinephrine / Hydrocortisone</span></div><div class="abg-problem"><strong>AngII:</strong> ATHOS-3 [7]. <strong>Epi:</strong> Refractory/inotropy needed [1]. <strong>Hydrocortisone 200mg/d:</strong> If ≥2 vasopressors or escalating doses. [2][5]<br><strong>Methylene Blue:</strong> Refractory vasoplegia (post-CPB, late septic). [9]</div></div>
+<div class="abg-card deescalate" id="escCard3"><div class="abg-header"><span class="abg-direction deescalate">↓ DE-ESCALATION</span><span class="abg-title">Weaning Vasopressors</span></div><div class="abg-problem">Phase 4: Wean adjuncts first → vasopressin last (or keep fixed until NE low) → NE last. Target negative fluid balance. Signal: MAP at target on stable/↓ doses, lactate normalizing, UOP improving. [1][4]</div></div>
 </div></div>
 
-<!-- ===== ASSESSMENT (RESTRUCTURED) ===== -->
+<!-- ASSESSMENT -->
 <div class="sub-content" id="sub0-4"><div class="card"><h3>🔍 Assessment & Monitoring</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Assessment in distributive shock is not a one-time event — it is a continuous feedback loop: assess perfusion → intervene → reassess response → adjust. Structure your evaluation by domain and timeframe. [1][4]</p>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Continuous feedback loop: assess → intervene → reassess → adjust. [1][4]</p>
 
 <h4>🕐 Initial Assessment (First 1–3 Hours)</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">Hemodynamic Stabilization</div><div class="param-def"><strong>MAP target:</strong> ≥65 mmHg (higher if chronic HTN or persistent hypoperfusion signs). Assess: Is MAP achieved? At what vasopressor dose? What is the trajectory? [4]</div></div>
-<div class="param-item"><div class="param-name">Volume Status</div><div class="param-def"><strong>Initial:</strong> 30 mL/kg crystalloid (SSC). <strong>Then assess fluid responsiveness:</strong> PLR (gold standard if spontaneous breathing), PPV/SVV (if mechanically ventilated, regular rhythm), mini-fluid challenge. [4]<br><strong>If responsive → more fluid. If not → vasopressors/inotropes.</strong></div></div>
-<div class="param-item"><div class="param-name">Source Identification</div><div class="param-def">Cultures (blood ×2, urine, sputum, wound, CSF as indicated) BEFORE antibiotics if obtainable within minutes. Imaging as indicated (CT, US). Assess for surgical source control needs. [5]</div></div>
-</div>
+<div class="param-grid"><div class="param-item"><div class="param-name">Hemodynamic Stabilization</div><div class="param-def">MAP ≥65 mmHg (higher if chronic HTN). At what vasopressor dose? What is the trajectory? [4]</div></div><div class="param-item"><div class="param-name">Volume Status & Fluid Responsiveness</div><div class="param-def">After initial 30 mL/kg: assess responsiveness via PLR (spontaneous breathing), PPV/SVV (ventilated, regular rhythm), or mini-fluid challenge. If responsive → more fluid. If not → vasopressors. [4]</div></div><div class="param-item"><div class="param-name">Source Identification</div><div class="param-def">Cultures before antibiotics (if obtainable within minutes). Imaging as needed. Assess surgical source control needs. [5]</div></div></div>
 
-<h4 style="margin-top:1rem">🫀 Perfusion Assessment — Three "Windows" [1][4]</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">🧠 Neurologic Window</div><div class="param-def">Mental status changes: confusion, agitation, obtundation, delirium. Often earliest and most sensitive sign of hypoperfusion. Assess with RASS, CAM-ICU. Resolution indicates improving perfusion. [1]</div></div>
-<div class="param-item"><div class="param-name">🩸 Renal Window</div><div class="param-def"><strong>UOP target:</strong> ≥0.5 mL/kg/hr. Oliguria is an early sign of renal hypoperfusion. Rising creatinine indicates established AKI. [6] Trend is more informative than a single value.</div></div>
-<div class="param-item"><div class="param-name">🖐️ Cutaneous Window</div><div class="param-def"><strong>Capillary refill time (CRT):</strong> Target ≤3 seconds. CRT-guided resuscitation non-inferior to lactate-guided (ANDROMEDA-SHOCK). [4]<br><strong>Mottling:</strong> Score 0–5 (knees → beyond). Progression indicates worsening.<br><strong>Skin temperature:</strong> Cool extremities in "warm" shock = transition to cold phenotype.</div></div>
-</div>
+<h4 style="margin-top:1rem">🫀 Perfusion Windows [1][4]</h4>
+<div class="param-grid"><div class="param-item"><div class="param-name">🧠 Neurologic</div><div class="param-def">Confusion, agitation, obtundation. Often earliest sign. Assess RASS, CAM-ICU. [1]</div></div><div class="param-item"><div class="param-name">🩸 Renal</div><div class="param-def">UOP ≥0.5 mL/kg/hr target. Oliguria = early hypoperfusion. Rising Cr = established AKI. Trend > single value. [6]</div></div><div class="param-item"><div class="param-name">🖐️ Cutaneous</div><div class="param-def">CRT target ≤3 sec (ANDROMEDA-SHOCK). Mottling score 0–5. Cool extremities in "warm" shock = transition to cold phenotype. [4]</div></div></div>
 
-<h4 style="margin-top:1rem">🧪 Metabolic & Biochemical Markers</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">Lactate</div><div class="param-def"><strong>Target:</strong> ≥20% decrease every 2 hours until normalized. [4]<br><strong>Interpretation:</strong> Reflects anaerobic metabolism + impaired clearance. Persistence >2 mmol/L after 24h = poor prognosis. Even small increases (>2.0) associated with significant mortality increase. Serial trending more valuable than single values. [4]</div></div>
-<div class="param-item"><div class="param-name">ScvO₂ (Central Venous O₂ Saturation)</div><div class="param-def"><strong>Low (<65%):</strong> Inadequate oxygen delivery relative to demand (↓CO, anemia, hypoxemia).<br><strong>Normal/High (>70% in sepsis):</strong> May indicate impaired peripheral extraction (mitochondrial dysfunction) or redistribution of flow — NOT reassuring in context of shock. [4]</div></div>
-<div class="param-item"><div class="param-name">Pv-aCO₂ (Venous-Arterial CO₂ Gap)</div><div class="param-def"><strong>>6 mmHg:</strong> Suggests persistent inadequate cardiac output relative to metabolic demand, even if ScvO₂ is normal. Indicates need for optimization of flow (fluids or inotropes). [4]</div></div>
-<div class="param-item"><div class="param-name">Base Deficit & pH</div><div class="param-def">Worsening metabolic acidosis (↑ base deficit, ↓ pH) reflects ongoing tissue hypoxia. Improvement = positive response to resuscitation.</div></div>
-</div>
+<h4 style="margin-top:1rem">🧪 Metabolic Markers</h4>
+<div class="param-grid"><div class="param-item"><div class="param-name">Lactate</div><div class="param-def">Target ≥20% decrease q2h until normalized. Persistence >2 after 24h = poor prognosis. Serial trending > single values. [4]</div></div><div class="param-item"><div class="param-name">ScvO₂</div><div class="param-def">Low (<65%) = inadequate O₂ delivery. High (>70%) in sepsis may = impaired extraction (NOT reassuring). [4]</div></div><div class="param-item"><div class="param-name">Pv-aCO₂ Gap</div><div class="param-def">>6 mmHg = inadequate CO relative to demand, even if ScvO₂ normal. Optimize flow. [4]</div></div></div>
 
-<h4 style="margin-top:1rem">🫁 Imaging — Echocardiography</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">Bedside Echo / POCUS</div><div class="param-def"><strong>First-line imaging in shock.</strong> In distributive shock expect: hyperdynamic LV (small cavity, high EF), IVC variability (suggests fluid responsiveness or low filling), normal/small RV. [4]<br><strong>Red flags for mixed/alternative diagnosis:</strong> Dilated poorly-contracting LV (cardiogenic), RV dilation (PE/obstructive), pericardial effusion (tamponade).<br>Serial echo guides fluid vs. vasopressor vs. inotrope decision-making.</div></div>
-</div>
+<h4 style="margin-top:1rem">🫁 Echocardiography</h4>
+<div class="param-grid"><div class="param-item"><div class="param-name">Bedside Echo/POCUS</div><div class="param-def">First-line imaging. In distributive: hyperdynamic LV, small cavity, IVC variability. Red flags for other Dx: dilated poorly-contracting LV (cardiogenic), RV dilation (PE), pericardial effusion (tamponade). [4]</div></div></div>
 
-<h4 style="margin-top:1rem">💊 Vasopressor Responsiveness & NEE Monitoring</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">NEE Trend</div><div class="param-def"><strong>Escalating NEE</strong> = worsening shock, inadequate source control, or new complication. <strong>Decreasing NEE</strong> = resolving shock, effective treatment. Track NEE over time as a composite vasopressor burden metric. [7]</div></div>
-<div class="param-item"><div class="param-name">MAP/NEE Ratio</div><div class="param-def">Integrates both the MAP achieved AND the vasopressor cost to achieve it. <strong>Higher ratio = better</strong> (good MAP at low vasopressor dose). [8]<br>• Tertile 1 (≥325): ~20% mortality<br>• Tertile 2 (136–324): ~35% mortality<br>• Tertile 3 (<136): ~55% mortality<br>Validated in septic shock only. [8]</div></div>
-<div class="param-item"><div class="param-name">Adequacy of Response</div><div class="param-def"><strong>Ask:</strong> Is MAP at target? Is NEE stable or escalating? Are perfusion windows improving? Is lactate clearing?<br><strong>If MAP at target but perfusion still poor</strong> → microcirculatory dysfunction, consider targeting higher MAP, optimizing CO, or evaluating for complications.</div></div>
-</div>
+<h4 style="margin-top:1rem">💊 Vasopressor Responsiveness</h4>
+<div class="param-grid"><div class="param-item"><div class="param-name">NEE Trend</div><div class="param-def">Escalating NEE = worsening. Decreasing NEE = resolving. Track as composite vasopressor burden metric. [7]</div></div><div class="param-item"><div class="param-name">MAP/NEE Ratio</div><div class="param-def">Higher = better (good MAP at low pressor cost). ≥325: ~20% mort | 136–324: ~35% | <136: ~55%. Validated in septic shock. [8]</div></div></div>
 
-<h4 style="margin-top:1rem">🔄 Ongoing Monitoring & Reassessment Triggers</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">Routine Re-evaluation (q2–6h)</div><div class="param-def">• Lactate trend<br>• UOP<br>• Vasopressor doses/NEE<br>• Perfusion windows (CRT, mental status)<br>• Fluid balance (input vs. output)<br>• Assess need for fluid responsiveness testing before additional boluses [4]</div></div>
-<div class="param-item"><div class="param-name">Reassessment Triggers</div><div class="param-def"><strong>Escalate evaluation if:</strong><br>• New vasopressor requirement or ↑ doses<br>• Rising lactate after initial clearance<br>• New organ dysfunction (↓UOP, ↑Cr, ↓mental status)<br>• Failure to improve at 6–12 hours<br><strong>Consider:</strong> Inadequate source control? New infection? Unrecognized bleeding? Adrenal insufficiency? Wrong shock type?</div></div>
-<div class="param-item"><div class="param-name">De-Resuscitation Signals</div><div class="param-def"><strong>When to transition from aggressive resuscitation to de-resuscitation:</strong><br>• MAP at target on stable/decreasing vasopressors<br>• Lactate normalizing<br>• UOP adequate<br>• No longer fluid responsive<br>• Target: negative fluid balance in Phase 4 to avoid volume overload complications (pulmonary edema, abdominal compartment syndrome) [1][4]</div></div>
-</div>
-
+<h4 style="margin-top:1rem">🔄 Ongoing & Reassessment Triggers</h4>
+<div class="param-grid"><div class="param-item"><div class="param-name">Routine (q2–6h)</div><div class="param-def">Lactate trend, UOP, vasopressor doses/NEE, perfusion windows, fluid balance, reassess fluid responsiveness before boluses. [4]</div></div><div class="param-item"><div class="param-name">Escalate If</div><div class="param-def">New/↑ vasopressor need, rising lactate, new organ dysfunction, failure to improve at 6–12h. Consider: inadequate source control? New infection? Bleeding? Adrenal insufficiency? Wrong shock type?</div></div><div class="param-item"><div class="param-name">De-Resuscitation Signals</div><div class="param-def">MAP at target on stable/↓ pressors, lactate normalizing, UOP adequate, no longer fluid responsive → target negative balance (Phase 4). [1][4]</div></div></div>
 </div></div>
 
-<!-- ===== REHAB ===== -->
+<!-- REHAB -->
 <div class="sub-content" id="sub0-5"><div class="card"><h3>💪 Rehab Considerations</h3>
 <div class="warn-box"><strong>Key Principle:</strong> Never determine readiness by an isolated number. Integrate trajectory, stability, respiratory status, and response to support. [6]</div>
-
-<!-- 2F: Readiness Checklist -->
-<div class="readiness-checklist">
-<h4>📋 Structured Readiness Assessment</h4>
-<p style="font-size:0.72rem;color:var(--text2);margin-bottom:0.75rem">Not a score — a structured framework for clinical reasoning</p>
+<div class="readiness-checklist"><h4>📋 Structured Readiness Assessment</h4><p style="font-size:0.72rem;color:var(--text2);margin-bottom:0.75rem">Not a score — a structured framework for clinical reasoning</p>
 <div class="readiness-item" id="ri0"><input type="checkbox" id="rc0" onchange="updateReadiness()"><label for="rc0">Hemodynamically stable with routine care (no acute decompensation)</label></div>
 <div class="readiness-item" id="ri1"><input type="checkbox" id="rc1" onchange="updateReadiness()"><label for="rc1">Vasopressor dose trending down or stable (not actively titrating up)</label></div>
 <div class="readiness-item" id="ri2"><input type="checkbox" id="rc2" onchange="updateReadiness()"><label for="rc2">No new/active titration in last 2+ hours</label></div>
 <div class="readiness-item" id="ri3"><input type="checkbox" id="rc3" onchange="updateReadiness()"><label for="rc3">Adequate oxygenation on current respiratory support</label></div>
 <div class="readiness-item" id="ri4"><input type="checkbox" id="rc4" onchange="updateReadiness()"><label for="rc4">Patient responsive/arousable to voice or light stimulation</label></div>
 <div class="readiness-item" id="ri5"><input type="checkbox" id="rc5" onchange="updateReadiness()"><label for="rc5">No active hemorrhage or new concerning clinical change</label></div>
-<div class="readiness-summary" id="readinessSummary">0 of 6 considerations met</div>
-</div>
-
-<div class="context-domain"><h4>Vasoactive Context — Not Dichotomous Cutoffs</h4><p>Minimize dichotomous decision making. Clinical context, dosage <em>trends</em>, and individual response are more pertinent than any single threshold. A patient on stable NE 0.15 mcg/kg/min trending down is very different from one on NE 0.08 mcg/kg/min trending up. [6]</p></div>
-
+<div class="readiness-summary" id="readinessSummary">0 of 6 considerations met</div></div>
+<div class="context-domain"><h4>Vasoactive Context — Not Dichotomous Cutoffs</h4><p>Clinical context, dosage <em>trends</em>, and individual response matter more than any single threshold. NE 0.15 trending ↓ ≠ NE 0.08 trending ↑. [6]</p></div>
 <h4>Evidence for Early Mobility in Septic Shock</h4>
-<ul class="checklist">
-<li class="checklist-item"><span class="checklist-icon primary">1</span><div class="checklist-content"><strong>Hickmann 2018</strong><div class="checklist-detail">Very early PT preserved muscle fiber CSA, reduced catabolic markers. [6]</div></div></li>
-<li class="checklist-item"><span class="checklist-icon primary">2</span><div class="checklist-content"><strong>Liu 2022</strong><div class="checklist-detail">Early mobilization ≤3 days → lower in-hospital mortality. [6]</div></div></li>
-<li class="checklist-item"><span class="checklist-icon primary">3</span><div class="checklist-content"><strong>Sakai 2025</strong><div class="checklist-detail">↓ ICU-acquired weakness at discharge. [6]</div></div></li>
-<li class="checklist-item"><span class="checklist-icon primary">4</span><div class="checklist-content"><strong>BEAT-SHOCK 2025</strong><div class="checklist-detail">Earlier functional milestones. No ↑ 28/90-day mortality. [6]</div></div></li>
-</ul>
-
+<ul class="checklist"><li class="checklist-item"><span class="checklist-icon primary">1</span><div class="checklist-content"><strong>Hickmann 2018</strong><div class="checklist-detail">Very early PT preserved muscle fiber CSA, reduced catabolic markers. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">2</span><div class="checklist-content"><strong>Liu 2022</strong><div class="checklist-detail">Early mobilization ≤3 days → lower in-hospital mortality. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">3</span><div class="checklist-content"><strong>Sakai 2025</strong><div class="checklist-detail">↓ ICU-acquired weakness at discharge. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">4</span><div class="checklist-content"><strong>BEAT-SHOCK 2025</strong><div class="checklist-detail">Earlier functional milestones. No ↑ 28/90-day mortality. [6]</div></div></li></ul>
 <h4 style="margin-top:1rem">Post-Sepsis Syndrome</h4>
-<div class="context-domain"><h4>Long-term Impairments</h4><p>19% depression, 39% anxiety, 8% PTSD. 48% did not return to work. Only 33% returned to independent living by 6 months. Significant cognitive impairment and physical deconditioning persist for years. Early rehabilitation may mitigate these long-term sequelae. [6]</p></div>
+<div class="context-domain"><h4>Long-term Impairments</h4><p>19% depression, 39% anxiety, 8% PTSD. 48% did not return to work. Only 33% independent at 6 months. [6]</p></div>
 </div></div>
 
-<!-- ===== NEE APPLICABILITY ===== -->
+<!-- NEE APPLICABILITY -->
 <div class="sub-content" id="sub0-6"><div class="card"><h3>🧮 NEE Applicability</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">The Norepinephrine Equivalent (NEE) provides a single composite metric for total vasopressor burden, enabling standardized communication, severity tracking, and prognostication. [7]</p>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Single composite metric for total vasopressor burden — enables standardized communication, severity tracking, and prognostication. [7]</p>
 <div class="eq-box"><div class="eq-main">NEE (mcg/kg/min) = NE + Epi + (Dopa÷100) + (Phenyl×0.06) + (Vaso×2.5) + (AngII×0.0025) + (MB×0.2)</div><div class="eq-cite">Kotani et al. 2023 [7]</div></div>
-
 <h4 style="margin-top:1rem">Clinical Applications</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">Severity Quantification</div><div class="param-def">Standardizes vasopressor burden regardless of which agents are used. Enables comparison across patients and timepoints. [7]</div></div>
-<div class="param-item"><div class="param-name">Trajectory Tracking</div><div class="param-def">Serial NEE values reveal direction of illness: Rising NEE = worsening; Falling NEE = resolving. More informative than individual agent doses. [7]</div></div>
-<div class="param-item"><div class="param-name">Communication</div><div class="param-def">"NEE 0.35 and rising" communicates severity instantly to any clinician regardless of which vasopressor combination is used.</div></div>
-<div class="param-item"><div class="param-name">Rehab Contextualization</div><div class="param-def">Provides objective framework for mobility decisions — not as a cutoff, but as context for clinical reasoning about vasopressor burden and trajectory. [6]</div></div>
-</div>
-
+<div class="param-grid"><div class="param-item"><div class="param-name">Severity Quantification</div><div class="param-def">Standardizes burden regardless of which agents used. Enables comparison across patients and timepoints. [7]</div></div><div class="param-item"><div class="param-name">Trajectory Tracking</div><div class="param-def">Rising NEE = worsening; Falling NEE = resolving. More informative than individual doses. [7]</div></div><div class="param-item"><div class="param-name">Rehab Contextualization</div><div class="param-def">Objective framework for mobility decisions — not a cutoff, but context for clinical reasoning. [6]</div></div></div>
 <h4 style="margin-top:1rem">MAP/NEE Ratio [8]</h4>
 <table><tr><th>Tertile</th><th>Score</th><th>MIMIC-III</th><th>eICU</th></tr><tr class="severity-low"><td>≥325</td><td>1 pt</td><td>~20%</td><td>~18%</td></tr><tr class="severity-mid"><td>136–324</td><td>2 pts</td><td>~35%</td><td>~32%</td></tr><tr class="severity-high"><td><136</td><td>3 pts</td><td>~55%</td><td>~52%</td></tr></table>
-<div class="warn-box">⚠️ <strong>Validated in septic shock only.</strong> c-statistic 0.65–0.68. Useful for prognostication and severity benchmarking but should not be used in isolation for clinical decisions. [7][8]</div>
+<div class="warn-box">⚠️ Validated in septic shock only. c-statistic 0.65–0.68. [7][8]</div>
 </div></div>
 
 <p class="cite">[1] Vincent & De Backer 2013 – NEJM · [2] Manson et al. 2023 – ATS Scholar · [3] Nakata et al. 2023 · [4] Monnet et al. 2025 – ESICM · [5] Khorsand et al. 2023 · [6] CSM Shock 2026 · [7] Kotani et al. 2023 · [8] Bosch et al. 2020 · [9] Bellumkonda 2025</p>
 </div>
+
 <!-- TAB 1: CARDIOGENIC -->
 <div class="tab-content" id="tab1">
 <div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(1,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(1,1)">SCAI & Etiologies</button><button class="sub-tab" onclick="switchSub(1,2)">Management</button><button class="sub-tab" onclick="switchSub(1,3)">tMCS</button><button class="sub-tab" onclick="switchSub(1,4)">Rehab</button></div>
-<div class="sub-content active" id="sub1-0"><div class="card"><h3>🔬 Pathophysiology</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">A cardiac disorder resulting in clinical and biochemical evidence of sustained tissue hypoperfusion — low CO due to primary cardiac dysfunction → systemic decompensation. [5][9]</p><div class="param-grid"><div class="param-item"><div class="param-name">Vicious Cycle</div><div class="param-def">↓Contractility → ↓CO → ↓MAP → ↓Coronary perfusion → Further ischemia → Multi-organ dysfunction. [3][9]</div></div><div class="param-item"><div class="param-name">Venous Congestion</div><div class="param-def">Congestive organ damage (hepatic, renal) — associated with ↑ mortality independent of CO. [3]</div></div><div class="param-item"><div class="param-name">Mixed Shock (~20-25%)</div><div class="param-def">Paradoxical vasodilation (↓SVR) from inflammatory activation. PAC especially helpful. May require methylene blue or hydroxocobalamin. [9]</div></div></div><div class="purple-box"><strong>CPO = MAP × CO ÷ 451</strong> — Strongest hemodynamic predictor of mortality (SHOCK trial). [3][9]</div></div></div>
-<div class="sub-content" id="sub1-1"><div class="card"><h3>📊 SCAI & Etiologies (SHARC) [9]</h3><table><tr><th>SCAI</th><th>Description</th><th>Mortality</th></tr><tr><td>A</td><td>At risk</td><td>~3%</td></tr><tr><td>B</td><td>Beginning</td><td>~7%</td></tr><tr><td>C</td><td>Classic CS</td><td>~12%</td></tr><tr><td>D</td><td>Deteriorating</td><td>~40%</td></tr><tr><td>E</td><td>Extremis</td><td>~67%</td></tr></table><h4 style="margin-top:1rem">SHARC Classification [9]</h4><p style="font-size:0.82rem;color:var(--text2)"><strong>AMI-CS:</strong> Worst prognosis (~30% in-hospital, ~59% 5-year). <strong>HF-CS:</strong> Better (~25% in-hospital). <strong>Post-Cardiotomy.</strong> <strong>Secondary:</strong> Arrhythmias, valvular, pericardial. [9]</p></div></div>
-<div class="sub-content" id="sub1-2"><div class="card"><h3>💊 Management</h3><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">VASOPRESSORS</span><span class="abg-title">Norepinephrine (First-Line)</span></div><div class="abg-problem">Target MAP ≥65 mmHg. [4][9]</div></div><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">INOTROPES</span><span class="abg-title">Dobutamine or Milrinone</span></div><div class="abg-problem">No mortality difference (DOREMI). Target CI >2.2. Catecholamines may worsen long-term outcomes in HFrEF. [5]</div></div><p style="font-size:0.82rem;color:var(--text2);margin-top:0.75rem"><strong>Other:</strong> Judicious 250–500mL challenges · Diuresis if congested · Early revascularization (SHOCK trial) · Early tMCS if pharmacologic support inadequate. [3][5][9]</p></div></div>
+<div class="sub-content active" id="sub1-0"><div class="card"><h3>🔬 Pathophysiology</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Low CO due to primary cardiac dysfunction → sustained tissue hypoperfusion → systemic decompensation. [5][9]</p><div class="param-grid"><div class="param-item"><div class="param-name">Vicious Cycle</div><div class="param-def">↓Contractility → ↓CO → ↓MAP → ↓Coronary perfusion → Further ischemia → Multi-organ dysfunction. [3][9]</div></div><div class="param-item"><div class="param-name">Venous Congestion</div><div class="param-def">Congestive organ damage (hepatic, renal) — ↑ mortality independent of CO. [3]</div></div><div class="param-item"><div class="param-name">Mixed Shock (~20-25%)</div><div class="param-def">Paradoxical vasodilation from inflammatory activation. PAC helpful. May need methylene blue or hydroxocobalamin. [9]</div></div></div><div class="purple-box"><strong>CPO = MAP × CO ÷ 451</strong> — Strongest hemodynamic predictor of mortality (SHOCK trial). [3][9]</div></div></div>
+<div class="sub-content" id="sub1-1"><div class="card"><h3>📊 SCAI & Etiologies (SHARC) [9]</h3><table><tr><th>SCAI</th><th>Description</th><th>Mortality</th></tr><tr><td>A</td><td>At risk</td><td>~3%</td></tr><tr><td>B</td><td>Beginning</td><td>~7%</td></tr><tr><td>C</td><td>Classic CS</td><td>~12%</td></tr><tr><td>D</td><td>Deteriorating</td><td>~40%</td></tr><tr><td>E</td><td>Extremis</td><td>~67%</td></tr></table><p style="font-size:0.82rem;color:var(--text2);margin-top:0.75rem"><strong>AMI-CS:</strong> Worst prognosis (~30% in-hospital). <strong>HF-CS:</strong> ~25%. <strong>Post-Cardiotomy. Secondary:</strong> Arrhythmias, valvular, pericardial. [9]</p></div></div>
+<div class="sub-content" id="sub1-2"><div class="card"><h3>💊 Management</h3><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">VASOPRESSORS</span><span class="abg-title">Norepinephrine (First-Line)</span></div><div class="abg-problem">Target MAP ≥65 mmHg. [4][9]</div></div><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">INOTROPES</span><span class="abg-title">Dobutamine or Milrinone</span></div><div class="abg-problem">No mortality difference (DOREMI). Target CI >2.2. [5]</div></div><p style="font-size:0.82rem;color:var(--text2);margin-top:0.75rem"><strong>Other:</strong> Judicious 250–500mL challenges · Diuresis if congested · Early revascularization · Early tMCS if pharmacologic support inadequate. [3][5][9]</p></div></div>
 <div class="sub-content" id="sub1-3"><div class="card"><h3>🔧 tMCS [3]</h3><table><tr><th>Device</th><th>Flow</th><th>Key Feature</th></tr><tr><td><strong>IABP</strong></td><td>Modest</td><td>↑Coronary perfusion, ↓afterload</td></tr><tr><td><strong>Impella</strong></td><td>2.5–5.5 L/min</td><td>LV unloading, ↓PVA</td></tr><tr><td><strong>VA-ECMO</strong></td><td>3–7 L/min</td><td>Highest flow; may ↑LV afterload</td></tr><tr><td><strong>ECPELLA</strong></td><td>Combined</td><td>ECMO + Impella LV unloading</td></tr></table><div class="good-box"><strong>DANGER Shock (2024):</strong> First RCT showing mAFP benefit in AMI-CS — 6-month mortality benefit. [9]</div></div></div>
-<div class="sub-content" id="sub1-4"><div class="card"><h3>💪 Rehab</h3><div class="good-box"><strong>Ueno et al. 2025</strong> — Early rehab for acute HF requiring IV inotropes: In-hospital mortality 9.9% vs 13.2% (p<0.001), shorter LOS, lower 30-day readmission. [6]</div><div class="context-domain"><h4>Key Principles</h4><p>• Hemodynamic stability with routine care before progression<br>• PPV effects on CO variable — depends on preload/afterload/LV-RV dysfunction<br>• Conservative, response-dependent progression [5][6]</p></div></div></div>
-<p class="cite">[1] Vincent 2013 · [3] Nakata 2023 · [4] Monnet 2025 · [5] Khorsand 2023 · [6] CSM 2026 · [9] Bellumkonda 2025</p>
+<div class="sub-content" id="sub1-4"><div class="card"><h3>💪 Rehab</h3><div class="good-box"><strong>Ueno et al. 2025</strong> — Early rehab for acute HF requiring IV inotropes: mortality 9.9% vs 13.2% (p<0.001), shorter LOS. [6]</div><div class="context-domain"><h4>Key Principles</h4><p>• Hemodynamic stability with routine care before progression<br>• Conservative, response-dependent progression [5][6]</p></div></div></div>
+<p class="cite">[3] Nakata 2023 · [4] Monnet 2025 · [5] Khorsand 2023 · [6] CSM 2026 · [9] Bellumkonda 2025</p>
 </div>
+
 <!-- TAB 2: HYPOVOLEMIC -->
 <div class="tab-content" id="tab2">
 <div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(2,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(2,1)">Classification</button><button class="sub-tab" onclick="switchSub(2,2)">Management</button><button class="sub-tab" onclick="switchSub(2,3)">Rehab</button></div>
-<div class="sub-content active" id="sub2-0"><div class="card"><h3>🔬 Pathophysiology</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Loss of intravascular volume → ↓preload → ↓SV → ↓CO → tissue hypoperfusion. Hemodynamics: ↓CO, ↑SVR, ↓↓CVP, ↓PCWP, ↓SvO₂, cool/clammy. [1][5]</p><div class="param-grid"><div class="param-item"><div class="param-name">Hemorrhagic Cascade</div><div class="param-def">Hypovolemia → reflex vasoconstriction → ↓organ blood flow → anaerobic metabolism → acidosis → endothelial dysfunction → glycocalyx shedding → coagulopathy. [5][6]</div></div></div></div></div>
-<div class="sub-content" id="sub2-1"><div class="card"><h3>📊 Hemorrhagic Classification [6]</h3><table><tr><th>Class</th><th>Loss</th><th>HR</th><th>BP</th><th>UOP</th></tr><tr><td>I</td><td><15%</td><td><100</td><td>Normal</td><td>>30 mL/hr</td></tr><tr><td>II</td><td>15–30%</td><td>100–120</td><td>Normal</td><td>20–30</td></tr><tr><td>III</td><td>30–40%</td><td>120–140</td><td>↓</td><td>5–15</td></tr><tr><td>IV</td><td>>40%</td><td>>140</td><td>SBP<90</td><td>Negligible</td></tr></table></div></div>
-<div class="sub-content" id="sub2-2"><div class="card"><h3>💊 Management</h3><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">PRIORITY</span><span class="abg-title">Source Control</span></div><div class="abg-problem">Surgery, endoscopy, IR. [5][6]</div></div><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">RESUSCITATION</span><span class="abg-title">Volume + Blood Products</span></div><div class="abg-problem">MTP 1:1:1 ratio. Avoid aggressive crystalloid. [5][6]</div></div><div class="warn-box">⚠️ <strong>Permissive hypotension (no TBI):</strong> SBP 80–90 mmHg until major bleeding stopped. <strong>With TBI:</strong> MAP ≥80 mmHg. [4]</div></div></div>
-<div class="sub-content" id="sub2-3"><div class="card"><h3>💪 Rehab</h3><div class="context-domain"><h4>Key Monitoring</h4><p>• H&H stability · End-organ perfusion · HDS with routine care · Coagulation status [6]</p></div><div class="good-box"><strong>Case [6]:</strong> GI hemorrhagic shock → Max A → CS + RW ambulation (250 ft) Day 9 → Stairs Day 17.</div></div></div>
+<div class="sub-content active" id="sub2-0"><div class="card"><h3>🔬 Pathophysiology</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Loss of intravascular volume → ↓preload → ↓SV → ↓CO → tissue hypoperfusion. [1][5]</p><div class="param-grid"><div class="param-item"><div class="param-name">Hemorrhagic Cascade</div><div class="param-def">Hypovolemia → vasoconstriction → ↓organ flow → anaerobic metabolism → acidosis → glycocalyx shedding → coagulopathy. [5][6]</div></div></div></div></div>
+<div class="sub-content" id="sub2-1"><div class="card"><h3>📊 Hemorrhagic Classification [6]</h3><table><tr><th>Class</th><th>Loss</th><th>HR</th><th>BP</th><th>UOP</th></tr><tr><td>I</td><td>&lt;15%</td><td>&lt;100</td><td>Normal</td><td>&gt;30 mL/hr</td></tr><tr><td>II</td><td>15–30%</td><td>100–120</td><td>Normal</td><td>20–30</td></tr><tr><td>III</td><td>30–40%</td><td>120–140</td><td>↓</td><td>5–15</td></tr><tr><td>IV</td><td>&gt;40%</td><td>&gt;140</td><td>SBP&lt;90</td><td>Negligible</td></tr></table></div></div>
+<div class="sub-content" id="sub2-2"><div class="card"><h3>💊 Management</h3><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">PRIORITY</span><span class="abg-title">Source Control</span></div><div class="abg-problem">Surgery, endoscopy, IR. [5][6]</div></div><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">RESUSCITATION</span><span class="abg-title">Volume + Blood Products</span></div><div class="abg-problem">MTP 1:1:1 ratio. Avoid aggressive crystalloid. [5][6]</div></div><div class="warn-box">⚠️ <strong>Permissive hypotension (no TBI):</strong> SBP 80–90 mmHg until bleeding stopped. <strong>With TBI:</strong> MAP ≥80 mmHg. [4]</div></div></div>
+<div class="sub-content" id="sub2-3"><div class="card"><h3>💪 Rehab</h3><div class="context-domain"><h4>Key Monitoring</h4><p>H&H stability · End-organ perfusion · HDS with routine care · Coagulation status [6]</p></div><div class="good-box"><strong>Case [6]:</strong> GI hemorrhagic shock → Max A → CS + RW ambulation (250 ft) Day 9 → Stairs Day 17.</div></div></div>
 <p class="cite">[1] Vincent 2013 · [4] Monnet 2025 · [5] Khorsand 2023 · [6] CSM 2026</p>
 </div>
+
 <!-- TAB 3: OBSTRUCTIVE -->
 <div class="tab-content" id="tab3">
 <div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(3,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(3,1)">Etiologies & Tx</button><button class="sub-tab" onclick="switchSub(3,2)">Rehab (PE)</button></div>
-<div class="sub-content active" id="sub3-0"><div class="card"><h3>🔬 Pathophysiology</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Physical impediment to blood flow. Volume and contractility preserved; CO↓ due to mechanical obstruction. Rarest (~2%). [5][6]</p><div class="param-grid"><div class="param-item"><div class="param-name">Hemodynamics</div><div class="param-def">↓CO, ↑SVR, ↑CVP, variable PCWP, ↓SvO₂, cool extremities. [5]</div></div><div class="param-item"><div class="param-name">PE Mechanism</div><div class="param-def">≥50% vascular bed → acute ↑RV afterload → RV dilation → septal shift → ↓LV filling → ↓CO → collapse. [5][6]</div></div></div></div></div>
-<div class="sub-content" id="sub3-1"><div class="card"><h3>🔍 Etiologies & Treatment</h3><details class="collapsible" open><summary>Tension Pneumothorax</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> Clinical — absent lung sliding on POCUS. <strong>Tx:</strong> Needle decompression → thoracostomy. [5]</p></div></details><details class="collapsible"><summary>Cardiac Tamponade</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> Beck's triad, pulsus paradoxus. Echo: RV diastolic collapse. <strong>Tx:</strong> Pericardiocentesis. Temporize: volume, epi boluses, minimize PEEP/VT. [5]</p></div></details><details class="collapsible"><summary>Massive PE</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> SBP<90 >15min. RV dilation, McConnell's sign. <strong>Tx:</strong> Systemic thrombolysis, CDT, embolectomy, or VA-ECMO. [5][6]</p></div></details></div></div>
-<div class="sub-content" id="sub3-2"><div class="card"><h3>💪 Rehab — PE (Jiménez 2022 RCT) [6]</h3><table><tr><th>Risk</th><th>Definition</th><th>Mobilization</th></tr><tr><td>Low</td><td>sPESI=0</td><td>Day 1: Ambulate ≥20 min/day</td></tr><tr><td>Int-Low</td><td>sPESI≥1 + ↑Tn OR RV dysfxn</td><td>Day 2: Ambulate when stable</td></tr><tr><td>Int-High</td><td>sPESI≥1 + ↑Tn AND RV dysfxn</td><td>48h rest, then mobilize</td></tr></table><div class="good-box"><strong>Outcome:</strong> ↓LOS by 2.1 days (4.0 vs 6.1, p<0.001). No ↑ 30-day mortality. [6]</div><div class="warn-box">⚠️ <strong>RV Failure:</strong> Supine→upright: ↑pooling → ↓RV preload → ↓CO → hypotension. Exercise compounds further. [6]</div></div></div>
+<div class="sub-content active" id="sub3-0"><div class="card"><h3>🔬 Pathophysiology</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Physical impediment to blood flow. CO↓ due to mechanical obstruction. Rarest (~2%). [5][6]</p><div class="param-grid"><div class="param-item"><div class="param-name">Hemodynamics</div><div class="param-def">↓CO, ↑SVR, ↑CVP, variable PCWP, ↓SvO₂, cool extremities. [5]</div></div><div class="param-item"><div class="param-name">PE Mechanism</div><div class="param-def">≥50% vascular bed → acute ↑RV afterload → RV dilation → septal shift → ↓LV filling → ↓CO. [5][6]</div></div></div></div></div>
+<div class="sub-content" id="sub3-1"><div class="card"><h3>🔍 Etiologies & Treatment</h3><details class="collapsible" open><summary>Tension Pneumothorax</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> Clinical — absent lung sliding on POCUS. <strong>Tx:</strong> Needle decompression → thoracostomy. [5]</p></div></details><details class="collapsible"><summary>Cardiac Tamponade</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> Beck's triad, pulsus paradoxus. Echo: RV diastolic collapse. <strong>Tx:</strong> Pericardiocentesis. [5]</p></div></details><details class="collapsible"><summary>Massive PE</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> SBP&lt;90 &gt;15min. RV dilation, McConnell's sign. <strong>Tx:</strong> Thrombolysis, CDT, embolectomy, or VA-ECMO. [5][6]</p></div></details></div></div>
+<div class="sub-content" id="sub3-2"><div class="card"><h3>💪 Rehab — PE (Jiménez 2022 RCT) [6]</h3><table><tr><th>Risk</th><th>Definition</th><th>Mobilization</th></tr><tr><td>Low</td><td>sPESI=0</td><td>Day 1: Ambulate ≥20 min/day</td></tr><tr><td>Int-Low</td><td>sPESI≥1 + ↑Tn OR RV dysfxn</td><td>Day 2: Ambulate when stable</td></tr><tr><td>Int-High</td><td>sPESI≥1 + ↑Tn AND RV dysfxn</td><td>48h rest, then mobilize</td></tr></table><div class="good-box"><strong>Outcome:</strong> ↓LOS by 2.1 days (4.0 vs 6.1, p&lt;0.001). No ↑ 30-day mortality. [6]</div><div class="warn-box">⚠️ <strong>RV Failure:</strong> Supine→upright: ↑pooling → ↓RV preload → ↓CO → hypotension. [6]</div></div></div>
 <p class="cite">[5] Khorsand 2023 · [6] CSM 2026</p>
 </div>
-<!-- TAB 4: NEE CALCULATOR (UPDATED WITH SINGLE-AGENT CONVERTER) -->
+
+<!-- TAB 4: NEE CALCULATOR -->
 <div class="tab-content" id="tab4">
 <div class="card"><h3>🧮 Norepinephrine Equivalent (NEE) Calculator</h3>
 <p style="font-size:0.78rem;color:var(--text2);margin-bottom:0.75rem">Updated formula — 11 agents · Kotani et al. <em>Critical Care</em> (2023) 27:29 [7]</p>
@@ -401,107 +387,306 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <div class="nee-weight-row"><label>⚖️ Weight:</label><input type="number" id="neeWeight" class="nee-weight-input" placeholder="kg" min="1" max="500" step="0.1"><span style="font-size:0.75rem;color:var(--text2)">kg (for phenylephrine mcg/min→µg/kg/min)</span></div>
 <div class="nee-map-row"><label>MAP:</label><input type="number" id="neeMap" class="nee-map-input" placeholder="mmHg" min="0" max="300" step="1"><span style="font-size:0.75rem;color:var(--text2)">mmHg</span><span class="nee-map-result" id="neeMapResult">MAP/NEE: —</span></div>
 <button class="nee-reset-btn" onclick="resetNEE()">↺ Reset All</button>
+<div class="nee-mode-tabs" style="margin-top:1rem"><button class="nee-mode-tab active" onclick="switchNeeMode(0)">🔬 Single-Agent</button><button class="nee-mode-tab" onclick="switchNeeMode(1)">🧮 Multi-Agent</button></div>
 
-<!-- MODE TABS: Single-Agent vs Multi-Agent -->
-<div class="nee-mode-tabs" style="margin-top:1rem">
-<button class="nee-mode-tab active" onclick="switchNeeMode(0)">🔬 Single-Agent Converter</button>
-<button class="nee-mode-tab" onclick="switchNeeMode(1)">🧮 Multi-Agent Calculator</button>
-</div>
-
-<!-- SINGLE-AGENT CONVERTER (from NEE.html) -->
+<!-- Single Agent -->
 <div class="nee-mode-content active" id="neeMode0">
-<div class="sa-converter">
-<p class="sa-desc">💊 Select any vasopressor → See the norepinephrine equivalent dose</p>
-<div class="sa-row">
-<div class="sa-box">
-<h4>💊 Input Agent</h4>
-<select id="saAgent" onchange="calcSingleAgent()">
-<option value="">-- Choose Agent --</option>
-<option value="norepinephrine">Norepinephrine (µg/kg/min)</option>
-<option value="epinephrine">Epinephrine (µg/kg/min)</option>
-<option value="dopamine">Dopamine (µg/kg/min)</option>
-<option value="phenylephrine">Phenylephrine (mcg/min)</option>
-<option value="vasopressin">Vasopressin (U/min)</option>
-<option value="angiotensin_ii">Angiotensin II (ng/kg/min)</option>
-<option value="terlipressin">Terlipressin (µg/kg/min)</option>
-<option value="methylene_blue">Methylene Blue (mg/kg/h)</option>
-<option value="metaraminol">Metaraminol (µg/kg/min)</option>
-<option value="hydroxocobalamin">Hydroxocobalamin (g bolus)</option>
-<option value="midodrine">Midodrine (µg/kg/min)</option>
-</select>
-<input type="number" id="saDose" placeholder="Enter dose" min="0" step="any" oninput="calcSingleAgent()">
-<div class="sa-unit-label" id="saUnitLabel">—</div>
-</div>
-<div class="sa-arrow">→</div>
-<div class="sa-box sa-result-box">
-<h4>💉 NE Equivalent</h4>
-<div class="sa-result-value" id="saResult">—</div>
-<div class="sa-result-label">µg/kg/min</div>
-</div>
-</div>
-<div class="sa-explanation" id="saExplanation">Select an agent and enter a dose.</div>
-</div>
-</div>
+<div class="sa-converter"><p class="sa-desc">💊 Select any vasopressor → See the norepinephrine equivalent dose</p>
+<div class="sa-row"><div class="sa-box"><h4>💊 Input Agent</h4><select id="saAgent" onchange="calcSingleAgent()"><option value="">-- Choose Agent --</option><option value="norepinephrine">Norepinephrine (µg/kg/min)</option><option value="epinephrine">Epinephrine (µg/kg/min)</option><option value="dopamine">Dopamine (µg/kg/min)</option><option value="phenylephrine">Phenylephrine (mcg/min)</option><option value="vasopressin">Vasopressin (U/min)</option><option value="angiotensin_ii">Angiotensin II (ng/kg/min)</option><option value="terlipressin">Terlipressin (µg/kg/min)</option><option value="methylene_blue">Methylene Blue (mg/kg/h)</option><option value="metaraminol">Metaraminol (µg/kg/min)</option><option value="hydroxocobalamin">Hydroxocobalamin (g bolus)</option><option value="midodrine">Midodrine (µg/kg/min)</option></select><input type="number" id="saDose" placeholder="Enter dose" min="0" step="any" oninput="calcSingleAgent()"><div class="sa-unit-label" id="saUnitLabel">—</div></div><div class="sa-arrow">→</div><div class="sa-box sa-result-box"><h4>💉 NE Equivalent</h4><div class="sa-result-value" id="saResult">—</div><div class="sa-result-label">µg/kg/min</div></div></div>
+<div class="sa-explanation" id="saExplanation">Select an agent and enter a dose.</div></div></div>
 
-<!-- MULTI-AGENT CALCULATOR (original) -->
+<!-- Multi Agent -->
 <div class="nee-mode-content" id="neeMode1">
 <div class="nee-agent-grid" id="neeAgentGrid"></div>
 <div class="nee-result-box"><div class="nee-result-label">Total NEE</div><div class="nee-result-value" id="neeTotal">0.000</div><div class="nee-result-unit">µg/kg/min</div><div class="nee-severity-bar"><span class="nee-sev-pill active" id="sev0">None</span><span class="nee-sev-pill" id="sev1">Low ≤0.1</span><span class="nee-sev-pill" id="sev2">Mod 0.1–0.3</span><span class="nee-sev-pill" id="sev3">High 0.3–1.0</span><span class="nee-sev-pill" id="sev4">Extreme >1.0</span></div><p style="font-size:0.72rem;color:var(--text2);margin-top:0.5rem" id="neeSubtext">Enter doses above. Active: 0</p></div>
 <div class="nee-breakdown" id="neeBreakdown" style="display:none"><div class="nee-breakdown-header">📊 Breakdown</div><div class="nee-breakdown-body"><table id="neeBreakdownTable"></table></div></div>
 </div>
 </div>
-
-<div class="card"><h3>📊 MAP/NEE Ratio [8]</h3><table><tr><th>Tertile</th><th>Score</th><th>MIMIC-III</th><th>eICU</th><th>Severity</th></tr><tr class="severity-low"><td>≥325</td><td>1</td><td>~20%</td><td>~18%</td><td>Mild</td></tr><tr class="severity-mid"><td>136–324</td><td>2</td><td>~35%</td><td>~32%</td><td>Moderate</td></tr><tr class="severity-high"><td><136</td><td>3</td><td>~55%</td><td>~52%</td><td>Severe</td></tr></table><div class="warn-box">⚠️ Validated in septic shock only. c-statistic 0.65–0.68. [8]</div></div>
+<div class="card"><h3>📊 MAP/NEE Ratio [8]</h3><table><tr><th>Tertile</th><th>Score</th><th>MIMIC-III</th><th>eICU</th><th>Severity</th></tr><tr class="severity-low"><td>≥325</td><td>1</td><td>~20%</td><td>~18%</td><td>Mild</td></tr><tr class="severity-mid"><td>136–324</td><td>2</td><td>~35%</td><td>~32%</td><td>Moderate</td></tr><tr class="severity-high"><td>&lt;136</td><td>3</td><td>~55%</td><td>~52%</td><td>Severe</td></tr></table><div class="warn-box">⚠️ Validated in septic shock only. c-statistic 0.65–0.68. [8]</div></div>
 <div class="card"><h3>📖 Conversion Factors [7]</h3><table><tr><th>Agent</th><th>Factor</th><th>Unit</th><th>Evidence</th></tr><tr><td>Norepinephrine</td><td>1.0</td><td>µg/kg/min</td><td>Reference</td></tr><tr><td>Epinephrine</td><td>1.0</td><td>µg/kg/min</td><td>High (2 RCTs)</td></tr><tr><td>Dopamine</td><td>0.01</td><td>µg/kg/min</td><td>High (SOAP II)</td></tr><tr><td>Phenylephrine</td><td>0.06</td><td>mcg/min*</td><td>Moderate</td></tr><tr><td>Vasopressin</td><td>2.5</td><td>U/min</td><td>High (VASST/VANISH)</td></tr><tr><td>Angiotensin II</td><td>0.0025</td><td>ng/kg/min</td><td>Moderate (ATHOS-3)</td></tr><tr><td>Terlipressin</td><td>10</td><td>µg/kg/min</td><td>Moderate</td></tr><tr><td>Methylene Blue</td><td>0.2</td><td>mg/kg/h</td><td>Low (arbitrary)</td></tr><tr><td>Metaraminol</td><td>0.125</td><td>µg/kg/min</td><td>Moderate</td></tr><tr><td>Hydroxocobalamin</td><td>0.02</td><td>g (bolus)</td><td>Low</td></tr><tr><td>Midodrine</td><td>0.4</td><td>µg/kg/min</td><td>Low</td></tr></table></div>
 <p class="cite">[7] Kotani et al. 2023 · [8] Bosch et al. 2020</p>
 </div>
+
 <script>
-// === MAIN TAB SWITCHING ===
-function switchMain(idx){document.querySelectorAll('.main-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===idx));const colors=['#e74c3c','#3498db','#f39c12','#9b59b6','#27ae60'];document.documentElement.style.setProperty('--tab-accent',colors[idx]);document.documentElement.style.setProperty('--pill-active',colors[idx])}
-function switchSub(m,s){const c=document.getElementById('tab'+m);c.querySelectorAll('.sub-tab').forEach((t,i)=>t.classList.toggle('active',i===s));c.querySelectorAll('.sub-content').forEach((x,i)=>x.classList.toggle('active',i===s))}
+// SAFE JAVASCRIPT - NO TEMPLATE LITERALS - STRING CONCATENATION ONLY
 
-// === NEE MODE SWITCHING ===
-function switchNeeMode(idx){document.querySelectorAll('.nee-mode-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));document.querySelectorAll('.nee-mode-content').forEach((c,i)=>c.classList.toggle('active',i===idx))}
+function switchMain(idx){
+  var tabs=document.querySelectorAll('.main-tab');
+  var contents=document.querySelectorAll('.tab-content');
+  for(var i=0;i<tabs.length;i++){tabs[i].classList.toggle('active',i===idx)}
+  for(var i=0;i<contents.length;i++){contents[i].classList.toggle('active',i===idx)}
+  var colors=['#e74c3c','#3498db','#f39c12','#9b59b6','#27ae60'];
+  document.documentElement.style.setProperty('--tab-accent',colors[idx]);
+  document.documentElement.style.setProperty('--pill-active',colors[idx]);
+}
 
-// === AGENT DATA ===
-const AGENTS=[{key:'norepinephrine',name:'Norepinephrine',factor:1,unit:'µg/kg/min',needsWt:false},{key:'epinephrine',name:'Epinephrine',factor:1,unit:'µg/kg/min',needsWt:false},{key:'dopamine',name:'Dopamine',factor:0.01,unit:'µg/kg/min',needsWt:false},{key:'phenylephrine',name:'Phenylephrine',factor:0.06,unit:'mcg/min',needsWt:true},{key:'vasopressin',name:'Vasopressin',factor:2.5,unit:'U/min',needsWt:false},{key:'angiotensin_ii',name:'Angiotensin II',factor:0.0025,unit:'ng/kg/min',needsWt:false},{key:'terlipressin',name:'Terlipressin',factor:10,unit:'µg/kg/min',needsWt:false},{key:'methylene_blue',name:'Methylene Blue',factor:0.2,unit:'mg/kg/h',needsWt:false},{key:'metaraminol',name:'Metaraminol',factor:0.125,unit:'µg/kg/min',needsWt:false},{key:'hydroxocobalamin',name:'Hydroxocobalamin',factor:0.02,unit:'g (bolus)',needsWt:false},{key:'midodrine',name:'Midodrine',factor:0.4,unit:'µg/kg/min',needsWt:false}];
+function switchSub(m,s){
+  var c=document.getElementById('tab'+m);
+  var tabs=c.querySelectorAll('.sub-tab');
+  var subs=c.querySelectorAll('.sub-content');
+  for(var i=0;i<tabs.length;i++){tabs[i].classList.toggle('active',i===s)}
+  for(var i=0;i<subs.length;i++){subs[i].classList.toggle('active',i===s)}
+}
 
-// === SINGLE-AGENT CONVERTER ===
+function switchNeeMode(idx){
+  var tabs=document.querySelectorAll('.nee-mode-tab');
+  var contents=document.querySelectorAll('.nee-mode-content');
+  for(var i=0;i<tabs.length;i++){tabs[i].classList.toggle('active',i===idx)}
+  for(var i=0;i<contents.length;i++){contents[i].classList.toggle('active',i===idx)}
+}
+
+// 2B: Quick Compare
+var hemoData={'CO':['↑/Normal','↓↓','↓','↓'],'SVR':['↓↓','↑↑','↑','↑'],'CVP':['↓/Normal','↑↑','↓↓','↑'],'PCWP':['↓/Normal','↑↑','↓','Variable'],'SvO₂':['↑/Normal','↓↓','↓','↓'],'Extremities':['Warm (early)','Cool','Cool','Cool']};
+var shockNames=['Distributive','Cardiogenic','Hypovolemic','Obstructive'];
+var shockColors=['#e74c3c','#3498db','#f39c12','#9b59b6'];
+
+function showQuickCompare(param,activeIdx){
+  var overlay=document.getElementById('qcOverlay');
+  document.getElementById('qcTitle').textContent='🔍 '+param+' — All Shock Types';
+  var data=hemoData[param];
+  if(!data) return;
+  var html='';
+  for(var i=0;i<shockNames.length;i++){
+    var cls=(i===activeIdx)?'qc-row qc-highlight':'qc-row';
+    html+='<div class="'+cls+'"><span class="qc-label" style="color:'+shockColors[i]+'">'+shockNames[i]+'</span><span class="qc-val">'+data[i]+'</span></div>';
+  }
+  document.getElementById('qcBody').innerHTML=html;
+  overlay.classList.add('show');
+}
+function closeQC(e){if(e.target===e.currentTarget) e.target.classList.remove('show')}
+
+// 2C: NEE Dot
+function updateNeeDot(total,ac){
+  var dot=document.getElementById('neeDot');
+  dot.className='nee-dot';
+  if(ac===0||total===0) dot.classList.add('dot-none');
+  else if(total<=0.1) dot.classList.add('dot-low');
+  else if(total<=0.3) dot.classList.add('dot-mod');
+  else if(total<=1.0) dot.classList.add('dot-high');
+  else dot.classList.add('dot-extreme');
+}
+
+// 2D: Escalation Stepper
+var currentEscStep=-1;
+function setEscStep(idx){
+  var btns=document.querySelectorAll('.esc-step-btn');
+  var cards=[document.getElementById('escCard0'),document.getElementById('escCard1'),document.getElementById('escCard2'),document.getElementById('escCard3')];
+  if(currentEscStep===idx){
+    currentEscStep=-1;
+    for(var i=0;i<btns.length;i++){btns[i].className='esc-step-btn'}
+    for(var i=0;i<cards.length;i++){cards[i].classList.remove('esc-dimmed','esc-active')}
+    return;
+  }
+  currentEscStep=idx;
+  for(var i=0;i<btns.length;i++){
+    btns[i].className='esc-step-btn';
+    if(i<idx) btns[i].classList.add('esc-past');
+    else if(i===idx) btns[i].classList.add('esc-current');
+  }
+  for(var i=0;i<cards.length;i++){
+    cards[i].classList.remove('esc-dimmed','esc-active');
+    if(i===idx) cards[i].classList.add('esc-active');
+    else cards[i].classList.add('esc-dimmed');
+  }
+  cards[idx].scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// 2F: Readiness
+function updateReadiness(){
+  var count=0;
+  for(var i=0;i<6;i++){
+    var cb=document.getElementById('rc'+i);
+    var item=document.getElementById('ri'+i);
+    if(cb.checked){count++;item.classList.add('checked')}
+    else{item.classList.remove('checked')}
+  }
+  document.getElementById('readinessSummary').textContent=count+' of 6 considerations met';
+}
+
+// 2H: Expand All
+function toggleAllDetails(btn){
+  var card=btn.closest('.card');
+  var details=card.querySelectorAll('details.collapsible');
+  var allOpen=true;
+  for(var i=0;i<details.length;i++){if(!details[i].open) allOpen=false}
+  for(var i=0;i<details.length;i++){details[i].open=!allOpen}
+  btn.textContent=allOpen?'📂 Expand All':'📁 Collapse All';
+}
+
+// Agent Data
+var AGENTS=[
+  {key:'norepinephrine',name:'Norepinephrine',factor:1,unit:'µg/kg/min',needsWt:false},
+  {key:'epinephrine',name:'Epinephrine',factor:1,unit:'µg/kg/min',needsWt:false},
+  {key:'dopamine',name:'Dopamine',factor:0.01,unit:'µg/kg/min',needsWt:false},
+  {key:'phenylephrine',name:'Phenylephrine',factor:0.06,unit:'mcg/min',needsWt:true},
+  {key:'vasopressin',name:'Vasopressin',factor:2.5,unit:'U/min',needsWt:false},
+  {key:'angiotensin_ii',name:'Angiotensin II',factor:0.0025,unit:'ng/kg/min',needsWt:false},
+  {key:'terlipressin',name:'Terlipressin',factor:10,unit:'µg/kg/min',needsWt:false},
+  {key:'methylene_blue',name:'Methylene Blue',factor:0.2,unit:'mg/kg/h',needsWt:false},
+  {key:'metaraminol',name:'Metaraminol',factor:0.125,unit:'µg/kg/min',needsWt:false},
+  {key:'hydroxocobalamin',name:'Hydroxocobalamin',factor:0.02,unit:'g (bolus)',needsWt:false},
+  {key:'midodrine',name:'Midodrine',factor:0.4,unit:'µg/kg/min',needsWt:false}
+];
+
+// Single Agent
 function calcSingleAgent(){
-  const sel=document.getElementById('saAgent').value;
-  const dose=parseFloat(document.getElementById('saDose').value)||0;
-  const weight=parseFloat(document.getElementById('neeWeight').value)||0;
-  const resultEl=document.getElementById('saResult');
-  const explEl=document.getElementById('saExplanation');
-  const unitEl=document.getElementById('saUnitLabel');
+  var sel=document.getElementById('saAgent').value;
+  var dose=parseFloat(document.getElementById('saDose').value)||0;
+  var weight=parseFloat(document.getElementById('neeWeight').value)||0;
+  var resultEl=document.getElementById('saResult');
+  var explEl=document.getElementById('saExplanation');
+  var unitEl=document.getElementById('saUnitLabel');
   if(!sel){resultEl.textContent='—';explEl.textContent='Select an agent and enter a dose.';unitEl.textContent='—';return}
-  const agent=AGENTS.find(a=>a.key===sel);
+  var agent=null;
+  for(var i=0;i<AGENTS.length;i++){if(AGENTS[i].key===sel){agent=AGENTS[i];break}}
   if(!agent){resultEl.textContent='—';return}
   unitEl.textContent=agent.unit;
   if(dose<=0){resultEl.textContent='—';explEl.textContent='Enter a dose to calculate.';return}
-  let nee;
+  var nee;
   if(agent.needsWt){
-    if(weight<=0){resultEl.textContent='⚠️';explEl.textContent='⚠️ Weight required for '+agent.name+' (mcg/min → µg/kg/min conversion).';return}
+    if(weight<=0){resultEl.textContent='⚠️';explEl.textContent='⚠️ Weight required for '+agent.name+'.';return}
     nee=(dose/weight)*agent.factor;
-    explEl.innerHTML=`<strong>${dose} ${agent.unit} ÷ ${weight} kg × ${agent.factor}</strong> = ${nee.toFixed(4)} µg/kg/min NE equivalent`;
-  }else{
+    explEl.innerHTML='<strong>'+dose+' '+agent.unit+' ÷ '+weight+' kg × '+agent.factor+'</strong> = '+nee.toFixed(4)+' µg/kg/min NE eq';
+  } else {
     nee=dose*agent.factor;
-    explEl.innerHTML=`<strong>${dose} ${agent.unit} × ${agent.factor}</strong> = ${nee.toFixed(4)} µg/kg/min NE equivalent`;
+    explEl.innerHTML='<strong>'+dose+' '+agent.unit+' × '+agent.factor+'</strong> = '+nee.toFixed(4)+' µg/kg/min NE eq';
   }
   resultEl.textContent=nee.toFixed(4);
 }
 
-// === MULTI-AGENT GRID BUILD ===
-function buildNEEGrid(){const grid=document.getElementById('neeAgentGrid');let html='';AGENTS.forEach(a=>{const fd=a.factor===1?'×1':'×'+a.factor;const w=a.needsWt?' ⚖️':'';html+=`<div class="nee-agent-card" id="ncard_${a.key}"><div class="nee-agent-header"><span>${a.name}${w}</span><span style="font-size:0.65rem">${fd}</span></div><div class="nee-agent-body"><input type="number" class="nee-agent-input" id="ndose_${a.key}" placeholder="0" min="0" step="any" oninput="calcNEE()"><div class="nee-agent-unit">${a.unit}</div><div class="nee-agent-nee" id="nnee_${a.key}">0.000</div></div></div>`});grid.innerHTML=html}
+// Build Grid
+function buildNEEGrid(){
+  var grid=document.getElementById('neeAgentGrid');
+  var html='';
+  for(var i=0;i<AGENTS.length;i++){
+    var a=AGENTS[i];
+    var fd=a.factor===1?'×1':'×'+a.factor;
+    var w=a.needsWt?' ⚖️':'';
+    html+='<div class="nee-agent-card" id="ncard_'+a.key+'">';
+    html+='<div class="nee-agent-header"><span>'+a.name+w+'</span><span style="font-size:0.65rem">'+fd+'</span></div>';
+    html+='<div class="nee-agent-body">';
+    html+='<input type="number" class="nee-agent-input" id="ndose_'+a.key+'" placeholder="0" min="0" step="any" oninput="calcNEE()">';
+    html+='<div class="nee-agent-unit">'+a.unit+'</div>';
+    html+='<div class="nee-agent-nee" id="nnee_'+a.key+'">0.000</div>';
+    html+='</div></div>';
+  }
+  grid.innerHTML=html;
+}
 
-// === MULTI-AGENT CALC ===
-function calcNEE(){const weight=parseFloat(document.getElementById('neeWeight').value)||0;let total=0,ac=0;const contribs=[];AGENTS.forEach(a=>{const raw=parseFloat(document.getElementById('ndose_'+a.key).value)||0;const card=document.getElementById('ncard_'+a.key);const label=document.getElementById('nnee_'+a.key);card.classList.remove('active');if(raw>0){let fd=raw;if(a.needsWt){if(weight<=0){label.textContent='need wt';return}fd=raw/weight}const nee=fd*a.factor;total+=nee;ac++;card.classList.add('active');label.textContent=nee.toFixed(4);contribs.push({agent:a,raw,fd,nee})}else{label.textContent='0.000'}});document.getElementById('neeTotal').textContent=total.toFixed(4);const pills=[0,1,2,3,4].map(i=>document.getElementById('sev'+i));pills.forEach(p=>p.classList.remove('active'));let idx=(ac===0||total===0)?0:(total<=0.1?1:(total<=0.3?2:(total<=1.0?3:4)));pills[idx].classList.add('active');const mapVal=parseFloat(document.getElementById('neeMap').value)||0;const md=document.getElementById('neeMapResult');if(mapVal>0&&total>0){const r=mapVal/total;md.textContent=`MAP/NEE: ${r.toFixed(0)}`;md.style.color=r>=325?'var(--green)':(r>=136?'var(--amber)':'var(--red)')}else{md.textContent='MAP/NEE: —';md.style.color='var(--tab-accent)'}document.getElementById('neeSubtext').textContent=ac===0?'Enter doses above. Active: 0':`Active (${ac}): ${contribs.map(c=>c.agent.name).join(' + ')}`;const bd=document.getElementById('neeBreakdown'),bt=document.getElementById('neeBreakdownTable');if(contribs.length===0){bd.style.display='none';return}bd.style.display='block';contribs.sort((a,b)=>b.nee-a.nee);let th='<tr><th>Agent</th><th>Input</th><th>Factor</th><th>NEE</th><th>%</th><th></th></tr>';contribs.forEach(c=>{const pct=total>0?(c.nee/total*100):0;th+=`<tr><td><strong>${c.agent.name}</strong></td><td style="font-family:monospace">${c.raw} ${c.agent.unit}</td><td style="font-family:monospace">×${c.agent.factor}</td><td style="font-family:monospace">${c.nee.toFixed(4)}</td><td style="font-family:monospace">${pct.toFixed(1)}%</td><td style="width:60px"><div class="nee-contribution-bar" style="width:${Math.max(2,Math.min(100,pct))}%"></div></td></tr>`});th+=`<tr style="border-top:2px solid var(--green)"><td colspan="3"><strong>TOTAL</strong></td><td style="font-family:monospace"><strong>${total.toFixed(4)}</strong></td><td colspan="2"></td></tr>`;bt.innerHTML=th}
+// Multi Agent Calc
+function calcNEE(){
+  var weight=parseFloat(document.getElementById('neeWeight').value)||0;
+  var total=0,ac=0;
+  var contribs=[];
+  for(var i=0;i<AGENTS.length;i++){
+    var a=AGENTS[i];
+    var raw=parseFloat(document.getElementById('ndose_'+a.key).value)||0;
+    var card=document.getElementById('ncard_'+a.key);
+    var label=document.getElementById('nnee_'+a.key);
+    card.classList.remove('active');
+    if(raw>0){
+      var fd=raw;
+      if(a.needsWt){
+        if(weight<=0){label.textContent='need wt';continue}
+        fd=raw/weight;
+      }
+      var nee=fd*a.factor;
+      total+=nee;ac++;
+      card.classList.add('active');
+      label.textContent=nee.toFixed(4);
+      contribs.push({agent:a,raw:raw,nee:nee});
+    } else {
+      label.textContent='0.000';
+    }
+  }
+  document.getElementById('neeTotal').textContent=total.toFixed(4);
+  var pills=[];
+  for(var j=0;j<5;j++){pills.push(document.getElementById('sev'+j))}
+  for(var j=0;j<pills.length;j++){pills[j].classList.remove('active')}
+  var idx=(ac===0||total===0)?0:(total<=0.1?1:(total<=0.3?2:(total<=1.0?3:4)));
+  pills[idx].classList.add('active');
+  updateNeeDot(total,ac);
+  var mapVal=parseFloat(document.getElementById('neeMap').value)||0;
+  var md=document.getElementById('neeMapResult');
+  if(mapVal>0&&total>0){
+    var r=mapVal/total;
+    md.textContent='MAP/NEE: '+r.toFixed(0);
+    md.style.color=r>=325?'var(--green)':(r>=136?'var(--amber)':'var(--red)');
+  } else {
+    md.textContent='MAP/NEE: —';
+    md.style.color='var(--tab-accent)';
+  }
+  var names=[];
+  for(var k=0;k<contribs.length;k++){names.push(contribs[k].agent.name)}
+  document.getElementById('neeSubtext').textContent=ac===0?'Enter doses above. Active: 0':'Active ('+ac+'): '+names.join(' + ');
+  var bd=document.getElementById('neeBreakdown');
+  var bt=document.getElementById('neeBreakdownTable');
+  if(contribs.length===0){bd.style.display='none';return}
+  bd.style.display='block';
+  contribs.sort(function(a,b){return b.nee-a.nee});
+  var th='<tr><th>Agent</th><th>Input</th><th>Factor</th><th>NEE</th><th>%</th><th></th></tr>';
+  for(var m=0;m<contribs.length;m++){
+    var c=contribs[m];
+    var pct=total>0?(c.nee/total*100):0;
+    th+='<tr><td><strong>'+c.agent.name+'</strong></td>';
+    th+='<td style="font-family:monospace">'+c.raw+' '+c.agent.unit+'</td>';
+    th+='<td style="font-family:monospace">×'+c.agent.factor+'</td>';
+    th+='<td style="font-family:monospace">'+c.nee.toFixed(4)+'</td>';
+    th+='<td style="font-family:monospace">'+pct.toFixed(1)+'%</td>';
+    th+='<td style="width:60px"><div class="nee-contribution-bar" style="width:'+Math.max(2,Math.min(100,pct))+'%"></div></td></tr>';
+  }
+  th+='<tr style="border-top:2px solid var(--green)"><td colspan="3"><strong>TOTAL</strong></td><td style="font-family:monospace"><strong>'+total.toFixed(4)+'</strong></td><td colspan="2"></td></tr>';
+  bt.innerHTML=th;
+}
 
-// === RESET ===
-function resetNEE(){AGENTS.forEach(a=>{document.getElementById('ndose_'+a.key).value='';document.getElementById('nnee_'+a.key).textContent='0.000';document.getElementById('ncard_'+a.key).classList.remove('active')});document.getElementById('neeWeight').value='';document.getElementById('neeMap').value='';document.getElementById('neeTotal').textContent='0.000';document.getElementById('neeMapResult').textContent='MAP/NEE: —';document.getElementById('neeBreakdown').style.display='none';document.getElementById('neeSubtext').textContent='Enter doses above. Active: 0';[0,1,2,3,4].forEach(i=>document.getElementById('sev'+i).classList.remove('active'));document.getElementById('sev0').classList.add('active');document.getElementById('saAgent').selectedIndex=0;document.getElementById('saDose').value='';document.getElementById('saResult').textContent='—';document.getElementById('saExplanation').textContent='Select an agent and enter a dose.';document.getElementById('saUnitLabel').textContent='—'}
+// Reset
+function resetNEE(){
+  for(var i=0;i<AGENTS.length;i++){
+    document.getElementById('ndose_'+AGENTS[i].key).value='';
+    document.getElementById('nnee_'+AGENTS[i].key).textContent='0.000';
+    document.getElementById('ncard_'+AGENTS[i].key).classList.remove('active');
+  }
+  document.getElementById('neeWeight').value='';
+  document.getElementById('neeMap').value='';
+  document.getElementById('neeTotal').textContent='0.000';
+  document.getElementById('neeMapResult').textContent='MAP/NEE: —';
+  document.getElementById('neeBreakdown').style.display='none';
+  document.getElementById('neeSubtext').textContent='Enter doses above. Active: 0';
+  for(var j=0;j<5;j++){document.getElementById('sev'+j).classList.remove('active')}
+  document.getElementById('sev0').classList.add('active');
+  document.getElementById('saAgent').selectedIndex=0;
+  document.getElementById('saDose').value='';
+  document.getElementById('saResult').textContent='—';
+  document.getElementById('saExplanation').textContent='SeQlect an agent and enter a dose.';
+  document.getElementById('saUnitLabel').textContent='—';
+  updateNeeDot(0,0);
+}
 
-// === INIT ===
-document.addEventListener('DOMContentLoaded',()=>{buildNEEGrid();document.getElementById('neeMap').addEventListener('input',calcNEE);document.getElementById('neeWeight').addEventListener('input',()=>{calcNEE();calcSingleAgent()})});
+// Init
+document.addEventListener('DOMContentLoaded',function(){
+  buildNEEGrid();
+  document.getElementById('neeMap').addEventListener('input',calcNEE);
+  document.getElementById('neeWeight').addEventListener('input',function(){calcNEE();calcSingleAgent()});
+  // 2B: Hemo table click listeners
+  var tables=document.querySelectorAll('.hemo-table');
+  for(var t=0;t<tables.length;t++){
+    var table=tables[t];
+    var activeCol=parseInt(table.getAttribute('data-active-col'))||1;
+    var rows=table.querySelectorAll('tr');
+    for(var ri=1;ri<rows.length;ri++){
+      var cells=rows[ri].querySelectorAll('td');
+      for(var ci=1;ci<cells.length;ci++){
+        (function(row,ac){
+          cells[ci].addEventListener('click',function(){
+            var paramEl=row.querySelector('td strong');
+            var param=paramEl?paramEl.textContent:row.cells[0].textContent.trim();
+            showQuickCompare(param,ac-1);
+          });
+        })(rows[ri],activeCol);
+      }
+    }
+  }
+});
 </script>
 </body>
 </html>
