@@ -100,19 +100,6 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 .hemo-table td{cursor:pointer;transition:background 0.15s}
 .hemo-table td:hover{background:rgba(231,76,60,0.06)}
 @media(prefers-color-scheme:dark){.hemo-table th.hemo-active,.hemo-table td.hemo-active{background:rgba(248,113,113,0.12)}.hemo-table td:hover{background:rgba(248,113,113,0.08)}}
-/* 2B: Quick Compare */
-.qc-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center;padding:1rem}
-.qc-overlay.show{display:flex}
-.qc-card{background:var(--card);border-radius:12px;padding:1.25rem;max-width:400px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
-.qc-card h4{font-size:0.95rem;color:var(--tab-accent);margin-bottom:0.75rem}
-.qc-close{position:absolute;top:0.5rem;right:0.75rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--text2);padding:0.25rem}
-.qc-row{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
-.qc-row:last-child{border-bottom:none}
-.qc-row .qc-label{font-weight:600;min-width:90px}
-.qc-row .qc-val{text-align:right;color:var(--text2)}
-.qc-row.qc-highlight{background:rgba(231,76,60,0.08);border-radius:6px;padding:0.5rem;margin:0.15rem -0.25rem}
-.qc-row.qc-highlight .qc-val{color:var(--tab-accent);font-weight:700}
-@media(prefers-color-scheme:dark){.qc-row.qc-highlight{background:rgba(248,113,113,0.1)}}
 /* 2C: NEE dot */
 .nee-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-left:4px;vertical-align:middle;background:var(--border);transition:background 0.3s}
 .nee-dot.dot-none{background:var(--border)}.nee-dot.dot-low{background:var(--green)}.nee-dot.dot-mod{background:var(--amber)}.nee-dot.dot-high{background:#ea580c}.nee-dot.dot-extreme{background:var(--red)}
@@ -197,15 +184,6 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <button class="main-tab" onclick="switchMain(3)">🫁 Obstructive</button>
 <button class="main-tab" onclick="switchMain(4)">🧮 NEE Calc<span class="nee-dot dot-none" id="neeDot"></span></button>
 </nav>
-
-<!-- 2B: Quick Compare Overlay -->
-<div class="qc-overlay" id="qcOverlay" onclick="closeQC(event)">
-<div class="qc-card" style="position:relative">
-<button class="qc-close" onclick="document.getElementById('qcOverlay').classList.remove('show')">&times;</button>
-<h4 id="qcTitle">—</h4>
-<div id="qcBody"></div>
-</div>
-</div>
 
 <!-- TAB 0: DISTRIBUTIVE (NEW ORDER) -->
 <div class="tab-content active" id="tab0">
@@ -434,26 +412,6 @@ function switchNeeMode(idx){
   for(var i=0;i<tabs.length;i++){tabs[i].classList.toggle('active',i===idx)}
   for(var i=0;i<contents.length;i++){contents[i].classList.toggle('active',i===idx)}
 }
-
-// 2B: Quick Compare
-var hemoData={'CO':['↑/Normal','↓↓','↓','↓'],'SVR':['↓↓','↑↑','↑','↑'],'CVP':['↓/Normal','↑↑','↓↓','↑'],'PCWP':['↓/Normal','↑↑','↓','Variable'],'SvO₂':['↑/Normal','↓↓','↓','↓'],'Extremities':['Warm (early)','Cool','Cool','Cool']};
-var shockNames=['Distributive','Cardiogenic','Hypovolemic','Obstructive'];
-var shockColors=['#e74c3c','#3498db','#f39c12','#9b59b6'];
-
-function showQuickCompare(param,activeIdx){
-  var overlay=document.getElementById('qcOverlay');
-  document.getElementById('qcTitle').textContent='🔍 '+param+' — All Shock Types';
-  var data=hemoData[param];
-  if(!data) return;
-  var html='';
-  for(var i=0;i<shockNames.length;i++){
-    var cls=(i===activeIdx)?'qc-row qc-highlight':'qc-row';
-    html+='<div class="'+cls+'"><span class="qc-label" style="color:'+shockColors[i]+'">'+shockNames[i]+'</span><span class="qc-val">'+data[i]+'</span></div>';
-  }
-  document.getElementById('qcBody').innerHTML=html;
-  overlay.classList.add('show');
-}
-function closeQC(e){if(e.target===e.currentTarget) e.target.classList.remove('show')}
 
 // 2C: NEE Dot
 function updateNeeDot(total,ac){
