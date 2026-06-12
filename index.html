@@ -174,6 +174,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 .sa-result-label{font-size:0.72rem;color:var(--text2);text-align:center}
 .sa-explanation{margin-top:0.75rem;padding:0.75rem;background:var(--bg2);border-radius:8px;font-size:0.78rem;color:var(--text2);border:1px dashed var(--border);min-height:2.5rem}
 .assess-panel{display:none}.assess-panel.active{display:block}
+.mgmt-panel{display:none}.mgmt-panel.active{display:block}
 </style>
 </head>
 <body>
@@ -304,6 +305,16 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 
 <!-- MANAGEMENT -->
 <div class="sub-content" id="sub0-3"><div class="card"><h3>💊 Medical & Pharmacologic Management</h3>
+
+<!-- MANAGEMENT MINI-TABS -->
+<div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
+<button class="sub-tab active" onclick="switchMgmt(0)" id="mgmtBtn0">🚨 Initial Resuscitation</button>
+<button class="sub-tab" onclick="switchMgmt(1)" id="mgmtBtn1">💉 Pharmacology</button>
+<button class="sub-tab" onclick="switchMgmt(2)" id="mgmtBtn2">📈 Escalation</button>
+</div>
+
+<!-- INITIAL RESUSCITATION -->
+<div class="mgmt-panel active" id="mgmtPanel0">
 <h4>Initial Resuscitation</h4>
 <div class="param-grid">
 <div class="param-item"><div class="param-name">Volume Resuscitation</div><div class="param-def">IV crystalloid — individualize based on clinical response. The SSC recommends 30 mL/kg within 3 hours (weak recommendation), but ARISE FLUIDS (2026) found no outcome difference when this volume was not completed. Assess fluid responsiveness before additional boluses. Excess fluid worsens outcomes. [2][4][5]</div></div>
@@ -312,12 +323,12 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <div class="param-item"><div class="param-name">Antimicrobials</div><div class="param-def">Empiric broad-spectrum within 1 hour. Cultures first if possible without delaying. De-escalate on results. [5][2]</div></div>
 </div>
 
-<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-top:1rem;margin-bottom:1.25rem;border:2px solid var(--blue)">
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-top:1rem;margin-bottom:1rem;border:2px solid var(--blue)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
 <span class="badge badge-blue">LANDMARK TRIAL</span>
 <strong style="font-size:0.88rem;color:var(--text1)">ARISE FLUIDS (NEJM 2026, n=963)</strong>
 </div>
-<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.6rem">Restricted fluids + early vasopressors vs. liberal fluids + later vasopressors in ED-presenting septic shock</p>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.6rem">Restricted fluids + early vasopressors vs. liberal fluids + later vasopressors in ED-presenting septic shock [2]</p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
 <div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem;text-align:center">
 <strong style="color:var(--text1);font-size:0.95rem">0.0 days</strong><br>
@@ -348,14 +359,18 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 </div>
 
 <div class="warn-box">⚠️ <strong>Hypothesis-Testing Framework [1]:</strong> There is no single "correct" initial strategy. Armed with a hypothesis based on initial observations, implement an intervention, evaluate impact in real time, and revise as needed. Both groups in ARISE FLUIDS were reassessed hourly using heart rate, skin perfusion, mentation, urine output, and lactate. [1][2]</div>
-<h4 style="margin-top:1rem">Vasopressor & Inotrope Pharmacology</h4>
+</div>
+
+<!-- PHARMACOLOGY -->
+<div class="mgmt-panel" id="mgmtPanel1">
+<h4>Vasopressor & Inotrope Pharmacology</h4>
 
 <div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
 <h4 style="margin-bottom:0.6rem;font-size:0.85rem;color:var(--text1)">🔑 Receptor → Physiologic Effect</h4>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;font-size:0.78rem">
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--red)"><strong style="color:var(--red)">α-1</strong><br><strong>Vasoconstriction</strong><br><span style="color:var(--text2);font-size:0.72rem">↑SVR, ↑MAP · Shunts blood from splanchnic/skin → muscles [1]</span></div>
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--blue)"><strong style="color:var(--blue)">β-1</strong><br><strong>Inotropy + Chronotropy</strong><br><span style="color:var(--text2);font-size:0.72rem">↑Contractility, ↑HR → ↑CO via Ca²⁺ influx [1]</span></div>
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--green)"><strong style="color:var(--green)">β-2</strong><br><strong>Vasodilation + Bronchodilation</strong><br><span style="color:var(--text2);font-size:0.72rem">Relaxes smooth muscle · ↑muscle perfusion · Releases lactate as fuel [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--red)"><strong style="color:var(--red)">Alpha-1</strong><br><strong>Vasoconstriction</strong><br><span style="color:var(--text2);font-size:0.72rem">Raises SVR, raises MAP. Shunts blood from splanchnic/skin to muscles [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--blue)"><strong style="color:var(--blue)">Beta-1</strong><br><strong>Inotropy + Chronotropy</strong><br><span style="color:var(--text2);font-size:0.72rem">Raises contractility, raises HR → raises CO via Ca2+ influx [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--green)"><strong style="color:var(--green)">Beta-2</strong><br><strong>Vasodilation + Bronchodilation</strong><br><span style="color:var(--text2);font-size:0.72rem">Relaxes smooth muscle. Raises muscle perfusion. Releases lactate as fuel [1]</span></div>
 </div>
 </div>
 
@@ -364,9 +379,9 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <thead>
 <tr style="background:var(--bg2)">
 <th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border)">Agent</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--red)">α1</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--blue)">β1</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--green)">β2</th>
+<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--red)">Alpha-1</th>
+<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--blue)">Beta-1</th>
+<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--green)">Beta-2</th>
 <th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--purple)">Other</th>
 <th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border)">Net Hemodynamic Effect</th>
 </tr>
@@ -386,7 +401,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;font-weight:600;color:var(--purple)">V1, V2</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Non-catecholamine vasoconstriction; promotes free water reabsorption</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Non-catecholamine vasoconstriction; promotes free water reabsorption [1]</td>
 </tr>
 <tr style="border-bottom:1px solid var(--border)">
 <td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Epinephrine</td>
@@ -394,7 +409,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--blue)">++++</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--green)">+++</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Low dose: <span style="color:var(--blue)">raises CO (Beta-1)</span> · High dose: <span style="color:var(--red)">raises SVR (Alpha-1)</span> · May raise lactate <span style="color:var(--green)">(Beta-2)</span></td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Low dose: <span style="color:var(--blue)">raises CO (Beta-1)</span> · High dose: <span style="color:var(--red)">raises SVR (Alpha-1)</span> · May raise lactate <span style="color:var(--green)">(Beta-2)</span> [1]</td>
 </tr>
 <tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
 <td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Phenylephrine</td>
@@ -402,7 +417,8 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Pure <span style="color:var(--red)">vasoconstriction</span>; reflex bradycardia; raises afterload</td></tr>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Pure <span style="color:var(--red)">vasoconstriction</span>; reflex bradycardia; raises afterload [1]</td>
+</tr>
 <tr style="border-bottom:1px solid var(--border)">
 <td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Angiotensin II</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
@@ -417,7 +433,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--blue)">++ <span style="font-size:0.65rem;font-weight:400">(mid)</span></td>
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;font-weight:600;color:var(--purple)">D1, D2 <span style="font-size:0.65rem;font-weight:400">(low)</span></td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Dose-dependent: low = renal vasodilation · mid = inotropy · high = vasoconstriction</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Dose-dependent: low = renal vasodilation · mid = inotropy · high = vasoconstriction [1]</td>
 </tr>
 <tr style="border-bottom:1px solid var(--border)">
 <td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Dobutamine</td>
@@ -425,7 +441,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--blue)">++++</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--green)">++</td>
 <td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)"><span style="color:var(--blue)">Strong inotropy</span> + raises CO; may <span style="color:var(--green)">lower SVR</span> (vasodilation from Beta-2)</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)"><span style="color:var(--blue)">Strong inotropy</span> + raises CO; may <span style="color:var(--green)">lower SVR</span> (vasodilation from Beta-2) [1]</td>
 </tr>
 <tr style="background:var(--pill-bg)">
 <td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Milrinone</td>
@@ -439,9 +455,21 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 </table>
 </div>
 
-<div class="warn-box" style="margin-top:1rem">⚠️ <strong>Hypothesis Testing [1]:</strong> If phenylephrine (pure α1) worsens shock → suspect cardiogenic component (↑afterload harmful). If dobutamine (β1/β2) worsens → vasodilatory component dominant. Use agent response to test your hemodynamic hypothesis.</div>
-</div></div>
+<div class="warn-box" style="margin-top:1rem">⚠️ <strong>Hypothesis Testing [1]:</strong> If phenylephrine (pure Alpha-1) worsens shock → suspect cardiogenic component (raised afterload harmful). If dobutamine (Beta-1/Beta-2) worsens → vasodilatory component dominant. Use agent response to test your hemodynamic hypothesis.</div>
+</div>
 
+<!-- ESCALATION -->
+<div class="mgmt-panel" id="mgmtPanel2">
+<h4>Escalation Pathway [2][5]</h4>
+<p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">Mark current step:</p>
+<div class="esc-stepper" id="escStepper"><button class="esc-step-btn" onclick="setEscStep(0)">Step 1: NE</button><button class="esc-step-btn" onclick="setEscStep(1)">Step 2: Vaso</button><button class="esc-step-btn" onclick="setEscStep(2)">Step 3: Adjuncts</button><button class="esc-step-btn" onclick="setEscStep(3)">De-escalation</button></div>
+<div class="abg-card escalate" id="escCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Norepinephrine (First-Line)</span></div><div class="abg-problem">"We consider norepinephrine the vasopressor of first choice" [1]. Target MAP 65 mmHg or higher. Potent Alpha-1 vasoconstriction + mild Beta-1 inotropy. Superior to dopamine (SOAP II), equivalent to epinephrine. [1][4]</div></div>
+<div class="abg-card escalate" id="escCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Vasopressin (0.01-0.04 U/min)</span></div><div class="abg-problem">Non-catecholamine; V1 receptors. Catecholamine-sparing. Posterior pituitary stores deplete in prolonged shock — hormone replacement rationale. [1][5]</div><div class="abg-safety">Do not exceed 0.04 U/min. Do not titrate to MAP. [1]</div></div>
+<div class="abg-card escalate" id="escCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Adjuncts: AngII / Epinephrine / Hydrocortisone</span></div><div class="abg-problem"><strong>AngII:</strong> ATHOS-3. <strong>Epi:</strong> Refractory/inotropy needed — strong Beta-1 for chronotropy and contractility [1]. <strong>Hydrocortisone 200mg/d:</strong> If 2+ vasopressors or escalating doses — endogenous cortisol stores may be inadequate for prolonged stress response [1].<br><strong>Methylene Blue:</strong> Refractory vasoplegia (post-CPB, late septic).</div></div>
+<div class="abg-card deescalate" id="escCard3"><div class="abg-header"><span class="abg-direction deescalate">DE-ESCALATION</span><span class="abg-title">Weaning Vasopressors</span></div><div class="abg-problem">Wean adjuncts first → vasopressin last (or keep fixed until NE low) → NE last. Target negative fluid balance. Signal: MAP at target on stable/decreasing doses, lactate normalizing, UOP improving. [1][4]</div></div>
+</div>
+
+</div></div>
 <!-- ASSESSMENT -->
 <div class="sub-content" id="sub0-4"><div class="card"><h3>🔍 Assessment & Monitoring</h3>
 <p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Continuous feedback loop: assess → intervene → reassess → adjust. [1][4]</p>
@@ -799,6 +827,14 @@ Is vasoactive support adequate and not escalating? <span style="color:var(--gree
 <script>
 // SAFE JAVASCRIPT - NO TEMPLATE LITERALS - STRING CONCATENATION ONLY
 
+function switchMgmt(idx){
+  for(var i=0;i<3;i++){
+    var btn=document.getElementById('mgmtBtn'+i);
+    var panel=document.getElementById('mgmtPanel'+i);
+    btn.classList.toggle('active',i===idx);
+    panel.classList.toggle('active',i===idx);
+  }
+}
 function switchMain(idx){
   var tabs=document.querySelectorAll('.main-tab');
   var contents=document.querySelectorAll('.tab-content');
