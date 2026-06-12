@@ -262,28 +262,89 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 
 <h4 style="margin-top:1rem">Vasopressor Pharmacology</h4>
 
-<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid var(--border)">
-<h4 style="margin-bottom:0.5rem;font-size:0.85rem;color:var(--text1)">🔑 Receptor Effects</h4>
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
+<h4 style="margin-bottom:0.6rem;font-size:0.85rem;color:var(--text1)">🔑 Receptor → Physiologic Effect</h4>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;font-size:0.78rem">
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border-left:3px solid var(--red)"><strong>α-1</strong><br>Vasoconstriction<br><span style="color:var(--text2);font-size:0.72rem">↑SVR, ↑MAP, shunts blood from splanchnic/skin to muscles [1]</span></div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border-left:3px solid var(--blue)"><strong>β-1</strong><br>Inotropy + Chronotropy<br><span style="color:var(--text2);font-size:0.72rem">↑Contractility, ↑HR → ↑CO via Ca²⁺ influx [1]</span></div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border-left:3px solid var(--green)"><strong>β-2</strong><br>Vasodilation + Bronchodilation<br><span style="color:var(--text2);font-size:0.72rem">Relaxes smooth muscle, ↑muscle perfusion, releases lactate as fuel [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--red)"><strong style="color:var(--red)">α-1</strong><br><strong>Vasoconstriction</strong><br><span style="color:var(--text2);font-size:0.72rem">↑SVR, ↑MAP · Shunts blood from splanchnic/skin → muscles [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--blue)"><strong style="color:var(--blue)">β-1</strong><br><strong>Inotropy + Chronotropy</strong><br><span style="color:var(--text2);font-size:0.72rem">↑Contractility, ↑HR → ↑CO via Ca²⁺ influx [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--green)"><strong style="color:var(--green)">β-2</strong><br><strong>Vasodilation + Bronchodilation</strong><br><span style="color:var(--text2);font-size:0.72rem">Relaxes smooth muscle · ↑muscle perfusion · Releases lactate as fuel [1]</span></div>
 </div>
 </div>
 
 <div style="overflow-x:auto">
-<table><tr><th>Agent</th><th>α1</th><th>β1</th><th>β2</th><th>Other</th><th>Net Hemodynamic Effect</th></tr>
-<tr><td><strong>Norepinephrine</strong></td><td>++++</td><td>++</td><td>+</td><td>—</td><td>↑↑SVR (vasoconstriction) + mild inotropy → ↑MAP</td></tr>
-<tr><td><strong>Vasopressin</strong></td><td>—</td><td>—</td><td>—</td><td>V1, V2</td><td>Non-catecholamine vasoconstriction; ↑free water reabsorption</td></tr>
-<tr><td><strong>Epinephrine</strong></td><td>+++</td><td>++++</td><td>+++</td><td>—</td><td>Low dose: ↑CO (β1) · High dose: ↑SVR (α1) · May ↑lactate (β2)</td></tr>
-<tr><td><strong>Phenylephrine</strong></td><td>++++</td><td>—</td><td>—</td><td>—</td><td>Pure vasoconstriction; reflex bradycardia; ↑afterload</td></tr>
-<tr><td><strong>Angiotensin II</strong></td><td>—</td><td>—</td><td>—</td><td>AT1</td><td>RAAS-mediated vasoconstriction</td></tr>
-<tr><td><strong>Dopamine</strong></td><td>++ (high)</td><td>++ (mid)</td><td>—</td><td>D1, D2 (low)</td><td>Dose-dependent: low=renal vasodilation · mid=inotropy · high=vasoconstriction</td></tr>
-<tr><td><strong>Dobutamine</strong></td><td>+</td><td>++++</td><td>++</td><td>—</td><td>↑↑Inotropy + ↑CO; may ↓SVR (vasodilation from β2)</td></tr></table>
+<table style="border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:10px;overflow:hidden">
+<thead>
+<tr style="background:var(--bg2)">
+<th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border)">Agent</th>
+<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--red)">α1</th>
+<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--blue)">β1</th>
+<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--green)">β2</th>
+<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--purple)">Other</th>
+<th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border)">Net Hemodynamic Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border)">
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Norepinephrine</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--red)">++++</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--blue)">++</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--green)">+</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">↑↑SVR <span style="color:var(--red)">(vasoconstriction)</span> + mild inotropy → ↑MAP</td>
+</tr>
+<tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Vasopressin</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:600;color:var(--purple)">V1, V2</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Non-catecholamine vasoconstriction; ↑free water reabsorption</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border)">
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Epinephrine</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--red)">+++</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--blue)">++++</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--green)">+++</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Low dose: ↑CO <span style="color:var(--blue)">(β1)</span> · High dose: ↑SVR <span style="color:var(--red)">(α1)</span> · May ↑lactate <span style="color:var(--green)">(β2)</span></td>
+</tr>
+<tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Phenylephrine</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--red)">++++</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Pure <span style="color:var(--red)">vasoconstriction</span>; reflex bradycardia; ↑afterload</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border)">
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Angiotensin II</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:600;color:var(--purple)">AT1</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">RAAS-mediated vasoconstriction</td>
+</tr>
+<tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Dopamine</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--red)">++ <span style="font-size:0.65rem;font-weight:400">(high)</span></td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--blue)">++ <span style="font-size:0.65rem;font-weight:400">(mid)</span></td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:600;color:var(--purple)">D1, D2 <span style="font-size:0.65rem;font-weight:400">(low)</span></td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Dose-dependent: low=renal vasodilation · mid=inotropy · high=vasoconstriction</td>
+</tr>
+<tr>
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Dobutamine</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--red)">+</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--blue)">++++</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--green)">++</td>
+<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">↑↑Inotropy + ↑CO; may <span style="color:var(--green)">↓SVR</span> (vasodilation from β2)</td>
+</tr>
+</tbody>
+</table>
 </div>
 
-<div class="warn-box">⚠️ <strong>Clinical Pearl [1]:</strong> If phenylephrine (pure α1) worsens shock → suspect cardiogenic component (↑afterload harmful). If dobutamine (β1/β2) worsens shock → vasodilatory component dominant. Use agent response to test your hemodynamic hypothesis.</div>
-</div></div>
+<div class="warn-box" style="margin-top:1rem">⚠️ <strong>Hypothesis Testing [1]:</strong> If phenylephrine (pure α1) worsens shock → suspect cardiogenic component (↑afterload harmful). If dobutamine (β1/β2) worsens → vasodilatory component dominant. Use agent response to test your hemodynamic hypothesis.</div>
 
 <!-- ASSESSMENT -->
 <div class="sub-content" id="sub0-4"><div class="card"><h3>🔍 Assessment & Monitoring</h3>
