@@ -173,131 +173,56 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 
 <!-- ===== ETIOLOGIES (NEW FIRST TAB) ===== -->
 <div class="sub-content active" id="sub0-0"><div class="card"><h3>🦠 Etiologies of Distributive Shock</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Distributive shock accounts for the majority of shock presentations in the ICU. Understanding the specific etiology is essential because it directly determines management — from source control in sepsis to IM epinephrine in anaphylaxis. [1][5]</p>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Distributive shock accounts for the majority (~66%) of shock in ICU. Identifying the specific etiology directly determines management. [1][5]</p>
 
-<h4>⚡ Quick Differentiation</h4>
-<table>
-<tr><th>Feature</th><th>Septic</th><th>Anaphylactic</th><th>Neurogenic</th><th>Adrenal</th></tr>
-<tr><td><strong>Onset</strong></td><td>Hours (insidious)</td><td>Minutes</td><td>Immediate post-injury</td><td>Hours–days</td></tr>
-<tr><td><strong>HR</strong></td><td>↑↑ Tachycardia</td><td>↑↑ Tachycardia</td><td>↓ Bradycardia</td><td>↑ Tachycardia</td></tr>
-<tr><td><strong>Temperature</strong></td><td>Fever or hypothermia</td><td>Normal</td><td>Poikilothermia</td><td>May be febrile</td></tr>
-<tr><td><strong>Key Clue</strong></td><td>Infectious source + fever</td><td>Exposure + urticaria/angioedema</td><td>Spinal injury level + warm below</td><td>Steroid hx + hyponatremia</td></tr>
-<tr><td><strong>First Treatment</strong></td><td>Abx + fluids + NE</td><td>IM Epinephrine</td><td>NE or Phenylephrine</td><td>IV Hydrocortisone</td></tr>
-</table>
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.5rem;border:1px solid var(--border)">
+<h4 style="margin-bottom:0.6rem">⚡ Quick Differentiation</h4>
+<div style="overflow-x:auto">
+<table style="margin-top:0"><tr><th>Feature</th><th>Septic</th><th>Anaphylactic</th><th>Neurogenic</th><th>Adrenal</th></tr><tr><td><strong>Onset</strong></td><td>Hours</td><td>Minutes</td><td>Immediate post-injury</td><td>Hours–days</td></tr><tr><td><strong>HR</strong></td><td>↑↑</td><td>↑↑</td><td>↓ Bradycardia</td><td>↑</td></tr><tr><td><strong>Temp</strong></td><td>Fever/hypothermia</td><td>Normal</td><td>Poikilothermia</td><td>May be febrile</td></tr><tr><td><strong>Key Clue</strong></td><td>Source + fever</td><td>Exposure + urticaria</td><td>Spinal level + warm below</td><td>Steroid hx + hypoNa</td></tr><tr><td><strong>First Tx</strong></td><td>Abx + fluids + NE</td><td>IM Epinephrine</td><td>NE or Phenylephrine</td><td>IV Hydrocortisone</td></tr></table>
+</div>
+</div>
 
-<button class="expand-toggle" onclick="toggleAllDetails(this)" style="margin-top:0.75rem">📂 Expand All</button>
+<h4 style="font-size:0.92rem;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);color:var(--text1)">📋 Etiology Deep Dives</h4>
 
 <details class="collapsible" open><summary>Septic Shock (62% of all shock)</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Definition (Sepsis-3):</strong> Sepsis with persisting hypotension requiring vasopressors to maintain MAP ≥65 mmHg AND lactate >2 mmol/L despite adequate volume resuscitation. [1][5]</p>
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Dysregulated host response to infection → systemic cytokine release (TNF-α, IL-1, IL-6) → endothelial activation → vasodilation + capillary leak + microthrombosis → organ dysfunction. [2][5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Definition (Sepsis-3):</strong> Sepsis with persisting hypotension requiring vasopressors for MAP ≥65 mmHg AND lactate >2 mmol/L despite adequate volume resuscitation. [1][5]</p>
 <p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Common Sources:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
-<li><strong>Pulmonary</strong> — pneumonia (most common), empyema</li>
-<li><strong>Abdominal</strong> — peritonitis, cholangitis, abscess, ischemic bowel</li>
-<li><strong>Urinary</strong> — pyelonephritis, obstructed infected system</li>
-<li><strong>Skin/Soft tissue</strong> — necrotizing fasciitis, cellulitis</li>
-<li><strong>Line-related</strong> — central line-associated bloodstream infection (CLABSI)</li>
-<li><strong>CNS</strong> — meningitis (less common)</li>
-</ul>
-<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management Priorities:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
-<li>Early broad-spectrum antibiotics (ideally within 1 hour) [5][2]</li>
-<li>Source control (surgical, IR, or procedural) as soon as feasible [5]</li>
-<li>IV crystalloid resuscitation (30 mL/kg within first 3 hours per SSC; individualize) [4]</li>
-<li>Norepinephrine for MAP ≥65 mmHg [1][4]</li>
-<li>Vasopressin as second agent [5]</li>
-<li>Hydrocortisone 200mg/day if refractory [2][5]</li>
-</ul>
-<div class="warn-box" style="margin-top:0.5rem">⚠️ <strong>Time-sensitive:</strong> Each hour delay in appropriate antibiotics associated with measurable increase in mortality. [5]</div>
+<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem"><li><strong>Pulmonary</strong> — pneumonia (most common), empyema</li><li><strong>Abdominal</strong> — peritonitis, cholangitis, abscess, ischemic bowel</li><li><strong>Urinary</strong> — pyelonephritis, obstructed infected system</li><li><strong>Skin/Soft tissue</strong> — necrotizing fasciitis, cellulitis</li><li><strong>Line-related</strong> — CLABSI</li></ul>
+<p style="font-size:0.82rem"><strong>Management:</strong> Early broad-spectrum antibiotics (within 1hr) + source control → IV crystalloid → norepinephrine → vasopressin → hydrocortisone if refractory. [5][2]</p>
 </div></details>
 
 <details class="collapsible"><summary>Anaphylactic Shock</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> IgE-mediated mast cell and basophil degranulation → massive histamine release → profound vasodilation + bronchospasm + capillary leak + mucosal edema. Non-IgE (anaphylactoid) reactions also possible. [5]</p>
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Clinical Features:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
-<li>Rapid onset (seconds to minutes after exposure)</li>
-<li>Urticaria, angioedema, flushing (cutaneous in ~90%)</li>
-<li>Bronchospasm, stridor, laryngeal edema (airway)</li>
-<li>Hypotension, tachycardia, cardiovascular collapse</li>
-<li>GI: nausea, vomiting, cramping</li>
-</ul>
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Common Triggers:</strong> Drugs (antibiotics, NSAIDs, NMBAs), foods (nuts, shellfish), insect stings, latex, contrast media, blood products.</p>
-<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
-<li><strong>STOP</strong> the offending agent immediately</li>
-<li><strong>IM Epinephrine 0.3–0.5mg</strong> (anterolateral thigh) — repeat q5–15 min [5]</li>
-<li>Aggressive IV fluid resuscitation (1–2L bolus crystalloid)</li>
-<li>Secure airway early (intubation if laryngeal edema)</li>
-<li>Adjuncts: H1/H2 blockers, corticosteroids (prevent biphasic), nebulized albuterol for bronchospasm</li>
-<li>Refractory: IV epinephrine infusion, vasopressin [5]</li>
-</ul>
-<div class="bad-box" style="margin-top:0.5rem"><strong>⚠️ Do NOT substitute antihistamines or steroids for epinephrine.</strong> Epinephrine is the ONLY first-line treatment.</div>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> IgE-mediated mast cell degranulation → massive histamine release → vasodilation + bronchospasm + capillary leak + mucosal edema. [5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Clinical Features:</strong> Rapid onset after exposure, urticaria/angioedema (~90%), bronchospasm/stridor, hypotension, GI symptoms.</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Common Triggers:</strong> Antibiotics, NSAIDs, NMBAs, foods, insect stings, latex, contrast, blood products.</p>
+<p style="font-size:0.82rem"><strong>Management:</strong> STOP offending agent → <strong>IM Epinephrine 0.3–0.5mg</strong> (repeat q5–15min) → aggressive IV fluids → secure airway → adjuncts (H1/H2 blockers, steroids, albuterol). [5]</p>
+<div class="bad-box">⚠️ Epinephrine is the ONLY first-line treatment. Do NOT substitute antihistamines or steroids.</div>
 </div></details>
 
 <details class="collapsible"><summary>Neurogenic Shock</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Disruption of descending sympathetic pathways (typically cervical or high thoracic spinal cord injury T6 and above) → loss of vascular tone + loss of cardiac accelerator fibers → vasodilation + bradycardia. Unopposed vagal tone. [5]</p>
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Distinguishing Features:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
-<li>Hypotension + <strong>bradycardia</strong> (unlike all other shock types which are tachycardic)</li>
-<li>Warm, flushed skin <strong>below</strong> the level of injury</li>
-<li>Poikilothermia (inability to regulate temperature)</li>
-<li>Often concurrent with spinal shock (areflexia below level)</li>
-</ul>
-<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
-<li>Spinal stabilization and surgical decompression as indicated [5]</li>
-<li>Target MAP 85–90 mmHg for spinal cord perfusion (first 5–7 days) [5]</li>
-<li>Norepinephrine or phenylephrine first-line</li>
-<li>Atropine or isoproterenol for symptomatic bradycardia</li>
-<li>Careful volume — these patients are euvolemic but vasodilated</li>
-</ul>
-<div class="warn-box" style="margin-top:0.5rem">⚠️ <strong>Rule out hemorrhage.</strong> Trauma patients with spinal injury may have concurrent hemorrhagic shock — do not attribute all hypotension to neurogenic cause without excluding bleeding.</div>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Disruption of descending sympathetic pathways (cervical/high thoracic SCI, T6 and above) → loss of vascular tone + loss of cardiac accelerator fibers → vasodilation + bradycardia. [5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Distinguishing Features:</strong> Hypotension + <strong>bradycardia</strong> (unlike all other shock types); warm, flushed skin below level; poikilothermia.</p>
+<p style="font-size:0.82rem"><strong>Management:</strong> Spinal stabilization → Target MAP 85–90 mmHg (spinal cord perfusion) → Norepinephrine or phenylephrine → Atropine for symptomatic bradycardia. [5]</p>
+<div class="warn-box">⚠️ Rule out hemorrhage. Trauma patients may have concurrent hemorrhagic shock — do not attribute all hypotension to neurogenic cause.</div>
 </div></details>
 
-<details class="collapsible"><summary>Adrenal Crisis (Relative Adrenal Insufficiency)</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Inadequate cortisol response to physiologic stress → impaired vascular tone, decreased catecholamine sensitivity, inability to mount appropriate stress response. Can be primary (adrenal destruction) or secondary (chronic steroid suppression). [2][5]</p>
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Clinical Clues:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
-<li>History of chronic corticosteroid use (most common cause in ICU)</li>
-<li>Refractory hypotension despite adequate fluids and vasopressors</li>
-<li>Hyponatremia, hyperkalemia (primary)</li>
-<li>Hypoglycemia</li>
-<li>Eosinophilia</li>
-</ul>
-<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
-<li><strong>IV Hydrocortisone 200mg/day</strong> (50mg q6h or 200mg continuous infusion) [2][5]</li>
-<li>Dramatic improvement in vasopressor responsiveness often seen within hours</li>
-<li>In septic shock: consider stress-dose steroids if on ≥2 vasopressors or escalating doses [2]</li>
-</ul>
+<details class="collapsible"><summary>Adrenal Crisis</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Inadequate cortisol response to stress → impaired vascular tone + decreased catecholamine sensitivity. Most common ICU cause: chronic steroid suppression. [2][5]</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Clues:</strong> Steroid history, refractory hypotension despite fluids + vasopressors, hyponatremia, hyperkalemia, hypoglycemia, eosinophilia.</p>
+<p style="font-size:0.82rem"><strong>Management:</strong> <strong>IV Hydrocortisone 200mg/day</strong> (50mg q6h). Often dramatic improvement in vasopressor responsiveness within hours. [2][5]</p>
 </div></details>
 
-<details class="collapsible"><summary>Post-Cardiopulmonary Bypass Vasoplegia</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Contact activation with the bypass circuit → systemic inflammatory response → NO-mediated vasoplegia. Incidence 5–25% post-CPB. [9]</p>
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Risk Factors:</strong> Longer CPB time, preoperative ACEi/ARB, low LVEF, preoperative vasopressors.</p>
-<p style="font-size:0.82rem;margin-bottom:0.4rem"><strong>Management:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem">
-<li>Norepinephrine first-line</li>
-<li>Vasopressin (early addition)</li>
-<li>Methylene blue 1–2 mg/kg IV (inhibits guanylate cyclase/NO pathway)</li>
-<li>Hydroxocobalamin (NO scavenger) — emerging evidence [9]</li>
-</ul>
+<details class="collapsible"><summary>Post-CPB Vasoplegia</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Pathophysiology:</strong> Contact activation with bypass circuit → systemic inflammatory response → NO-mediated vasoplegia. Incidence 5–25% post-CPB. [9]</p>
+<p style="font-size:0.82rem"><strong>Management:</strong> Norepinephrine → Vasopressin → Methylene blue (inhibits NO/guanylate cyclase) → Hydroxocobalamin (NO scavenger). [9]</p>
 </div></details>
 
 <details class="collapsible"><summary>Drug-Induced Distributive Shock</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Common Culprits:</strong></p>
-<ul style="font-size:0.82rem;color:var(--text2);padding-left:1.2rem;margin-bottom:0.5rem">
-<li><strong>Calcium channel blockers</strong> — profound vasodilation + negative inotropy</li>
-<li><strong>Sedatives/anesthetics</strong> — propofol, volatile agents, dexmedetomidine</li>
-<li><strong>Vasodilators</strong> — nitroprusside, nitroglycerin, hydralazine</li>
-<li><strong>ACEi/ARB</strong> — can contribute to refractory vasoplegia</li>
-<li><strong>Cytokine release syndrome</strong> — post CAR-T or immunotherapy</li>
-</ul>
-<p style="font-size:0.82rem"><strong>Key Principle:</strong> Identify and discontinue offending agent. Supportive vasopressor therapy. For CCB overdose: high-dose insulin euglycemic therapy, IV calcium, lipid emulsion.</p>
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Culprits:</strong> Calcium channel blockers, sedatives/anesthetics (propofol, volatiles), vasodilators (nitroprusside, NTG), ACEi/ARB, cytokine release syndrome (post CAR-T).</p>
+<p style="font-size:0.82rem"><strong>Key Principle:</strong> Identify and discontinue offending agent. Supportive vasopressor therapy. For CCB OD: high-dose insulin, IV calcium, lipid emulsion.</p>
 </div></details>
-
 </div></div>
-
+	
 <!-- ===== PATHOPHYSIOLOGY ===== -->
 <div class="sub-content" id="sub0-1"><div class="card"><h3>🔬 Pathophysiology of Distributive Shock</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Distributive shock is characterized by inappropriate systemic vasodilation leading to maldistribution of blood flow, decreased SVR, and inadequate tissue oxygen utilization despite often preserved or elevated cardiac output. The primary defect is in the periphery. [1]</p><div class="param-grid"><div class="param-item"><div class="param-name">Vasodilatory Mechanism</div><div class="param-def">Excess proinflammatory mediators and cytokines enter systemic circulation → vasoplegia and organ dysfunction. The main deficit lies in the periphery — decreased SVR and altered oxygen extraction. [1][2]</div></div><div class="param-item"><div class="param-name">Nitric Oxide (NO) Pathway</div><div class="param-def">Inflammatory signaling upregulates iNOS → excessive NO production → activates guanylate cyclase → smooth muscle relaxation → vasodilation. Also: lactic acidosis opens K-ATP channels → membrane hyperpolarization → catecholamine resistance. [5]</div></div><div class="param-item"><div class="param-name">Cytokine Cascade</div><div class="param-def">In septic shock: TNF-α, IL-1, IL-6 drive endothelial activation, capillary leak, microcirculatory dysfunction, and activation of coagulation cascades. [2]</div></div><div class="param-item"><div class="param-name">Relative Hypovolemia</div><div class="param-def">Vasodilation dramatically increases venous capacitance → blood pools peripherally → effective circulating volume decreases even without absolute fluid loss → ↓ venous return and preload. [1][6]</div></div><div class="param-item"><div class="param-name">Capillary Leak & Glycocalyx Injury</div><div class="param-def">Inflammatory mediators damage the endothelial glycocalyx and tight junctions → plasma extravasation → interstitial edema → ↓ effective circulating volume + impaired O₂ diffusion distance. [1][5]</div></div><div class="param-item"><div class="param-name">Microcirculatory Dysfunction</div><div class="param-def">↓ Capillary density, ↓ perfused capillaries, ↑ heterogeneity of flow. Results in "shunting" — blood bypasses exchange vessels. Persistence predicts poor outcomes independent of macrovascular correction. [4]</div></div><div class="param-item"><div class="param-name">Myocardial Depression</div><div class="param-def">Circulating myocardial depressant factors (TNF-α, IL-1β, NO) → biventricular dilation with reduced EF. Often reversible. Contributes to "cold" (late) septic shock phenotype. [5]</div></div></div></div></div>
 
