@@ -173,6 +173,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 .sa-result-value{font-family:monospace;font-size:1.6rem;font-weight:800;color:var(--green);text-align:center;margin:0.5rem 0 0.25rem}
 .sa-result-label{font-size:0.72rem;color:var(--text2);text-align:center}
 .sa-explanation{margin-top:0.75rem;padding:0.75rem;background:var(--bg2);border-radius:8px;font-size:0.78rem;color:var(--text2);border:1px dashed var(--border);min-height:2.5rem}
+.assess-panel{display:none}.assess-panel.active{display:block}
 </style>
 </head>
 <body>
@@ -402,25 +403,155 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 
 <!-- ASSESSMENT -->
 <div class="sub-content" id="sub0-4"><div class="card"><h3>🔍 Assessment & Monitoring</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Continuous feedback loop: assess → intervene → reassess → adjust. [1][4]</p>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Continuous feedback loop: assess → intervene → reassess → adjust. [1][4]</p>
 
-<h4>🕐 Initial Assessment (First 1–3 Hours)</h4>
-<div class="param-grid"><div class="param-item"><div class="param-name">Hemodynamic Stabilization</div><div class="param-def">MAP ≥65 mmHg (higher if chronic HTN). At what vasopressor dose? What is the trajectory? [4]</div></div><div class="param-item"><div class="param-name">Volume Status & Fluid Responsiveness</div><div class="param-def">After initial 30 mL/kg: assess responsiveness via PLR (spontaneous breathing), PPV/SVV (ventilated, regular rhythm), or mini-fluid challenge. If responsive → more fluid. If not → vasopressors. [4]</div></div><div class="param-item"><div class="param-name">Source Identification</div><div class="param-def">Cultures before antibiotics (if obtainable within minutes). Imaging as needed. Assess surgical source control needs. [5]</div></div></div>
+<!-- PHASE TABS -->
+<div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
+<button class="sub-tab active" onclick="switchAssess(0)" id="assessBtn0">⏱️ Initial (1-3h)</button>
+<button class="sub-tab" onclick="switchAssess(1)" id="assessBtn1">🫀 Perfusion</button>
+<button class="sub-tab" onclick="switchAssess(2)" id="assessBtn2">🧪 Markers</button>
+<button class="sub-tab" onclick="switchAssess(3)" id="assessBtn3">💊 Pressor Response</button>
+<button class="sub-tab" onclick="switchAssess(4)" id="assessBtn4">🔄 Reassessment</button>
+</div>
 
-<h4 style="margin-top:1rem">🫀 Perfusion Windows [1][4]</h4>
-<div class="param-grid"><div class="param-item"><div class="param-name">🧠 Neurologic</div><div class="param-def">Confusion, agitation, obtundation. Often earliest sign. Assess RASS, CAM-ICU. [1]</div></div><div class="param-item"><div class="param-name">🩸 Renal</div><div class="param-def">UOP ≥0.5 mL/kg/hr target. Oliguria = early hypoperfusion. Rising Cr = established AKI. Trend > single value. [6]</div></div><div class="param-item"><div class="param-name">🖐️ Cutaneous</div><div class="param-def">CRT target ≤3 sec (ANDROMEDA-SHOCK). Mottling score 0–5. Cool extremities in "warm" shock = transition to cold phenotype. [4]</div></div></div>
+<!-- INITIAL ASSESSMENT -->
+<div class="assess-panel active" id="assessPanel0">
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid var(--border)">
+<h4 style="font-size:0.88rem;margin-bottom:0.75rem;color:var(--text1)">🕐 First 1–3 Hours: Stabilize & Identify</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem">
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-top:3px solid var(--red)">
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">🎯 MAP Target</div>
+<div style="font-size:0.78rem;color:var(--text2)">MAP 65 or higher if chronic HTN. At what pressor dose? What is the trajectory? [4]</div>
+</div>
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-top:3px solid var(--blue)">
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">💧 Fluid Response</div>
+<div style="font-size:0.78rem;color:var(--text2)">After 30 mL/kg: PLR (spont breathing), PPV/SVV (vented), or mini-challenge. Responsive = more fluid. Not = pressors. [4]</div>
+</div>
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-top:3px solid var(--amber)">
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">🔍 Source ID</div>
+<div style="font-size:0.78rem;color:var(--text2)">Cultures before abx (if obtainable in minutes). Imaging PRN. Assess surgical source control needs. [5]</div>
+</div>
+</div>
+</div>
+</div>
 
-<h4 style="margin-top:1rem">🧪 Metabolic Markers</h4>
-<div class="param-grid"><div class="param-item"><div class="param-name">Lactate</div><div class="param-def">Target ≥20% decrease q2h until normalized. Persistence >2 after 24h = poor prognosis. Serial trending > single values. [4]</div></div><div class="param-item"><div class="param-name">ScvO₂</div><div class="param-def">Low (<65%) = inadequate O₂ delivery. High (>70%) in sepsis may = impaired extraction (NOT reassuring). [4]</div></div><div class="param-item"><div class="param-name">Pv-aCO₂ Gap</div><div class="param-def">>6 mmHg = inadequate CO relative to demand, even if ScvO₂ normal. Optimize flow. [4]</div></div></div>
+<!-- PERFUSION WINDOWS -->
+<div class="assess-panel" id="assessPanel1">
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid var(--border)">
+<h4 style="font-size:0.88rem;margin-bottom:0.75rem;color:var(--text1)">🫀 Perfusion Windows [1][4]</h4>
+<p style="font-size:0.78rem;color:var(--text2);margin-bottom:0.75rem">Three clinical "windows" to assess end-organ perfusion at the bedside — no labs required</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem">
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-left:3px solid var(--purple);text-align:center">
+<div style="font-size:1.2rem;margin-bottom:0.3rem">🧠</div>
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">Neuro</div>
+<div style="font-size:0.75rem;color:var(--text2)">Confusion, agitation, obtundation. Often <strong>earliest sign</strong>. RASS, CAM-ICU. [1]</div>
+</div>
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-left:3px solid var(--amber);text-align:center">
+<div style="font-size:1.2rem;margin-bottom:0.3rem">🩸</div>
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">Renal</div>
+<div style="font-size:0.75rem;color:var(--text2)">UOP target 0.5 mL/kg/hr. Oliguria = early sign. Rising Cr = established AKI. Trend > single value. [6]</div>
+</div>
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-left:3px solid var(--teal);text-align:center">
+<div style="font-size:1.2rem;margin-bottom:0.3rem">🖐️</div>
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">Skin</div>
+<div style="font-size:0.75rem;color:var(--text2)">CRT target 3 sec or less (ANDROMEDA-SHOCK). Mottling score 0-5. Cool in "warm" shock = cold transition. [4]</div>
+</div>
+</div>
+</div>
 
-<h4 style="margin-top:1rem">🫁 Echocardiography</h4>
-<div class="param-grid"><div class="param-item"><div class="param-name">Bedside Echo/POCUS</div><div class="param-def">First-line imaging. In distributive: hyperdynamic LV, small cavity, IVC variability. Red flags for other Dx: dilated poorly-contracting LV (cardiogenic), RV dilation (PE), pericardial effusion (tamponade). [4]</div></div></div>
+<div style="margin-top:0.75rem">
+<h4 style="font-size:0.85rem;margin-bottom:0.5rem;color:var(--text1)">🫁 Echocardiography</h4>
+<div class="param-item"><div class="param-name">Bedside Echo/POCUS</div><div class="param-def">First-line imaging. In distributive: hyperdynamic LV, small cavity, IVC variability. Red flags for other Dx: dilated poorly-contracting LV (cardiogenic), RV dilation (PE), pericardial effusion (tamponade). [4]</div></div>
+</div>
+</div>
 
-<h4 style="margin-top:1rem">💊 Vasopressor Responsiveness</h4>
-<div class="param-grid"><div class="param-item"><div class="param-name">NEE Trend</div><div class="param-def">Escalating NEE = worsening. Decreasing NEE = resolving. Track as composite vasopressor burden metric. [7]</div></div><div class="param-item"><div class="param-name">MAP/NEE Ratio</div><div class="param-def">Higher = better (good MAP at low pressor cost). ≥325: ~20% mort | 136–324: ~35% | <136: ~55%. Validated in septic shock. [8]</div></div></div>
+<!-- METABOLIC MARKERS -->
+<div class="assess-panel" id="assessPanel2">
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid var(--border)">
+<h4 style="font-size:0.88rem;margin-bottom:0.75rem;color:var(--text1)">🧪 Metabolic Markers</h4>
+<table style="border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:10px;overflow:hidden">
+<thead>
+<tr style="background:var(--bg2)">
+<th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border);width:25%">Marker</th>
+<th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border)">Target / Interpretation</th>
+<th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border);width:25%">Red Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border)">
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Lactate</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Target 20% decrease q2h until normal. Serial trending > single values. [4]</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--red)">Persistent >2 after 24h = poor prognosis</td>
+</tr>
+<tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">ScvO2</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Low (<65%) = inadequate O2 delivery. [4]</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--red)">High (>70%) in sepsis = impaired extraction (NOT reassuring)</td>
+</tr>
+<tr>
+<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Pv-aCO2 Gap</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Normal <6 mmHg. Reflects adequacy of CO relative to demand. [4]</td>
+<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--red)">>6 mmHg = inadequate flow even if ScvO2 normal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warn-box">⚠️ <strong>Lactate Pearl [1]:</strong> Not all lactatemia = hypoperfusion. Beta-2 stimulation (epinephrine, albuterol) releases lactate as fuel — type B lactic acidosis. Context matters.</div>
+</div>
 
-<h4 style="margin-top:1rem">🔄 Ongoing & Reassessment Triggers</h4>
-<div class="param-grid"><div class="param-item"><div class="param-name">Routine (q2–6h)</div><div class="param-def">Lactate trend, UOP, vasopressor doses/NEE, perfusion windows, fluid balance, reassess fluid responsiveness before boluses. [4]</div></div><div class="param-item"><div class="param-name">Escalate If</div><div class="param-def">New/↑ vasopressor need, rising lactate, new organ dysfunction, failure to improve at 6–12h. Consider: inadequate source control? New infection? Bleeding? Adrenal insufficiency? Wrong shock type?</div></div><div class="param-item"><div class="param-name">De-Resuscitation Signals</div><div class="param-def">MAP at target on stable/↓ pressors, lactate normalizing, UOP adequate, no longer fluid responsive → target negative balance (Phase 4). [1][4]</div></div></div>
+<!-- VASOPRESSOR RESPONSIVENESS -->
+<div class="assess-panel" id="assessPanel3">
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid var(--border)">
+<h4 style="font-size:0.88rem;margin-bottom:0.75rem;color:var(--text1)">💊 Vasopressor Responsiveness</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border:1px solid var(--border)">
+<div style="font-weight:700;font-size:0.85rem;color:var(--tab-accent);margin-bottom:0.4rem">NEE Trend</div>
+<div style="font-size:0.78rem;color:var(--text2);margin-bottom:0.5rem">Track composite vasopressor burden over time. [7]</div>
+<div style="display:flex;gap:0.4rem;flex-wrap:wrap">
+<span class="badge badge-red">Rising = worsening</span>
+<span class="badge badge-green">Falling = resolving</span>
+</div>
+</div>
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border:1px solid var(--border)">
+<div style="font-weight:700;font-size:0.85rem;color:var(--tab-accent);margin-bottom:0.4rem">MAP/NEE Ratio</div>
+<div style="font-size:0.78rem;color:var(--text2);margin-bottom:0.5rem">Higher = better (good MAP at low pressor cost). [8]</div>
+<div style="display:flex;gap:0.3rem;flex-wrap:wrap">
+<span class="badge badge-green">325+ ~20% mort</span>
+<span class="badge badge-amber">136-324 ~35%</span>
+<span class="badge badge-red"><136 ~55%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="warn-box">⚠️ <strong>Hypothesis Testing [1]:</strong> Use agent response to test your hemodynamic hypothesis. Worsens on phenylephrine? Suspect cardiogenic. Worsens on dobutamine? Vasodilatory dominant.</div>
+</div>
+
+<!-- REASSESSMENT TRIGGERS -->
+<div class="assess-panel" id="assessPanel4">
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;border:1px solid var(--border)">
+<h4 style="font-size:0.88rem;margin-bottom:0.75rem;color:var(--text1)">🔄 Ongoing & Reassessment Triggers</h4>
+<div style="display:grid;grid-template-columns:1fr;gap:0.6rem">
+
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-left:3px solid var(--blue)">
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">🕐 Routine (q2-6h)</div>
+<div style="font-size:0.78rem;color:var(--text2)">Lactate trend, UOP, pressor doses/NEE, perfusion windows, fluid balance, reassess fluid responsiveness before boluses. [4]</div>
+</div>
+
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-left:3px solid var(--red)">
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">⚠️ Escalate If</div>
+<div style="font-size:0.78rem;color:var(--text2)">New or rising pressor need, rising lactate, new organ dysfunction, failure to improve at 6-12h.</div>
+<div style="font-size:0.75rem;color:var(--red);margin-top:0.3rem;font-weight:600">Ask: Inadequate source control? New infection? Bleeding? Adrenal insufficiency? Wrong shock type?</div>
+</div>
+
+<div style="background:var(--card);border-radius:8px;padding:0.75rem;border-left:3px solid var(--green)">
+<div style="font-weight:700;font-size:0.82rem;color:var(--text1);margin-bottom:0.3rem">✅ De-Resuscitation Signals</div>
+<div style="font-size:0.78rem;color:var(--text2)">MAP at target on stable or decreasing pressors, lactate normalizing, UOP adequate, no longer fluid responsive → target negative balance (Phase 4). [1][4]</div>
+</div>
+
+</div>
+</div>
+</div>
+
 </div></div>
 
 <!-- REHAB -->
@@ -576,7 +707,16 @@ function setEscStep(idx){
   }
   cards[idx].scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-
+// Assess Block
+function switchAssess(idx){
+  for(var i=0;i<5;i++){
+    var btn=document.getElementById('assessBtn'+i);
+    var panel=document.getElementById('assessPanel'+i);
+    btn.classList.toggle('active',i===idx);
+    panel.classList.toggle('active',i===idx);
+  }
+}
+	
 // 2F: Readiness
 function updateReadiness(){
   var count=0;
