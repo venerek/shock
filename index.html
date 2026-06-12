@@ -175,6 +175,8 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 .sa-explanation{margin-top:0.75rem;padding:0.75rem;background:var(--bg2);border-radius:8px;font-size:0.78rem;color:var(--text2);border:1px dashed var(--border);min-height:2.5rem}
 .assess-panel{display:none}.assess-panel.active{display:block}
 .mgmt-panel{display:none}.mgmt-panel.active{display:block}
+.mini-tab{padding:0.4rem 0.75rem;border-radius:20px;font-size:0.72rem;font-weight:600;cursor:pointer;background:var(--pill-bg);color:var(--text2);border:none;transition:all 0.2s;white-space:nowrap}
+.mini-tab.active{background:var(--pill-active);color:var(--pill-active-text)}
 </style>
 </head>
 <body>
@@ -308,9 +310,9 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 
 <!-- MANAGEMENT MINI-TABS -->
 <div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
-<button class="sub-tab active" onclick="switchMgmt(0)" id="mgmtBtn0">🚨 Initial Resuscitation</button>
-<button class="sub-tab" onclick="switchMgmt(1)" id="mgmtBtn1">💉 Pharmacology</button>
-<button class="sub-tab" onclick="switchMgmt(2)" id="mgmtBtn2">📈 Escalation</button>
+<button class="mini-tab" onclick="switchMgmt(0)" id="mgmtBtn0">🚨 Initial Resuscitation</button>
+<button class="mini-tab" onclick="switchMgmt(1)" id="mgmtBtn1">💉 Pharmacology</button>
+<button class="mini-tab" onclick="switchMgmt(2)" id="mgmtBtn2">📈 Escalation</button>
 </div>
 
 <!-- INITIAL RESUSCITATION -->
@@ -476,11 +478,11 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 
 <!-- PHASE TABS -->
 <div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
-<button class="sub-tab active" onclick="switchAssess(0)" id="assessBtn0">⏱️ Initial (1-3h)</button>
-<button class="sub-tab" onclick="switchAssess(1)" id="assessBtn1">🫀 Perfusion</button>
-<button class="sub-tab" onclick="switchAssess(2)" id="assessBtn2">🧪 Markers</button>
-<button class="sub-tab" onclick="switchAssess(3)" id="assessBtn3">💊 Pressor Response</button>
-<button class="sub-tab" onclick="switchAssess(4)" id="assessBtn4">🔄 Reassessment</button>
+<button class="mini-tab" onclick="switchAssess(0)" id="assessBtn0">⏱️ Initial (1-3h)</button>
+<button class="mini-tab" onclick="switchAssess(1)" id="assessBtn1">🫀 Perfusion</button>
+<button class="mini-tab" onclick="switchAssess(2)" id="assessBtn2">🧪 Markers</button>
+<button class="mini-tab" onclick="switchAssess(3)" id="assessBtn3">💊 Pressor Response</button>
+<button class="mini-tab" onclick="switchAssess(4)" id="assessBtn4">🔄 Reassessment</button>
 </div>
 
 <!-- INITIAL ASSESSMENT -->
