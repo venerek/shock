@@ -261,15 +261,28 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <div class="param-grid"><div class="param-item"><div class="param-name">Volume Resuscitation</div><div class="param-def">IV crystalloid 30 mL/kg within first 3 hours (SSC). Individualize — assess fluid responsiveness before additional boluses. Excess fluid worsens outcomes. [4][5]</div></div><div class="param-item"><div class="param-name">Source Control</div><div class="param-def">Drain abscesses, debride necrotic tissue, remove infected devices, repair perforations. Every hour of delay matters. [5]</div></div><div class="param-item"><div class="param-name">Antimicrobials</div><div class="param-def">Empiric broad-spectrum within 1 hour. Cultures first if possible without delaying. De-escalate on results. [5][2]</div></div></div>
 
 <h4 style="margin-top:1rem">Vasopressor Pharmacology</h4>
-<table><tr><th>Agent</th><th>α1</th><th>β1</th><th>β2</th><th>Other</th><th>Effect</th></tr><tr><td><strong>Norepinephrine</strong></td><td>++++</td><td>++</td><td>+</td><td>—</td><td>Vasoconstriction + mild inotropy</td></tr><tr><td><strong>Vasopressin</strong></td><td>—</td><td>—</td><td>—</td><td>V1,V2</td><td>Non-catecholamine vasoconstriction</td></tr><tr><td><strong>Epinephrine</strong></td><td>+++</td><td>++++</td><td>+++</td><td>—</td><td>Dose-dependent: low=β, high=α</td></tr><tr><td><strong>Phenylephrine</strong></td><td>++++</td><td>—</td><td>—</td><td>—</td><td>Pure vasoconstriction</td></tr><tr><td><strong>Angiotensin II</strong></td><td>—</td><td>—</td><td>—</td><td>AT1</td><td>RAAS vasoconstriction</td></tr><tr><td><strong>Dobutamine</strong></td><td>+</td><td>++++</td><td>++</td><td>—</td><td>Inotropy (may ↓SVR)</td></tr></table>
 
-<h4 style="margin-top:1rem">Escalation Pathway [2][5]</h4>
-<p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">👆 Mark current step:</p>
-<div class="esc-stepper" id="escStepper"><button class="esc-step-btn" onclick="setEscStep(0)">Step 1: NE</button><button class="esc-step-btn" onclick="setEscStep(1)">Step 2: Vaso</button><button class="esc-step-btn" onclick="setEscStep(2)">Step 3: Adjuncts</button><button class="esc-step-btn" onclick="setEscStep(3)">De-escalation</button></div>
-<div class="abg-card escalate" id="escCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Norepinephrine (First-Line)</span></div><div class="abg-problem">"We consider norepinephrine the vasopressor of first choice" [1]. Target MAP ≥65 mmHg. [4]</div></div>
-<div class="abg-card escalate" id="escCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Vasopressin (0.01–0.04 U/min)</span></div><div class="abg-problem">Non-catecholamine; V1 receptors. Catecholamine-sparing. Delay associated with ~20% ↑ mortality per 10 mcg/min NE. [5]</div><div class="abg-safety">⚠️ Do not exceed 0.04 U/min. Do not titrate to MAP. [1]</div></div>
-<div class="abg-card escalate" id="escCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Adjuncts: AngII / Epinephrine / Hydrocortisone</span></div><div class="abg-problem"><strong>AngII:</strong> ATHOS-3 [7]. <strong>Epi:</strong> Refractory/inotropy needed [1]. <strong>Hydrocortisone 200mg/d:</strong> If ≥2 vasopressors or escalating doses. [2][5]<br><strong>Methylene Blue:</strong> Refractory vasoplegia (post-CPB, late septic). [9]</div></div>
-<div class="abg-card deescalate" id="escCard3"><div class="abg-header"><span class="abg-direction deescalate">↓ DE-ESCALATION</span><span class="abg-title">Weaning Vasopressors</span></div><div class="abg-problem">Phase 4: Wean adjuncts first → vasopressin last (or keep fixed until NE low) → NE last. Target negative fluid balance. Signal: MAP at target on stable/↓ doses, lactate normalizing, UOP improving. [1][4]</div></div>
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1rem;border:1px solid var(--border)">
+<h4 style="margin-bottom:0.5rem;font-size:0.85rem;color:var(--text1)">🔑 Receptor Effects</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;font-size:0.78rem">
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border-left:3px solid var(--red)"><strong>α-1</strong><br>Vasoconstriction<br><span style="color:var(--text2);font-size:0.72rem">↑SVR, ↑MAP, shunts blood from splanchnic/skin to muscles [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border-left:3px solid var(--blue)"><strong>β-1</strong><br>Inotropy + Chronotropy<br><span style="color:var(--text2);font-size:0.72rem">↑Contractility, ↑HR → ↑CO via Ca²⁺ influx [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border-left:3px solid var(--green)"><strong>β-2</strong><br>Vasodilation + Bronchodilation<br><span style="color:var(--text2);font-size:0.72rem">Relaxes smooth muscle, ↑muscle perfusion, releases lactate as fuel [1]</span></div>
+</div>
+</div>
+
+<div style="overflow-x:auto">
+<table><tr><th>Agent</th><th>α1</th><th>β1</th><th>β2</th><th>Other</th><th>Net Hemodynamic Effect</th></tr>
+<tr><td><strong>Norepinephrine</strong></td><td>++++</td><td>++</td><td>+</td><td>—</td><td>↑↑SVR (vasoconstriction) + mild inotropy → ↑MAP</td></tr>
+<tr><td><strong>Vasopressin</strong></td><td>—</td><td>—</td><td>—</td><td>V1, V2</td><td>Non-catecholamine vasoconstriction; ↑free water reabsorption</td></tr>
+<tr><td><strong>Epinephrine</strong></td><td>+++</td><td>++++</td><td>+++</td><td>—</td><td>Low dose: ↑CO (β1) · High dose: ↑SVR (α1) · May ↑lactate (β2)</td></tr>
+<tr><td><strong>Phenylephrine</strong></td><td>++++</td><td>—</td><td>—</td><td>—</td><td>Pure vasoconstriction; reflex bradycardia; ↑afterload</td></tr>
+<tr><td><strong>Angiotensin II</strong></td><td>—</td><td>—</td><td>—</td><td>AT1</td><td>RAAS-mediated vasoconstriction</td></tr>
+<tr><td><strong>Dopamine</strong></td><td>++ (high)</td><td>++ (mid)</td><td>—</td><td>D1, D2 (low)</td><td>Dose-dependent: low=renal vasodilation · mid=inotropy · high=vasoconstriction</td></tr>
+<tr><td><strong>Dobutamine</strong></td><td>+</td><td>++++</td><td>++</td><td>—</td><td>↑↑Inotropy + ↑CO; may ↓SVR (vasodilation from β2)</td></tr></table>
+</div>
+
+<div class="warn-box">⚠️ <strong>Clinical Pearl [1]:</strong> If phenylephrine (pure α1) worsens shock → suspect cardiogenic component (↑afterload harmful). If dobutamine (β1/β2) worsens shock → vasodilatory component dominant. Use agent response to test your hemodynamic hypothesis.</div>
 </div></div>
 
 <!-- ASSESSMENT -->
