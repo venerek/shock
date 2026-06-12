@@ -556,20 +556,131 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 
 <!-- REHAB -->
 <div class="sub-content" id="sub0-5"><div class="card"><h3>💪 Rehab Considerations</h3>
-<div class="warn-box"><strong>Key Principle:</strong> Never determine readiness by an isolated number. Integrate trajectory, stability, respiratory status, and response to support. [6]</div>
-<div class="readiness-checklist"><h4>📋 Structured Readiness Assessment</h4><p style="font-size:0.72rem;color:var(--text2);margin-bottom:0.75rem">Not a score — a structured framework for clinical reasoning</p>
-<div class="readiness-item" id="ri0"><input type="checkbox" id="rc0" onchange="updateReadiness()"><label for="rc0">Hemodynamically stable with routine care (no acute decompensation)</label></div>
-<div class="readiness-item" id="ri1"><input type="checkbox" id="rc1" onchange="updateReadiness()"><label for="rc1">Vasopressor dose trending down or stable (not actively titrating up)</label></div>
-<div class="readiness-item" id="ri2"><input type="checkbox" id="rc2" onchange="updateReadiness()"><label for="rc2">No new/active titration in last 2+ hours</label></div>
-<div class="readiness-item" id="ri3"><input type="checkbox" id="rc3" onchange="updateReadiness()"><label for="rc3">Adequate oxygenation on current respiratory support</label></div>
-<div class="readiness-item" id="ri4"><input type="checkbox" id="rc4" onchange="updateReadiness()"><label for="rc4">Patient responsive/arousable to voice or light stimulation</label></div>
-<div class="readiness-item" id="ri5"><input type="checkbox" id="rc5" onchange="updateReadiness()"><label for="rc5">No active hemorrhage or new concerning clinical change</label></div>
-<div class="readiness-summary" id="readinessSummary">0 of 6 considerations met</div></div>
-<div class="context-domain"><h4>Vasoactive Context — Not Dichotomous Cutoffs</h4><p>Clinical context, dosage <em>trends</em>, and individual response matter more than any single threshold. NE 0.15 trending ↓ ≠ NE 0.08 trending ↑. [6]</p></div>
-<h4>Evidence for Early Mobility in Septic Shock</h4>
-<ul class="checklist"><li class="checklist-item"><span class="checklist-icon primary">1</span><div class="checklist-content"><strong>Hickmann 2018</strong><div class="checklist-detail">Very early PT preserved muscle fiber CSA, reduced catabolic markers. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">2</span><div class="checklist-content"><strong>Liu 2022</strong><div class="checklist-detail">Early mobilization ≤3 days → lower in-hospital mortality. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">3</span><div class="checklist-content"><strong>Sakai 2025</strong><div class="checklist-detail">↓ ICU-acquired weakness at discharge. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">4</span><div class="checklist-content"><strong>BEAT-SHOCK 2025</strong><div class="checklist-detail">Earlier functional milestones. No ↑ 28/90-day mortality. [6]</div></div></li></ul>
-<h4 style="margin-top:1rem">Post-Sepsis Syndrome</h4>
-<div class="context-domain"><h4>Long-term Impairments</h4><p>19% depression, 39% anxiety, 8% PTSD. 48% did not return to work. Only 33% independent at 6 months. [6]</p></div>
+
+<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> Never determine readiness by an isolated number. Assess <em>trends and trajectories</em> — a single snapshot is insufficient. A patient on NE 0.15 trending down is fundamentally different from NE 0.08 trending up. [6]</div>
+
+<!-- READINESS FRAMEWORK -->
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
+<h4 style="font-size:0.92rem;margin-bottom:0.5rem;color:var(--text1)">📋 Structured Readiness Framework</h4>
+<p style="font-size:0.78rem;color:var(--text2);margin-bottom:1rem">Three domains to assess — each requires evaluating the <strong>trajectory</strong>, not a single value</p>
+
+<!-- DOMAIN 1: GROSS HEMODYNAMICS -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--red)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--red);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 1</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Gross Hemodynamics</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem">
+<strong style="color:var(--text1)">Heart Rate</strong><br>
+<span style="color:var(--text2)">Stable? Trending? New arrhythmia? Tachycardia worsening?</span>
+</div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem">
+<strong style="color:var(--text1)">Rhythm</strong><br>
+<span style="color:var(--text2)">New dysrhythmias? Rate-controlled AF vs. unstable? Pacing dependency?</span>
+</div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem">
+<strong style="color:var(--text1)">Blood Pressure</strong><br>
+<span style="color:var(--text2)">Systolic/diastolic trend? Widening or narrowing pulse pressure? Orthostatic component?</span>
+</div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem">
+<strong style="color:var(--text1)">MAP</strong><br>
+<span style="color:var(--text2)">At target (65+)? Stable with routine care? Labile with position changes?</span>
+</div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--red)">
+<strong>Trajectory Question:</strong> Are hemodynamics stable/improving over the last 2+ hours without active intervention, or requiring ongoing titration?
+</div>
+</div>
+
+<!-- DOMAIN 2: END-ORGAN PERFUSION -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--blue)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--blue);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 2</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Markers of End-Organ Perfusion</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)">
+<div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div>
+<strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br>
+<span style="color:var(--text2);font-size:0.72rem">Target 3 sec or less. Improving or worsening?</span>
+</div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)">
+<div style="font-size:1rem;margin-bottom:0.2rem">🧠</div>
+<strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br>
+<span style="color:var(--text2);font-size:0.72rem">Alert? Interactive? Improving vs. declining?</span>
+</div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)">
+<div style="font-size:1rem;margin-bottom:0.2rem">🩸</div>
+<strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br>
+<span style="color:var(--text2);font-size:0.72rem">Target 0.5 mL/kg/hr. Trending up or declining?</span>
+</div>
+</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.6rem;margin-bottom:0.5rem">
+<strong style="font-size:0.8rem;color:var(--text1)">🧪 Lab Biomarkers (Trending)</strong>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.4rem;margin-top:0.4rem">
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Lactate</strong><br><span style="color:var(--text2)">Clearing?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Creatinine</strong><br><span style="color:var(--text2)">Stable/improving?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>LFTs</strong><br><span style="color:var(--text2)">Not rising?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>pH/Base</strong><br><span style="color:var(--text2)">Correcting?</span></div>
+</div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--blue)">
+<strong>Trajectory Question:</strong> Is end-organ perfusion maintained or improving? Are biomarkers trending in the right direction over the last 6-12+ hours?
+</div>
+</div>
+
+<!-- DOMAIN 3: VASOACTIVE SUPPORT -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--green)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--green);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 3</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Vasoactive Requirement & Adequacy</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem">
+<strong style="color:var(--text1)">What is the dose?</strong><br>
+<span style="color:var(--text2)">Current NEE. Single agent or multi-agent? Absolute value matters less than context.</span>
+</div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem">
+<strong style="color:var(--text1)">What is the trajectory?</strong><br>
+<span style="color:var(--text2)">Weaning? Stable? Escalating? Time since last titration?</span>
+</div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2">
+<strong style="color:var(--text1)">Is it creating adequate perfusion?</strong><br>
+<span style="color:var(--text2)">MAP at target is necessary but not sufficient. Must pair with Domain 2 — are end-organs receiving adequate flow? A "good" MAP with worsening lactate/UOP/mentation = inadequate perfusion despite hemodynamic numbers.</span>
+</div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--green)">
+<strong>Trajectory Question:</strong> Is current vasoactive support achieving its goal (adequate perfusion), and is the dose stable or decreasing — not actively being titrated up?
+</div>
+</div>
+
+<!-- INTEGRATION -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;border:2px dashed var(--tab-accent)">
+<h4 style="font-size:0.85rem;color:var(--tab-accent);margin-bottom:0.5rem">🔗 Integration: The Clinical Question</h4>
+<p style="font-size:0.8rem;color:var(--text1);margin-bottom:0.5rem">Readiness is not a single threshold — it is the intersection of all three domains:</p>
+<div style="font-size:0.82rem;color:var(--text1);padding:0.5rem;background:var(--pill-bg);border-radius:6px;text-align:center;font-weight:600">
+Are gross hemodynamics stable? <span style="color:var(--red)">+</span><br>
+Is end-organ perfusion maintained/improving? <span style="color:var(--blue)">+</span><br>
+Is vasoactive support adequate and not escalating? <span style="color:var(--green)">=</span><br>
+<span style="color:var(--tab-accent);font-size:0.9rem">→ Clinical reasoning for mobility decision</span>
+</div>
+<p style="font-size:0.75rem;color:var(--text2);margin-top:0.5rem;text-align:center">This is a framework for reasoning, not a pass/fail score. Context always supersedes protocol.</p>
+</div>
+</div>
+
+<!-- EVIDENCE -->
+<h4 style="margin-top:1.25rem;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);color:var(--text1);font-size:0.92rem">📚 Evidence for Early Mobility in Septic Shock</h4>
+<ul class="checklist"><li class="checklist-item"><span class="checklist-icon primary">1</span><div class="checklist-content"><strong>Hickmann 2018</strong><div class="checklist-detail">Very early PT preserved muscle fiber CSA, reduced catabolic markers. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">2</span><div class="checklist-content"><strong>Liu 2022</strong><div class="checklist-detail">Early mobilization within 3 days associated with lower in-hospital mortality. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">3</span><div class="checklist-content"><strong>Sakai 2025</strong><div class="checklist-detail">Decreased ICU-acquired weakness at discharge. [6]</div></div></li><li class="checklist-item"><span class="checklist-icon primary">4</span><div class="checklist-content"><strong>BEAT-SHOCK 2025</strong><div class="checklist-detail">Earlier functional milestones. No increase in 28/90-day mortality. [6]</div></div></li></ul>
+
+<h4 style="margin-top:1.25rem;margin-bottom:0.5rem;color:var(--text1);font-size:0.88rem">⚠️ Post-Sepsis Syndrome</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;text-align:center;font-size:0.78rem"><strong style="font-size:1rem;color:var(--red)">19%</strong><br><span style="color:var(--text2)">Depression</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;text-align:center;font-size:0.78rem"><strong style="font-size:1rem;color:var(--amber)">39%</strong><br><span style="color:var(--text2)">Anxiety</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;text-align:center;font-size:0.78rem"><strong style="font-size:1rem;color:var(--purple)">48%</strong><br><span style="color:var(--text2)">Did not return to work</span></div>
+</div>
+<p style="font-size:0.75rem;color:var(--text2);margin-top:0.5rem;text-align:center">Only 33% independent at 6 months. 8% PTSD. [6]</p>
+
 </div></div>
 
 <!-- NEE APPLICABILITY -->
