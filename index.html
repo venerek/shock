@@ -1213,11 +1213,234 @@ Is support adequate, weaning, and access-compatible? <span style="color:var(--gr
 <!-- TAB 2: HYPOVOLEMIC -->
 <div class="tab-content" id="tab2">
 <div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(2,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(2,1)">Classification</button><button class="sub-tab" onclick="switchSub(2,2)">Management</button><button class="sub-tab" onclick="switchSub(2,3)">Rehab</button></div>
-<div class="sub-content active" id="sub2-0"><div class="card"><h3>🔬 Pathophysiology</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Loss of intravascular volume → ↓preload → ↓SV → ↓CO → tissue hypoperfusion. [1][5]</p><div class="param-grid"><div class="param-item"><div class="param-name">Hemorrhagic Cascade</div><div class="param-def">Hypovolemia → vasoconstriction → ↓organ flow → anaerobic metabolism → acidosis → glycocalyx shedding → coagulopathy. [5][6]</div></div></div></div></div>
-<div class="sub-content" id="sub2-1"><div class="card"><h3>📊 Hemorrhagic Classification [6]</h3><table><tr><th>Class</th><th>Loss</th><th>HR</th><th>BP</th><th>UOP</th></tr><tr><td>I</td><td>&lt;15%</td><td>&lt;100</td><td>Normal</td><td>&gt;30 mL/hr</td></tr><tr><td>II</td><td>15–30%</td><td>100–120</td><td>Normal</td><td>20–30</td></tr><tr><td>III</td><td>30–40%</td><td>120–140</td><td>↓</td><td>5–15</td></tr><tr><td>IV</td><td>&gt;40%</td><td>&gt;140</td><td>SBP&lt;90</td><td>Negligible</td></tr></table></div></div>
-<div class="sub-content" id="sub2-2"><div class="card"><h3>💊 Management</h3><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">PRIORITY</span><span class="abg-title">Source Control</span></div><div class="abg-problem">Surgery, endoscopy, IR. [5][6]</div></div><div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">RESUSCITATION</span><span class="abg-title">Volume + Blood Products</span></div><div class="abg-problem">MTP 1:1:1 ratio. Avoid aggressive crystalloid. [5][6]</div></div><div class="warn-box">⚠️ <strong>Permissive hypotension (no TBI):</strong> SBP 80–90 mmHg until bleeding stopped. <strong>With TBI:</strong> MAP ≥80 mmHg. [4]</div></div></div>
-<div class="sub-content" id="sub2-3"><div class="card"><h3>💪 Rehab</h3><div class="context-domain"><h4>Key Monitoring</h4><p>H&H stability · End-organ perfusion · HDS with routine care · Coagulation status [6]</p></div><div class="good-box"><strong>Case [6]:</strong> GI hemorrhagic shock → Max A → CS + RW ambulation (250 ft) Day 9 → Stairs Day 17.</div></div></div>
-<p class="cite">[1] Vincent 2013 · [4] Monnet 2025 · [5] Khorsand 2023 · [6] CSM 2026</p>
+
+<!-- PATHOPHYSIOLOGY -->
+<div class="sub-content active" id="sub2-0"><div class="card"><h3>🔬 Pathophysiology of Hypovolemic Shock</h3>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Loss of intravascular volume — directly via whole blood (hemorrhagic) or indirectly via extracellular fluid — reduces preload, creating a deficit in perfusion pressure so that macrocirculation and microcirculation both suffer. [1][10]</p>
+
+<div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
+
+<div style="position:relative;margin-bottom:1.25rem">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🩸 Volume Loss → ↓Preload</div>
+<div style="font-size:0.8rem;color:var(--text2)">Whole-blood loss or extracellular fluid loss reduces venous return and ventricular filling → ↓stroke volume → ↓cardiac output → inadequate tissue oxygen delivery. [1][10]</div>
+</div>
+</div>
+
+<div style="position:relative;margin-bottom:1.25rem">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🧬 Compensatory Response</div>
+<div style="font-size:0.8rem;color:var(--text2)">↑Heart rate and contractility, then baroreceptor-driven sympathetic activation → peripheral vasoconstriction. Diastolic pressure rises slightly with <strong>narrowing pulse pressure</strong>; blood is shunted from noncritical organs toward heart and brain. [10]</div>
+</div>
+</div>
+
+<div style="position:relative;margin-bottom:1.25rem">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">⚗️ Anaerobic Metabolism &amp; Acidosis</div>
+<div style="font-size:0.8rem;color:var(--text2)">Mitochondria can no longer sustain aerobic metabolism → shift to anaerobic ATP production → pyruvate converted to lactic acid. Shunted tissues are further oxygen-deprived, worsening lactic acidosis. [10]</div>
+</div>
+</div>
+
+<div style="position:relative;margin-bottom:1.25rem">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🌐 Endothelial &amp; Microcirculatory Injury (Hemorrhagic)</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem">
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--red)">Reflex Vasoconstriction</strong><br><span style="color:var(--text2)">↓Blood flow to vital organs → multisystem organ failure in severe cases [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--amber)">Glycocalyx Shedding</strong><br><span style="color:var(--text2)">From catecholamines + oxygen debt → fibrinolysis &amp; autoheparinization → coagulopathy [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--purple)">Capillary Leak</strong><br><span style="color:var(--text2)">Glycocalyx shedding + leukocyte–endothelial interactions → capillary leak syndrome [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--teal)">DAMP Release</strong><br><span style="color:var(--text2)">Dying cells release DAMPs/alarmins → activate innate immunity → systemic inflammation [1]</span></div>
+</div>
+</div>
+</div>
+
+<div style="position:relative">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">5</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">💀 Decompensation</div>
+<div style="font-size:0.8rem;color:var(--text2)">If uncorrected, worsening acidosis + hypoxemia cause loss of peripheral vasoconstriction → progressive hemodynamic collapse → death. [10]</div>
+</div>
+</div>
+
+</div>
+
+<div class="bad-box" style="margin-top:1.25rem"><strong>The "Lethal Triad" of Trauma:</strong> Acidosis + Hypothermia + Coagulopathy. Each worsens the others — acidosis impairs coagulation factor activity, fibrinogen, and platelets; hypothermia (&lt;34°C) independently impairs coagulation and is an independent risk factor for death. [10]</div>
+
+<div class="warn-box">⚠️ <strong>Trauma-Induced Coagulopathy:</strong> Not solely from hemodilution. A degree of coagulopathy is present in 25–56% of patients <em>before</em> resuscitation begins — recognized as two distinct processes: acute coagulopathy of trauma + resuscitation-induced coagulopathy. [10] Soft-tissue injury in traumatic hemorrhagic shock further accelerates coagulopathy via mechanisms that worsen tissue hypoxia. [1]</div>
+
+<div class="warn-box">⚠️ <strong>Diagnostic Pearl:</strong> Heart rate and blood pressure responses are <strong>extremely variable</strong> — affected by cardiopulmonary comorbidities, age, and vasoactive medications (e.g., beta-blockers blunt tachycardia) — and cannot be relied upon as the sole means of diagnosis. [10]</div>
+
+</div></div>
+
+<!-- CLASSIFICATION -->
+<div class="sub-content" id="sub2-1"><div class="card"><h3>📊 Classification of Hypovolemic Shock</h3>
+
+<h4 style="margin-bottom:0.5rem">Etiology-Based Classification [1]</h4>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem">Hypovolemic shock is divided by the nature of volume loss. [1]</p>
+<div style="overflow-x:auto">
+<table style="margin-top:0"><tr><th>Category</th><th>Subtype</th><th>Examples</th></tr>
+<tr><td rowspan="2"><strong>Extracellular Fluid Loss</strong></td><td>External (insensible)</td><td>Open abdominal procedures, hyperthermia, respiratory losses [1]</td></tr>
+<tr><td>Internal (GI / renal)</td><td>Prolonged NPO, persistent vomiting/diarrhea, diabetes insipidus, polyuric phase of ATN recovery [1]</td></tr>
+<tr><td><strong>Hemorrhagic Shock</strong></td><td>Loss of whole blood</td><td>Perioperative (postop bleeding), GI (varices, ulcers), maternal (uterine atony, placental abruption), vascular rupture (aneurysm) [1]</td></tr>
+<tr><td><strong>Traumatic Hemorrhagic Shock</strong></td><td>Blood loss + soft-tissue injury</td><td>e.g., motor vehicle collision. Soft-tissue injury accelerates coagulopathy. More common than nontraumatic blood loss. [1]</td></tr>
+</table>
+</div>
+
+<div class="warn-box">⚠️ <strong>Why the trauma distinction matters [1]:</strong> Soft-tissue injury increases disruption of blood–endothelium interactions and may accelerate coagulopathy through mechanisms that exacerbate tissue hypoxia — so traumatic hemorrhagic shock behaves differently from isolated blood loss.</div>
+
+<h4 style="margin-top:1.25rem;margin-bottom:0.5rem">ATLS Hemorrhage Classification (Class I–IV) [10]</h4>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem">Links estimated blood loss to expected physiologic response in a <strong>healthy 70 kg patient</strong> (~5 L total blood volume, ~7% of body weight). [10]</p>
+<div style="overflow-x:auto">
+<table><tr><th>Class</th><th>Blood Loss</th><th>HR</th><th>BP / Pulse Pressure</th><th>RR</th><th>Mental Status / UOP</th></tr>
+<tr class="severity-low"><td><strong>I</strong></td><td>&lt;15% (≤750 mL)</td><td>Normal / min ↑</td><td>Normal BP &amp; pulse pressure</td><td>Normal</td><td>Normal</td></tr>
+<tr class="severity-low"><td><strong>II</strong></td><td>15–30% (750–1500 mL)</td><td>100–120</td><td>SBP unchanged–slightly ↓; PP narrows</td><td>20–24</td><td>Mildly anxious</td></tr>
+<tr class="severity-mid"><td><strong>III</strong></td><td>30–40% (1500–2000 mL)</td><td>&gt;120</td><td>Significant BP drop</td><td>&gt;120 elevated</td><td>Altered MS; UOP declines; delayed CRT</td></tr>
+<tr class="severity-high"><td><strong>IV</strong></td><td>&gt;40%</td><td>&gt;120 (pronounced)</td><td>Hypotension; PP &lt;25 mmHg</td><td>Markedly elevated</td><td>Increasingly altered; UOP minimal/absent; delayed CRT</td></tr>
+</table>
+</div>
+
+<div class="warn-box">⚠️ <strong>Apply with caution [10]:</strong> Thresholds assume a healthy 70 kg adult. Beta-blockers blunt the tachycardic response; patients with baseline hypertension may be functionally hypotensive at SBP 110. Tachycardia is typically the <em>first</em> abnormal vital sign. [10]</div>
+
+</div></div>
+
+<!-- MANAGEMENT -->
+<div class="sub-content" id="sub2-2"><div class="card"><h3>💊 Medical Management</h3>
+
+<div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
+<button class="mini-tab active" onclick="switchHvMgmt(0)" id="hvMgmtBtn0">🩹 Damage Control</button>
+<button class="mini-tab" onclick="switchHvMgmt(1)" id="hvMgmtBtn1">💉 Resuscitation</button>
+<button class="mini-tab" onclick="switchHvMgmt(2)" id="hvMgmtBtn2">📈 Escalation</button>
+</div>
+
+<!-- DAMAGE CONTROL -->
+<div class="mgmt-panel active" id="hvMgmtPanel0">
+<h4>Damage Control Resuscitation [10]</h4>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem">A comprehensive strategy built on three principles to combat the lethal triad. [10]</p>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">1. Permissive (Hypotensive) Resuscitation</div><div class="param-def">Target SBP ~90 mmHg in patients <strong>without head trauma</strong> — maintains perfusion without dislodging fresh clot. Restricts fluid until hemorrhage controlled, accepting brief suboptimal end-organ perfusion. Evidence is mixed; weigh injury type (penetrating vs. blunt), intracranial injury likelihood, severity, and proximity to definitive control. [10]</div></div>
+<div class="param-item"><div class="param-name">2. Hemostatic Resuscitation</div><div class="param-def">Early blood products over abundant crystalloid — minimizes metabolic derangement, resuscitation-induced coagulopathy, and hemodilution. [10]</div></div>
+<div class="param-item"><div class="param-name">3. Hemorrhage Control / Damage Control Surgery</div><div class="param-def">"Stop the Bleed" — definitive correction of the source is the cornerstone. Surgery, endoscopy, or IR. Runs in conjunction with resuscitation, not after it. [1][10]</div></div>
+</div>
+<div class="bad-box">⚠️ The three principles directly target the <strong>lethal triad</strong> (coagulopathy, acidosis, hypothermia). Active rewarming and correction of acidosis are integral. [10]</div>
+</div>
+
+<!-- RESUSCITATION -->
+<div class="mgmt-panel" id="hvMgmtPanel1">
+<h4>Fluid, Blood Products &amp; Adjuncts</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Avoid Aggressive Crystalloid</div><div class="param-def">En route / early, avoid large-volume crystalloid to prevent clotting-factor dilution, hemodilution, and worsened hypoxia. Note: normal saline → hyperchloremic non-anion-gap acidosis; lactated Ringer's → metabolic alkalosis as lactate regenerates bicarbonate. [1][10]</div></div>
+<div class="param-item"><div class="param-name">Balanced Transfusion (1:1:1)</div><div class="param-def">Transfuse in ratios resembling whole blood — 1:1:1 PRBC : FFP : platelets. Massive transfusion at this ratio improves morbidity/mortality in trauma. [1]</div></div>
+<div class="param-item"><div class="param-name">TEG-Guided Transfusion</div><div class="param-def">Thromboelastography monitors clot formation in real time and helps guide product selection. INR/PT/aPTT may be elevated and fibrinogen decreased. [1]</div></div>
+<div class="param-item"><div class="param-name">Antifibrinolytics (TXA)</div><div class="param-def">Tranexamic acid prevents fibrin breakdown. The <strong>CRASH-2</strong> RCT showed reduced overall mortality when given within the first 8 hours of injury, with additional benefit when given within the first 3 hours. [10] <em>(Exact effect sizes to be added later.)</em></div></div>
+</div>
+<div class="good-box"><strong>PROPPR finding [10]:</strong> No significant difference in 24-hour or 30-day mortality between 1:1:1 and 1:1:2 ratios — but the 1:1:1 group was less likely to die of exsanguination at 24h and more likely to achieve hemostasis. Reduced time to first plasma also reduces mortality. <em>(Trial name/exact numbers to be added later.)</em></div>
+</div>
+
+<!-- ESCALATION -->
+<div class="mgmt-panel" id="hvMgmtPanel2">
+<h4>Escalation Pathway [1][10]</h4>
+<p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">Mark current step:</p>
+<div class="esc-stepper" id="hvEscStepper">
+<button class="esc-step-btn" onclick="setHvEscStep(0)">Step 1: Recognize</button>
+<button class="esc-step-btn" onclick="setHvEscStep(1)">Step 2: Hemostatic Resus</button>
+<button class="esc-step-btn" onclick="setHvEscStep(2)">Step 3: Vasopressors</button>
+<button class="esc-step-btn" onclick="setHvEscStep(3)">De-escalation</button>
+</div>
+<div class="abg-card escalate" id="hvEscCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Recognize &amp; Localize</span></div><div class="abg-problem">Recognition ideally before hypotension — tachycardia, tachypnea, narrowing pulse pressure, cool extremities, delayed CRT are early signs. In trauma, ATLS primary/secondary survey + FAST (specificity &gt;99%, but negative scan does not rule out intra-abdominal pathology). [10]</div></div>
+<div class="abg-card escalate" id="hvEscCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Hemorrhage Control + Hemostatic Resuscitation</span></div><div class="abg-problem">Definitive source control (surgery/endoscopy/IR) is priority. Begin balanced 1:1:1 transfusion, TXA within 3h (benefit up to 8h), TEG-guided products, active rewarming. Avoid crystalloid excess. [1][10]</div><div class="abg-safety">Target SBP ~90 if no head trauma (permissive hypotension). With TBI, this target does not apply.</div></div>
+<div class="abg-card escalate" id="hvEscCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Vasopressors (Temporizing)</span></div><div class="abg-problem">If fluid/blood alone is insufficient to restore adequate perfusion (SBP &lt;80 mmHg), temporize with vasopressors. <strong>Norepinephrine is suggested first-line</strong> — sympathomimetic with splanchnic venoconstriction shifting blood volume centrally → ↑venous return and CO. [1]</div><div class="abg-safety">Phenylephrine may have opposing effects on splanchnic pre-portal/hepatic veins → ↓venous return. Vasopressors are a bridge to hemorrhage control, not a substitute. [1]</div></div>
+<div class="abg-card deescalate" id="hvEscCard3"><div class="abg-header"><span class="abg-direction deescalate">DE-ESCALATION</span><span class="abg-title">Restore Euvolemia &amp; Wean</span></div><div class="abg-problem">Once bleeding controlled and euvolemia restored via balanced resuscitation: wean vasopressors, normalize lactate/base deficit, correct coagulopathy, and continue rewarming. Reassess H&amp;H (may be falsely high with hemoconcentration). [1]</div></div>
+</div>
+
+</div></div>
+
+<!-- REHAB -->
+<div class="sub-content" id="sub2-3"><div class="card"><h3>💪 Rehab Considerations</h3>
+
+<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> As in all shock, readiness is a trajectory — not a single number. In hypovolemic/hemorrhagic shock the key added layers are <em>hemostasis</em> (is the bleeding definitively controlled?) and <em>coagulation status</em>. Mobilizing a patient with ongoing or recently controlled hemorrhage carries re-bleeding risk.</div>
+
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
+<h4 style="font-size:0.92rem;margin-bottom:0.5rem;color:var(--text1)">📋 Structured Readiness Framework</h4>
+<p style="font-size:0.78rem;color:var(--text2);margin-bottom:1rem">Three domains — each requires evaluating the <strong>trajectory</strong>, adapted to hypovolemic physiology</p>
+
+<!-- DOMAIN 1 -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--red)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--red);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 1</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Volume &amp; Hemostasis Stability</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Bleeding Controlled?</strong><br><span style="color:var(--text2)">Source definitively addressed? Any signs of ongoing/recurrent bleeding?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Hemoglobin / Hematocrit</strong><br><span style="color:var(--text2)">Stable on serial checks? (Caution: hemoconcentration can falsely elevate.)</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Coagulation Status</strong><br><span style="color:var(--text2)">INR/PT/aPTT, fibrinogen, TEG normalizing? Lethal triad resolved?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">HR / BP / Pulse Pressure</strong><br><span style="color:var(--text2)">Stable with routine care? Pulse pressure no longer narrowing?</span></div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--red)">
+<strong>Trajectory Question:</strong> Is hemorrhage definitively controlled with stable H&amp;H and resolving coagulopathy — no transfusion requirement over the last several hours?
+</div>
+</div>
+
+<!-- DOMAIN 2 -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--blue)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--blue);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 2</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Markers of End-Organ Perfusion</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div><strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br><span style="color:var(--text2);font-size:0.72rem">Warming? CRT improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🧠</div><strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br><span style="color:var(--text2);font-size:0.72rem">Alert? Improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🩸</div><strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br><span style="color:var(--text2);font-size:0.72rem">Recovering? Pre-renal indices improving?</span></div>
+</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.6rem;margin-bottom:0.5rem">
+<strong style="font-size:0.8rem;color:var(--text1)">🧪 Lab Biomarkers (Trending)</strong>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.4rem;margin-top:0.4rem">
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Lactate</strong><br><span style="color:var(--text2)">Clearing?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Base Deficit</strong><br><span style="color:var(--text2)">Correcting?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Creatinine/BUN</strong><br><span style="color:var(--text2)">Pre-renal AKI resolving?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Temp</strong><br><span style="color:var(--text2)">Rewarmed?</span></div>
+</div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--blue)">
+<strong>Trajectory Question:</strong> Is end-organ perfusion maintained/improving with lactate and base deficit trending toward normal over the last 6–12+ hours?
+</div>
+</div>
+
+<!-- DOMAIN 3 -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--green)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--green);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 3</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Ongoing Transfusion &amp; Vasoactive Requirement</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the requirement?</strong><br><span style="color:var(--text2)">Ongoing transfusion needs? Current vasopressor (NEE) dose, if any?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the trajectory?</strong><br><span style="color:var(--text2)">Transfusion-free interval? Vasopressors weaning, stable, or escalating?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2"><strong style="color:var(--text1)">Is perfusion adequate?</strong><br><span style="color:var(--text2)">MAP at target is necessary but not sufficient — pair with Domain 2. Remember vasopressors here are a bridge to hemorrhage control; a "good" MAP on rising support with ongoing transfusion is not readiness. [1]</span></div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--green)">
+<strong>Trajectory Question:</strong> Is the patient off (or weaning) vasopressors with no active transfusion requirement, and is perfusion adequate?
+</div>
+</div>
+
+<!-- INTEGRATION -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;border:2px dashed var(--tab-accent)">
+<h4 style="font-size:0.85rem;color:var(--tab-accent);margin-bottom:0.5rem">🔗 Integration: The Clinical Question</h4>
+<p style="font-size:0.8rem;color:var(--text1);margin-bottom:0.5rem">Readiness is the intersection of all three domains, gated by hemostasis:</p>
+<div style="font-size:0.82rem;color:var(--text1);padding:0.5rem;background:var(--pill-bg);border-radius:6px;text-align:center;font-weight:600">
+Is bleeding controlled with stable volume/coagulation? <span style="color:var(--red)">+</span><br>
+Is end-organ perfusion maintained/improving? <span style="color:var(--blue)">+</span><br>
+Is transfusion/vasoactive support minimal and not escalating? <span style="color:var(--green)">=</span><br>
+<span style="color:var(--tab-accent);font-size:0.9rem">→ Clinical reasoning for mobility decision</span>
+</div>
+<p style="font-size:0.75rem;color:var(--text2);margin-top:0.5rem;text-align:center">A framework for reasoning with the team — not a pass/fail score. Re-bleeding risk and surgical/team clearance always supersede.</p>
+</div>
+</div>
+
+</div></div>
+
+<p class="cite">[1] Khorsand et al. 2023 – Anesthesiol Clin · [10] Hooper &amp; Armstrong – Hemorrhagic Shock, StatPearls (NBK470382)</p>
 </div>
 
 <!-- TAB 3: OBSTRUCTIVE -->
@@ -1559,6 +1782,43 @@ function setCgEscStep(idx){
     return;
   }
   currentCgEscStep=idx;
+  for(var i=0;i<btns.length;i++){
+    btns[i].className='esc-step-btn';
+    if(i<idx) btns[i].classList.add('esc-past');
+    else if(i===idx) btns[i].classList.add('esc-current');
+  }
+  for(var i=0;i<cards.length;i++){
+    cards[i].classList.remove('esc-dimmed','esc-active');
+    if(i===idx) cards[i].classList.add('esc-active');
+    else cards[i].classList.add('esc-dimmed');
+  }
+  cards[idx].scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+// ===== HYPOVOLEMIC TAB (namespaced — no collisions) =====
+
+// Hypovolemic Management mini-tabs (hvMgmtPanel0/1/2)
+function switchHvMgmt(idx){
+  for(var i=0;i<3;i++){
+    var btn=document.getElementById('hvMgmtBtn'+i);
+    var panel=document.getElementById('hvMgmtPanel'+i);
+    btn.classList.toggle('active',i===idx);
+    panel.classList.toggle('active',i===idx);
+  }
+}
+
+// Hypovolemic Escalation stepper (hvEscCard0-3)
+var currentHvEscStep=-1;
+function setHvEscStep(idx){
+  var btns=document.querySelectorAll('#hvEscStepper .esc-step-btn');
+  var cards=[];
+  for(var i=0;i<4;i++){cards.push(document.getElementById('hvEscCard'+i))}
+  if(currentHvEscStep===idx){
+    currentHvEscStep=-1;
+    for(var i=0;i<btns.length;i++){btns[i].className='esc-step-btn'}
+    for(var i=0;i<cards.length;i++){cards[i].classList.remove('esc-dimmed','esc-active')}
+    return;
+  }
+  currentHvEscStep=idx;
   for(var i=0;i<btns.length;i++){
     btns[i].className='esc-step-btn';
     if(i<idx) btns[i].classList.add('esc-past');
