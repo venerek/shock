@@ -1445,11 +1445,210 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 
 <!-- TAB 3: OBSTRUCTIVE -->
 <div class="tab-content" id="tab3">
-<div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(3,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(3,1)">Etiologies & Tx</button><button class="sub-tab" onclick="switchSub(3,2)">Rehab (PE)</button></div>
-<div class="sub-content active" id="sub3-0"><div class="card"><h3>🔬 Pathophysiology</h3><p style="font-size:0.82rem;color:var(--text2);margin-bottom:0.75rem">Physical impediment to blood flow. CO↓ due to mechanical obstruction. Rarest (~2%). [5][6]</p><div class="param-grid"><div class="param-item"><div class="param-name">Hemodynamics</div><div class="param-def">↓CO, ↑SVR, ↑CVP, variable PCWP, ↓SvO₂, cool extremities. [5]</div></div><div class="param-item"><div class="param-name">PE Mechanism</div><div class="param-def">≥50% vascular bed → acute ↑RV afterload → RV dilation → septal shift → ↓LV filling → ↓CO. [5][6]</div></div></div></div></div>
-<div class="sub-content" id="sub3-1"><div class="card"><h3>🔍 Etiologies & Treatment</h3><details class="collapsible" open><summary>Tension Pneumothorax</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> Clinical — absent lung sliding on POCUS. <strong>Tx:</strong> Needle decompression → thoracostomy. [5]</p></div></details><details class="collapsible"><summary>Cardiac Tamponade</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> Beck's triad, pulsus paradoxus. Echo: RV diastolic collapse. <strong>Tx:</strong> Pericardiocentesis. [5]</p></div></details><details class="collapsible"><summary>Massive PE</summary><div style="padding:0.75rem 0"><p style="font-size:0.82rem"><strong>Dx:</strong> SBP&lt;90 &gt;15min. RV dilation, McConnell's sign. <strong>Tx:</strong> Thrombolysis, CDT, embolectomy, or VA-ECMO. [5][6]</p></div></details></div></div>
-<div class="sub-content" id="sub3-2"><div class="card"><h3>💪 Rehab — PE (Jiménez 2022 RCT) [6]</h3><table><tr><th>Risk</th><th>Definition</th><th>Mobilization</th></tr><tr><td>Low</td><td>sPESI=0</td><td>Day 1: Ambulate ≥20 min/day</td></tr><tr><td>Int-Low</td><td>sPESI≥1 + ↑Tn OR RV dysfxn</td><td>Day 2: Ambulate when stable</td></tr><tr><td>Int-High</td><td>sPESI≥1 + ↑Tn AND RV dysfxn</td><td>48h rest, then mobilize</td></tr></table><div class="good-box"><strong>Outcome:</strong> ↓LOS by 2.1 days (4.0 vs 6.1, p&lt;0.001). No ↑ 30-day mortality. [6]</div><div class="warn-box">⚠️ <strong>RV Failure:</strong> Supine→upright: ↑pooling → ↓RV preload → ↓CO → hypotension. [6]</div></div></div>
-<p class="cite">[5] Khorsand 2023 · [6] CSM 2026</p>
+<div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(3,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(3,1)">Etiologies &amp; Tx</button><button class="sub-tab" onclick="switchSub(3,2)">Rehab (PE)</button></div>
+
+<!-- PATHOPHYSIOLOGY -->
+<div class="sub-content active" id="sub3-0"><div class="card"><h3>🔬 Pathophysiology of Obstructive Shock</h3>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">A physical impediment to blood flow in the cardiovascular system. The least common shock type (~2% of all shock states). Intravascular volume and cardiac contractility are usually <em>preserved</em> — the problem is mechanical. [1]</p>
+
+<div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
+
+<div style="position:relative;margin-bottom:1.25rem">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🚧 Mechanical Impediment</div>
+<div style="font-size:0.8rem;color:var(--text2)">Any obstruction that restricts venous return, prevents diastolic filling, or severely elevates afterload can cause obstructive shock. Tension pneumothorax, cardiac tamponade, and PE comprise the majority of cases. [1]</div>
+</div>
+</div>
+
+<div style="position:relative;margin-bottom:1.25rem">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🧭 Two Mechanistic Categories</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem">
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--blue)">Impaired Preload / Diastolic Filling</strong><br><span style="color:var(--text2)">Tension pneumothorax, tamponade, SVC syndrome, massive PE (effect on LV), abdominal compartment syndrome, auto-PEEP [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--red)">Elevated Afterload</strong><br><span style="color:var(--text2)">Massive PE (effect on RV), severe pulmonary hypertension, aortic occlusion, coarctation [1]</span></div>
+</div>
+</div>
+</div>
+
+<div style="position:relative;margin-bottom:1.25rem">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">📉 Low-Output Physiology</div>
+<div style="font-size:0.8rem;color:var(--text2)">As obstruction progresses, hemodynamic indices resemble low-output states: CO, stroke volume, and MAP fall while laboratory values reflect oxygen supply–demand mismatch. [1]</div>
+</div>
+</div>
+
+<div style="position:relative">
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">⚠️ Compensation Then Collapse</div>
+<div style="font-size:0.8rem;color:var(--text2)">Early signs may be limited to compensatory tachycardia and tachypnea. Once compensation fails, decompensation can be rapid — for patients in extremis, diagnosis is clinical and treatment must not be delayed for diagnostics. [1]</div>
+</div>
+</div>
+
+</div>
+
+<h4 style="margin-top:1.25rem">📊 Hemodynamic Signature [1]</h4>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">↓ CO / SV / MAP</div><div class="param-def">Decreased despite preserved contractility and intravascular volume. [1]</div></div>
+<div class="param-item"><div class="param-name">↑ SVR &amp; ↑ CVP</div><div class="param-def">Systemic vascular resistance and central venous pressure are usually increased. [1]</div></div>
+<div class="param-item"><div class="param-name">Variable Wedge Pressure</div><div class="param-def">Wedge pressure varies based on the specific etiology. [1]</div></div>
+</div>
+
+<div class="warn-box">⚠️ <strong>Exam clues [1]:</strong> Jugular venous distention, abnormal auscultatory findings, and cool extremities are frequent. Initial symptoms (shortness of breath, chest pain) may be nonspecific — maintain a high index of suspicion.</div>
+
+</div></div>
+
+<!-- ETIOLOGIES & TX -->
+<div class="sub-content" id="sub3-1"><div class="card"><h3>🔍 Etiologies &amp; Treatment</h3>
+
+<div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
+<button class="mini-tab active" onclick="switchObMgmt(0)" id="obMgmtBtn0">🫁 Tension PTX</button>
+<button class="mini-tab" onclick="switchObMgmt(1)" id="obMgmtBtn1">🫀 Tamponade</button>
+<button class="mini-tab" onclick="switchObMgmt(2)" id="obMgmtBtn2">🩸 Massive PE</button>
+</div>
+
+<!-- TENSION PNEUMOTHORAX -->
+<div class="mgmt-panel active" id="obMgmtPanel0">
+<h4>Tension Pneumothorax</h4>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> Trapped air accumulates in the pleural space, raising intrapleural pressure above atmospheric → ipsilateral lung collapse and mediastinal compression with contralateral shift. Most common in trauma, ARDS, and mechanically ventilated patients; a simple pneumothorax can convert to tension physiology if a one-way valve exists between alveolus and pleura. [1]</p>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Clinical Signs</div><div class="param-def">Cyanosis, tracheal deviation, decreased breath sounds, percussion hyperresonance, subcutaneous emphysema. On ventilator: elevated peak/plateau airway pressures with decreasing compliance. [1]</div></div>
+<div class="param-item"><div class="param-name">POCUS</div><div class="param-def">Higher sensitivity than chest radiography (79% vs. 40%), similar specificity (98% vs. 99%). Findings: absent lung sliding and lung pulse, presence of lung point, barcode sign on M-mode. [1]</div></div>
+</div>
+<div class="bad-box">⚠️ Pneumothorax developing <strong>during mechanical ventilation progresses to hemodynamic instability in up to 70% of cases.</strong> TP is a <strong>clinical diagnosis</strong> — do not delay treatment for imaging. [1]</div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TREATMENT</span><span class="abg-title">Decompression</span></div><div class="abg-problem">Emergent large-bore needle into the anterior 2nd intercostal space, midclavicular line → followed by a percutaneous small-bore thoracostomy catheter. [1]</div></div>
+</div>
+
+<!-- CARDIAC TAMPONADE -->
+<div class="mgmt-panel" id="obMgmtPanel1">
+<h4>Cardiac Tamponade</h4>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> Restriction of cardiac filling from elevated intrapericardial pressure (blood, clot, pus, chyle, or gas). Compensatory ↑systemic/pulmonary venous pressures + tachycardia. As diastolic, right atrial, and wedge pressures equalize, the Y-descent fades; with progression, pulsus paradoxus results from ventricular interdependence. [1]</p>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Classic Exam</div><div class="param-def">Muffled heart tones, JVD, systolic inspiratory variation &gt;10 mmHg (pulsus paradoxus). ECG: microvoltage and electrical alternans with large effusions. [1]</div></div>
+<div class="param-item"><div class="param-name">Echocardiography</div><div class="param-def">Diastolic collapse of the RV (highly specific), systolic collapse of the RA (early sign), plethoric IVC with hepatic flow reversal, respiratory variation of mitral/tricuspid inflow velocities. [1]</div></div>
+</div>
+<div class="warn-box">⚠️ <strong>Post-cardiac-surgery tamponade [1]:</strong> Requires high suspicion. Because the pericardium is often open to the pleural spaces, a <em>localized clot</em> on one chamber causes an insidious picture — gradually worsening hypotension, low CO, rising filling pressures, and escalating pressor/inotrope needs, often <strong>without</strong> classic pressure equalization. TEE is useful but may miss regional clots.</div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TREATMENT</span><span class="abg-title">Pericardial Decompression</span></div><div class="abg-problem">Evacuate the pressurized pericardial content — percutaneous or surgical. [1]</div></div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TEMPORIZE</span><span class="abg-title">While Awaiting Definitive Treatment</span></div><div class="abg-problem">Enhance venous return (volume administration, leg elevation); promote chronotropy/inotropy and systemic venous pressure with epinephrine boluses; reduce intrathoracic pressure by limiting tidal volume and PEEP. [1]</div></div>
+</div>
+
+<!-- MASSIVE PE -->
+<div class="mgmt-panel" id="obMgmtPanel2">
+<h4>Massive Pulmonary Embolism</h4>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> Obstructive shock results when ≥2 lobar arteries and at least 50–60% of the vascular bed are affected, elevating pulmonary vascular resistance. Acute ↑RV afterload → RV enlargement and myocardial failure → ↓LV early diastolic filling and preload → ↓SV and CO. <strong>Massive PE</strong> = hypotension with SBP &lt;90 mmHg for &gt;15 minutes. [1]</p>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Risk Stratification</div><div class="param-def">Altered mental status, hypotension, elevated troponins, and BNP mark increased mortality/adverse outcomes. PESI / simplified PESI (sPESI) aid risk stratification and therapy selection. [1]</div></div>
+<div class="param-item"><div class="param-name">POCUS (rule-in)</div><div class="param-def">High specificity, low sensitivity; relies on indirect evidence: RV dysfunction (TAPSE, S′, 60/60 sign), septal flattening in systole, RV:LV size, McConnell's sign (acute RV strain, not PE-specific). Thrombus-in-transit is the only pathognomonic finding. CT pulmonary angiography remains the gold standard. [1]</div></div>
+</div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">FIRST-LINE</span><span class="abg-title">Systemic Thrombolysis</span></div><div class="abg-problem">For patients with hypotension/shock, myocardial dysfunction, and low bleeding risk → systemic thrombolytic therapy. [1]</div></div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">ALTERNATIVES</span><span class="abg-title">Catheter-Based / Surgical</span></div><div class="abg-problem">Catheter-based thrombus removal for high bleeding risk or failed systemic thrombolysis. Surgical embolectomy may also be of benefit. [1]</div></div>
+<div class="good-box"><strong>PERT:</strong> Pulmonary Embolism Response Teams improve quality, efficiency, and multidisciplinary communication, resulting in improved outcomes. Standardization of in-hospital care is now recommended given therapy depends on local expertise. [1]</div>
+</div>
+
+<!-- ESCALATION STEPPER -->
+<h4 style="margin-top:1.25rem">📈 General Obstructive Approach</h4>
+<p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">Mark current step:</p>
+<div class="esc-stepper" id="obEscStepper">
+<button class="esc-step-btn" onclick="setObEscStep(0)">Step 1: Recognize</button>
+<button class="esc-step-btn" onclick="setObEscStep(1)">Step 2: Temporize</button>
+<button class="esc-step-btn" onclick="setObEscStep(2)">Step 3: Relieve Obstruction</button>
+<button class="esc-step-btn" onclick="setObEscStep(3)">Reassess</button>
+</div>
+<div class="abg-card escalate" id="obEscCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Recognize</span></div><div class="abg-problem">Nonspecific early symptoms (dyspnea, chest pain) + compensatory tachycardia/tachypnea. Look for JVD, abnormal auscultation, cool extremities, ↑SVR, ↑CVP. POCUS for rapid bedside differentiation. For patients in extremis, diagnosis is clinical. [1]</div></div>
+<div class="abg-card escalate" id="obEscCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Temporize (Pharmacotherapy)</span></div><div class="abg-problem">Support perfusion while preparing definitive relief. Therapies most often consist of pharmacotherapy followed in quick succession by percutaneous or surgical relief of the obstruction. [1]</div></div>
+<div class="abg-card escalate" id="obEscCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Relieve the Obstruction</span></div><div class="abg-problem">Etiology-specific: needle/thoracostomy decompression (TP), pericardial evacuation (tamponade), thrombolysis/catheter/surgical embolectomy (PE). This is the definitive treatment. [1]</div></div>
+<div class="abg-card deescalate" id="obEscCard3"><div class="abg-header"><span class="abg-direction deescalate">REASSESS</span><span class="abg-title">Confirm Resolution</span></div><div class="abg-problem">Reassess hemodynamics after obstruction relief — CO/SV/MAP should recover as the mechanical impediment resolves. Continue monitoring for recurrence and for conversion to or coexistence of another shock state. [1]</div></div>
+
+</div></div>
+
+<!-- REHAB (PE) -->
+<div class="sub-content" id="sub3-2"><div class="card"><h3>💪 Rehab Considerations — Pulmonary Embolism</h3>
+
+<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> As in all shock, readiness is a trajectory — not a single number. For obstructive shock, the gating questions are whether the <em>obstruction has been definitively relieved</em> and whether the <strong>right ventricle</strong> has recovered. Positional changes can be hazardous in RV-dependent physiology.</div>
+
+<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
+<h4 style="font-size:0.92rem;margin-bottom:0.5rem;color:var(--text1)">📋 Structured Readiness Framework</h4>
+<p style="font-size:0.78rem;color:var(--text2);margin-bottom:1rem">Three domains — each requires evaluating the <strong>trajectory</strong>, adapted to obstructive/PE physiology</p>
+
+<!-- DOMAIN 1 -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--red)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--red);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 1</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Obstruction Relief &amp; RV Recovery</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Obstruction Addressed?</strong><br><span style="color:var(--text2)">Thrombolysis/embolectomy done? No residual high-grade obstruction?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">RV Function</strong><br><span style="color:var(--text2)">TAPSE/S′ improving? Septal flattening resolving? RV:LV size normalizing?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Biomarkers</strong><br><span style="color:var(--text2)">Troponin and BNP trending down?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">HR / BP</strong><br><span style="color:var(--text2)">Stable with routine care? No longer hypotensive (SBP ≥90)?</span></div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--red)">
+<strong>Trajectory Question:</strong> Is the obstruction definitively relieved with RV function and biomarkers improving over the last several hours?
+</div>
+</div>
+
+<!-- DOMAIN 2 -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--blue)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--blue);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 2</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Markers of End-Organ Perfusion</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div><strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br><span style="color:var(--text2);font-size:0.72rem">Warming? CRT improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🧠</div><strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br><span style="color:var(--text2);font-size:0.72rem">Alert? Improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🩸</div><strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br><span style="color:var(--text2);font-size:0.72rem">≥0.5 mL/kg/hr? Trending up?</span></div>
+</div>
+<div style="background:var(--pill-bg);border-radius:8px;padding:0.6rem;margin-bottom:0.5rem">
+<strong style="font-size:0.8rem;color:var(--text1)">🧪 Lab Biomarkers (Trending)</strong>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.4rem;margin-top:0.4rem">
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Lactate</strong><br><span style="color:var(--text2)">Clearing?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>SvO₂</strong><br><span style="color:var(--text2)">Recovering?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Creatinine</strong><br><span style="color:var(--text2)">Stable/improving?</span></div>
+</div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--blue)">
+<strong>Trajectory Question:</strong> Is end-organ perfusion maintained/improving with biomarkers trending favorably over the last 6–12+ hours?
+</div>
+</div>
+
+<!-- DOMAIN 3 -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--green)">
+<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
+<span style="background:var(--green);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 3</span>
+<strong style="font-size:0.88rem;color:var(--text1)">Vasoactive / Respiratory Requirement &amp; Adequacy</strong>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the requirement?</strong><br><span style="color:var(--text2)">Vasopressor (NEE) dose, if any? Ventilatory/oxygen support level?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the trajectory?</strong><br><span style="color:var(--text2)">Support weaning, stable, or escalating?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2"><strong style="color:var(--text1)">Is perfusion adequate?</strong><br><span style="color:var(--text2)">MAP at target is necessary but not sufficient — pair with Domain 2. In RV-dependent PE physiology, positional changes can reduce RV preload and precipitate hypotension; confirm hemodynamic stability across position changes before mobility.</span></div>
+</div>
+<div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--green)">
+<strong>Trajectory Question:</strong> Is support minimal and not escalating, with adequate perfusion maintained across position changes?
+</div>
+</div>
+
+<!-- INTEGRATION -->
+<div style="background:var(--card);border-radius:10px;padding:1rem;border:2px dashed var(--tab-accent)">
+<h4 style="font-size:0.85rem;color:var(--tab-accent);margin-bottom:0.5rem">🔗 Integration: The Clinical Question</h4>
+<p style="font-size:0.8rem;color:var(--text1);margin-bottom:0.5rem">Readiness is the intersection of all three domains, gated by obstruction relief:</p>
+<div style="font-size:0.82rem;color:var(--text1);padding:0.5rem;background:var(--pill-bg);border-radius:6px;text-align:center;font-weight:600">
+Is the obstruction relieved with RV recovering? <span style="color:var(--red)">+</span><br>
+Is end-organ perfusion maintained/improving? <span style="color:var(--blue)">+</span><br>
+Is support minimal, not escalating, stable across positions? <span style="color:var(--green)">=</span><br>
+<span style="color:var(--tab-accent);font-size:0.9rem">→ Clinical reasoning for mobility decision</span>
+</div>
+<p style="font-size:0.75rem;color:var(--text2);margin-top:0.5rem;text-align:center">A framework for reasoning with the team — not a pass/fail score. RV-failure positional risk and team clearance always supersede.</p>
+</div>
+</div>
+
+<div class="warn-box">⚠️ <strong>RV Failure &amp; Positioning:</strong> In RV-dependent PE physiology, moving supine → upright can reduce venous return and RV preload → ↓CO → hypotension. Assess tolerance to position changes incrementally before progressing mobility.</div>
+
+</div></div>
+
+<p class="cite">[1] Khorsand et al. 2023 – Anesthesiol Clin</p>
 </div>
 
 <!-- TAB 4: NEE CALCULATOR -->
@@ -1819,6 +2018,43 @@ function setHvEscStep(idx){
     return;
   }
   currentHvEscStep=idx;
+  for(var i=0;i<btns.length;i++){
+    btns[i].className='esc-step-btn';
+    if(i<idx) btns[i].classList.add('esc-past');
+    else if(i===idx) btns[i].classList.add('esc-current');
+  }
+  for(var i=0;i<cards.length;i++){
+    cards[i].classList.remove('esc-dimmed','esc-active');
+    if(i===idx) cards[i].classList.add('esc-active');
+    else cards[i].classList.add('esc-dimmed');
+  }
+  cards[idx].scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+	// ===== OBSTRUCTIVE TAB (namespaced — no collisions) =====
+
+// Obstructive etiology mini-tabs (obMgmtPanel0/1/2)
+function switchObMgmt(idx){
+  for(var i=0;i<3;i++){
+    var btn=document.getElementById('obMgmtBtn'+i);
+    var panel=document.getElementById('obMgmtPanel'+i);
+    btn.classList.toggle('active',i===idx);
+    panel.classList.toggle('active',i===idx);
+  }
+}
+
+// Obstructive approach stepper (obEscCard0-3)
+var currentObEscStep=-1;
+function setObEscStep(idx){
+  var btns=document.querySelectorAll('#obEscStepper .esc-step-btn');
+  var cards=[];
+  for(var i=0;i<4;i++){cards.push(document.getElementById('obEscCard'+i))}
+  if(currentObEscStep===idx){
+    currentObEscStep=-1;
+    for(var i=0;i<btns.length;i++){btns[i].className='esc-step-btn'}
+    for(var i=0;i<cards.length;i++){cards[i].classList.remove('esc-dimmed','esc-active')}
+    return;
+  }
+  currentObEscStep=idx;
   for(var i=0;i<btns.length;i++){
     btns[i].className='esc-step-btn';
     if(i<idx) btns[i].classList.add('esc-past');
