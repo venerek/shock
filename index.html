@@ -192,8 +192,8 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <!-- TAB 0: DISTRIBUTIVE (NEW ORDER) -->
 <div class="tab-content active" id="tab0">
 <div class="sub-tabs">
-<button class="sub-tab active" onclick="switchSub(0,0)">Etiologies</button>
-<button class="sub-tab" onclick="switchSub(0,1)">Pathophysiology</button>
+<button class="sub-tab active" onclick="switchSub(0,0)">Pathophysiology</button>
+<button class="sub-tab" onclick="switchSub(0,1)">Etiologies</button>
 <button class="sub-tab" onclick="switchSub(0,2)">Hemodynamics</button>
 <button class="sub-tab" onclick="switchSub(0,3)">Management</button>
 <button class="sub-tab" onclick="switchSub(0,4)">Assessment</button>
@@ -202,7 +202,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 </div>
 
 <!-- ETIOLOGIES -->
-<div class="sub-content active" id="sub0-0"><div class="card"><h3>🦠 Etiologies of Distributive Shock</h3>
+<div class="sub-content" id="sub0-1"><div class="card"><h3>🦠 Etiologies of Distributive Shock</h3>
 <p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Distributive shock accounts for the majority (~66%) of shock in ICU. Identifying the specific etiology directly determines management. [1][5]</p>
 
 <div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.5rem;border:1px solid var(--border)">
@@ -254,7 +254,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 </div></div>
 	
 <!-- PATHOPHYSIOLOGY -->
-<div class="sub-content" id="sub0-1"><div class="card"><h3>🔬 Pathophysiology of Distributive Shock</h3>
+<div class="sub-content active" id="sub0-0"><div class="card"><h3>🔬 Pathophysiology of Distributive Shock</h3>
 <p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">The primary defect is in the periphery — inappropriate vasodilation with maldistribution of blood flow, decreased SVR, and impaired oxygen utilization despite preserved or elevated cardiac output. [1]</p>
 
 <div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
@@ -770,71 +770,55 @@ Is vasoactive support adequate and not escalating? <span style="color:var(--gree
 
 <!-- TAB 1: CARDIOGENIC -->
 <div class="tab-content" id="tab1">
-<div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(1,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(1,1)">SCAI &amp; Etiologies</button><button class="sub-tab" onclick="switchSub(1,2)">Management</button><button class="sub-tab" onclick="switchSub(1,3)">tMCS</button><button class="sub-tab" onclick="switchSub(1,4)">Rehab</button></div>
+<div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(1,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(1,1)">SCAI &amp; Etiologies</button><button class="sub-tab" onclick="switchSub(1,2)">Hemodynamics</button><button class="sub-tab" onclick="switchSub(1,3)">Management</button><button class="sub-tab" onclick="switchSub(1,4)">tMCS</button><button class="sub-tab" onclick="switchSub(1,5)">Rehab</button></div>
 
 <!-- PATHOPHYSIOLOGY -->
 <div class="sub-content active" id="sub1-0"><div class="card"><h3>🔬 Pathophysiology of Cardiogenic Shock</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">The primary defect is the pump. Inadequate cardiac output despite adequate intravascular volume → sustained tissue hypoperfusion → a self-reinforcing spiral of ischemia, congestion, and systemic decompensation. [3][5][9]</p>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">A low-output state due to primary cardiac dysfunction leading to systemic decompensation, end-organ dysfunction, and secondary myocardial injury. [1]</p>
 
 <div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
 
 <div style="position:relative;margin-bottom:1.25rem">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">💔 Primary Pump Failure</div>
-<div style="font-size:0.8rem;color:var(--text2)">Ischemic (AMI, most common), mechanical, arrhythmic, or end-stage myopathic insult → acute drop in contractility and stroke volume → ↓cardiac output. [5][9]</div>
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">💔 Primary Cardiac Dysfunction</div>
+<div style="font-size:0.8rem;color:var(--text2)">Most commonly acute coronary syndrome with LV dysfunction (up to 81% of cases), followed by acute decompensated heart failure. SBP &lt;80–90 mmHg, CI &lt;1.8 L/min/m² without support (&lt;2.2 with support), plus signs of tissue hypoperfusion. [1]</div>
 </div>
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🧬 Compensatory Neurohormonal Activation</div>
-<div style="font-size:0.8rem;color:var(--text2)"><strong>Sympathetic surge + RAAS activation:</strong> Catecholamines raise HR and contractility; angiotensin II and aldosterone drive vasoconstriction and sodium/water retention. Initially protective, these mechanisms raise afterload and myocardial O₂ demand. [3][9]</div>
-<div style="font-size:0.8rem;color:var(--text2);margin-top:0.3rem"><strong>The double-edged sword:</strong> Vasoconstriction maintains MAP but increases the failing ventricle's workload, worsening the supply-demand mismatch. [3]</div>
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🫀 Compensatory Vasoconstriction</div>
+<div style="font-size:0.8rem;color:var(--text2)">Compensatory peripheral vasoconstriction raises afterload — often poorly tolerated by a struggling pump. This produces the "cold and wet" profile (cool extremities + pulmonary congestion from LV failure). [1]</div>
 </div>
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🫀 Hemodynamic Consequences</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem">
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--red)">Forward Failure</strong><br><span style="color:var(--text2)">↓CO, ↓MAP, ↓coronary perfusion pressure → end-organ hypoperfusion [3][9]</span></div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--amber)">Backward Failure</strong><br><span style="color:var(--text2)">↑LVEDP → ↑PCWP → pulmonary congestion, hypoxemia [3]</span></div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--purple)">Venous Congestion</strong><br><span style="color:var(--text2)">↑CVP → congestive hepatic/renal injury — raises mortality independent of CO [3]</span></div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--teal)">↑Myocardial O₂ Demand</strong><br><span style="color:var(--text2)">Tachycardia + ↑afterload + wall stress widen the supply-demand gap [3][9]</span></div>
-</div>
-</div>
-</div>
-
-<div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
-<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🌀 The Downward Spiral</div>
-<div style="font-size:0.8rem;color:var(--text2)">↓Coronary perfusion → further ischemia → further ↓contractility → further ↓CO. Without interruption (revascularization, inotropy, or mechanical support), the cycle is self-perpetuating and lethal. [3][9]</div>
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🔥 Underappreciated Inflammatory Response</div>
+<div style="font-size:0.8rem;color:var(--text2)">A systemic inflammatory response can predominate with peripheral vasodilation — described as "wet and warm." Septic cardiomyopathy can produce a mixed-shock state, better elucidated with a PAC. [1]</div>
 </div>
 </div>
 
 <div style="position:relative">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">5</div>
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🔥 Mixed Shock Phenotype (Late, ~20–25%)</div>
-<div style="font-size:0.8rem;color:var(--text2)">Prolonged hypoperfusion triggers a SIRS-like inflammatory response → iNOS upregulation → inappropriate vasodilation superimposed on low CO. SVR falls paradoxically. PAC helpful to characterize; may require methylene blue or hydroxocobalamin. [9]</div>
+<div style="font-weight:700;font-size:0.88rem;color:var(--red);margin-bottom:0.25rem">💀 Systemic Decompensation</div>
+<div style="font-size:0.8rem;color:var(--text2)">End-organ hypoperfusion and secondary myocardial injury perpetuate the low-output state. Mortality remains high at 40–67%. [1]</div>
 </div>
 </div>
 
 </div>
 
-<div class="purple-box" style="margin-top:1.25rem"><strong>Cardiac Power Output: CPO = (MAP × CO) ÷ 451</strong><br>The single strongest hemodynamic predictor of in-hospital mortality (SHOCK trial). CPO &lt;0.6 W denotes severe pump failure. [3][9]</div>
-
-<div class="warn-box">⚠️ <strong>Key Insight:</strong> Cardiogenic shock is fundamentally a problem of afterload mismatch and a supply-demand spiral — not volume depletion. Reflexive fluid loading often worsens congestion. The therapeutic goal is to break the spiral: restore coronary flow, support contractility, and offload the ventricle. [3][9]</div>
+<div class="warn-box" style="margin-top:1.25rem">⚠️ <strong>RV vs. LV failure [1]:</strong> The presence and degree of RV and LV failure affects clinical presentation and determines management strategy (type of inotropic support, afterload reduction, diuretic use). Identify early.</div>
 
 </div></div>
 
 <!-- SCAI & ETIOLOGIES -->
 <div class="sub-content" id="sub1-1"><div class="card"><h3>📊 SCAI Staging &amp; Etiologies</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">The SCAI SHOCK classification stages severity from "At Risk" (A) to "Extremis" (E). Staging is dynamic — patients move between stages, and the modifier of cardiac arrest worsens prognosis at every stage. [9]</p>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">The SCAI classification standardizes the definition and severity of cardiogenic shock for timely risk stratification and intervention. Staging is dynamic — patients move between stages. [1]</p>
 
 <p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">Select a stage:</p>
 <div class="esc-stepper" id="scaiStepper">
@@ -845,54 +829,42 @@ Is vasoactive support adequate and not escalating? <span style="color:var(--gree
 <button class="esc-step-btn" onclick="setScaiStep(4)">E · Extremis</button>
 </div>
 
-<div class="abg-card escalate" id="scaiCard0"><div class="abg-header"><span class="abg-direction escalate">STAGE A</span><span class="abg-title">At Risk</span><span class="badge badge-green">~3% mortality</span></div><div class="abg-problem">No current signs of shock but at risk (e.g., large AMI, decompensating HF). Normal JVP, clear lungs, warm and well-perfused.</div><div class="abg-safety">Labs: normal lactate, normal renal function. Hemodynamics: normal.</div></div>
+<div class="abg-card escalate" id="scaiCard0"><div class="abg-header"><span class="abg-direction escalate">STAGE A</span><span class="abg-title">At Risk</span></div><div class="abg-problem">At risk for CS (large acute MI or prior infarct, worsening HF symptoms). Normal CVP, no rales, warm, good peripheral pulses, normal mentation. [1]</div><div class="abg-safety">Labs: normal lactate &amp; renal function. Hemodynamics: SBP &gt;100 or normal; if measured, CI ≥2.5, CVP &lt;10, ScvO₂ ≥65%. [1]</div></div>
 
-<div class="abg-card escalate" id="scaiCard1"><div class="abg-header"><span class="abg-direction escalate">STAGE B</span><span class="abg-title">Beginning (Pre-Shock / Compensated)</span><span class="badge badge-green">~7% mortality</span></div><div class="abg-problem">Hemodynamic instability without hypoperfusion. Tachycardia and/or hypotension (SBP &lt;90 or MAP &lt;60) but perfusion still preserved — normal lactate.</div><div class="abg-safety">Exam: elevated JVP, rales possible. Labs: normal lactate, minimal renal change.</div></div>
+<div class="abg-card escalate" id="scaiCard1"><div class="abg-header"><span class="abg-direction escalate">STAGE B</span><span class="abg-title">Beginning CS</span></div><div class="abg-problem">Clinical evidence of hypotension or tachycardia without hypoperfusion. Increased CVP, good peripheral pulses, normal mentation. [1]</div><div class="abg-safety">Labs: minimal renal impairment, elevated BNP. Hemodynamics: SBP &lt;90 or MAP &lt;60 or &gt;30 drop, HR ≥100; if done CI ≥2.2, ScvO₂ ≥65%. [1]</div></div>
 
-<div class="abg-card escalate" id="scaiCard2"><div class="abg-header"><span class="abg-direction escalate">STAGE C</span><span class="abg-title">Classic Cardiogenic Shock</span><span class="badge badge-amber">~12% mortality</span></div><div class="abg-problem">Hypoperfusion requiring intervention (inotrope, pressor, or mechanical support) beyond volume. The "textbook" presentation: cool, clammy, oliguric, altered.</div><div class="abg-safety">Labs: lactate ≥2, rising creatinine, ↑BNP. Hemodynamics: CI &lt;2.2, PCWP &gt;15, CPO ≤0.6 W.</div></div>
+<div class="abg-card escalate" id="scaiCard2"><div class="abg-header"><span class="abg-direction escalate">STAGE C</span><span class="abg-title">Classic CS</span></div><div class="abg-problem">Hypoperfusion requiring intervention (pharmacologic or temporary MCS), typically with hypotension. May look unwell, panicked, ashen, volume overloaded, rales, Killip 3–4, cold/clammy, altered MS, decreased UO. [1]</div><div class="abg-safety">Labs: lactate &gt;2, doubling creatinine or 50% GFR drop, ↑LFTs/BNP. Hemodynamics: CI &lt;2.2, P<sub>pao</sub> ≥15, CPO ≤0.6. [1]</div></div>
 
-<div class="abg-card escalate" id="scaiCard3"><div class="abg-header"><span class="abg-direction escalate">STAGE D</span><span class="abg-title">Deteriorating / Doom</span><span class="badge badge-red">~40% mortality</span></div><div class="abg-problem">Failure to respond to initial interventions — escalating support required. Not stabilizing on the current strategy.</div><div class="abg-safety">Labs: lactate rising or &gt;2 and not clearing, worsening organ dysfunction. Requires escalation of pharmacology or tMCS.</div></div>
+<div class="abg-card escalate" id="scaiCard3"><div class="abg-header"><span class="abg-direction escalate">STAGE D</span><span class="abg-title">Deteriorating / Doom</span></div><div class="abg-problem">Not responding to initial interventions in Stage C. Any of Stage C and deteriorating. [1]</div><div class="abg-safety">Requires multiple pressors and/or mechanical circulatory support to maintain flow. [1]</div></div>
 
-<div class="abg-card escalate" id="scaiCard4"><div class="abg-header"><span class="abg-direction escalate">STAGE E</span><span class="abg-title">Extremis</span><span class="badge badge-red">~67% mortality</span></div><div class="abg-problem">Circulatory collapse, often refractory cardiac arrest or requiring CPR/ECMO. Profound, multi-system hypoperfusion.</div><div class="abg-safety">Labs: severe lactic acidosis (often &gt;8), pH &lt;7.2. Hemodynamics: profound hypotension despite maximal support; near-PEA physiology.</div></div>
+<div class="abg-card escalate" id="scaiCard4"><div class="abg-header"><span class="abg-direction escalate">STAGE E</span><span class="abg-title">Extremis</span></div><div class="abg-problem">Near pulselessness, cardiac collapse, or CPR — with or without ECMO, mechanical ventilation, pacing. "Trying to die." [1]</div><div class="abg-safety">Labs: pH ≤7.2, lactate ≥5. Hemodynamics: no SBP without resuscitation, PEA, or refractory VT/VF despite maximal support. [1]</div></div>
 
-<div class="warn-box">⚠️ <strong>Cardiac Arrest Modifier (A):</strong> The presence of cardiac arrest at any stage independently worsens prognosis and is appended as a modifier (e.g., "C-A"). [9]</div>
+<div class="warn-box">⚠️ Mortality rises steeply with stage; overall CS mortality is 40–67%. [1]</div>
 
 <h4 style="font-size:0.92rem;margin:1.25rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);color:var(--text1)">📋 Etiology Deep Dives</h4>
 
-<details class="collapsible" open><summary>AMI-CS (Acute MI — most common)</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Mechanism:</strong> Loss of contractile mass (typically &gt;40% LV) or mechanical complication. Worst prognosis of the etiologies (~30% in-hospital mortality). [9]</p>
-<p style="font-size:0.82rem"><strong>Priority:</strong> Emergent revascularization of the culprit vessel. [9]</p>
-<div class="bad-box">⚠️ <strong>CULPRIT-SHOCK (NEJM 2017):</strong> In multivessel disease with AMI-CS, culprit-lesion-only PCI was superior to immediate multivessel PCI (lower 30-day death/RRT). <em>Citation flagged — verify year/numbers against the primary source.</em></div>
+<details class="collapsible" open><summary>Ischemic (most common — up to 81%)</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Includes:</strong> Acute MI secondary to LV or RV infarct; mechanical complication of ischemic infarct. ACS with resultant LV dysfunction is the leading cause. [1]</p>
+<p style="font-size:0.82rem"><strong>Priority:</strong> If ACS is present, emergent coronary angiography and revascularization is the mainstay — with demonstrated mortality benefit across racial/ethnic subgroups. [1]</p>
 </div></details>
 
-<details class="collapsible"><summary>HF-CS (Acute-on-Chronic Heart Failure)</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Mechanism:</strong> Decompensation of chronic cardiomyopathy. Often more congestion-predominant with relatively preserved adaptation. Mortality ~25%. [9]</p>
-<p style="font-size:0.82rem"><strong>Priority:</strong> Decongestion, inotropic support, evaluation for durable therapies (LVAD/transplant) in appropriate candidates. [9]</p>
+<details class="collapsible"><summary>Nonischemic — Acute / Acute-on-Chronic HF</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem"><strong>Includes:</strong> Acute decompensated heart failure (chronic ischemia, dilated cardiomyopathy, myocarditis, stress-induced/Takotsubo, peripartum cardiomyopathy), second most common cause after ACS. [1]</p>
 </div></details>
 
-<details class="collapsible"><summary>Mechanical Complications</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Includes:</strong> Acute mitral regurgitation (papillary muscle rupture), ventricular septal rupture, free wall rupture/tamponade. [9]</p>
-<p style="font-size:0.82rem"><strong>Priority:</strong> Urgent echo to identify; surgical or transcatheter repair. tMCS as bridge. High index of suspicion in AMI-CS that decompensates abruptly.</p>
-</div></details>
-
-<details class="collapsible"><summary>RV-Predominant Cardiogenic Shock</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Mechanism:</strong> RV infarction (inferior MI), acute PE, or RV failure post-LVAD. Preload-dependent and afterload-sensitive physiology. [9]</p>
-<p style="font-size:0.82rem"><strong>Priority:</strong> Maintain RV preload (cautious volume), reduce PVR, support RV contractility, avoid hypoxemia/hypercarbia/acidosis. RV-specific MCS (e.g., RV Impella, VA-ECMO) if refractory.</p>
-</div></details>
-
-<details class="collapsible"><summary>Arrhythmic</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem"><strong>Mechanism:</strong> Sustained tachy- or brady-arrhythmia compromising CO. <strong>Priority:</strong> Restore rhythm/rate — cardioversion, antiarrhythmics, or pacing. Often rapidly reversible once rhythm corrected.</p>
-</div></details>
-
-<details class="collapsible"><summary>Valvular &amp; Post-Cardiotomy</summary><div style="padding:0.75rem 0">
-<p style="font-size:0.82rem;margin-bottom:0.5rem"><strong>Valvular:</strong> Acute severe AR/MR or critical AS/MS. <strong>Post-cardiotomy shock:</strong> Failure to wean from bypass or early postoperative pump failure. [9]</p>
-<p style="font-size:0.82rem"><strong>Priority:</strong> Address the structural lesion; tMCS frequently required as a bridge to recovery or definitive repair.</p>
+<details class="collapsible"><summary>Other Etiologies</summary><div style="padding:0.75rem 0">
+<p style="font-size:0.82rem"><strong>Includes:</strong> Post-cardiotomy CS, post-cardiac-arrest myocardial stunning, septic cardiomyopathy, myocardial contusion, and dynamic LVOT obstruction (hypertrophic obstructive cardiomyopathy, hypertensive cardiomyopathy, Takotsubo). [1]</p>
 </div></details>
 
 </div></div>
 
+<!-- HEMODYNAMICS -->
+<div class="sub-content" id="sub1-2"><div class="card"><h3>📊 Hemodynamic Profile</h3><table class="hemo-table" id="hemoTable1" data-active-col="2"><tr><th>Parameter</th><th class="hemo-dim">Distributive</th><th class="hemo-active">Cardiogenic</th><th class="hemo-dim">Hypovolemic</th><th class="hemo-dim">Obstructive</th></tr><tr><td><strong>CO</strong></td><td class="hemo-dim">↑/Normal</td><td class="hemo-active">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>SVR</strong></td><td class="hemo-dim">↓↓</td><td class="hemo-active">↑↑</td><td class="hemo-dim">↑</td><td class="hemo-dim">↑</td></tr><tr><td><strong>CVP</strong></td><td class="hemo-dim">↓/Normal</td><td class="hemo-active">↑↑</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↑</td></tr><tr><td><strong>PCWP</strong></td><td class="hemo-dim">↓/Normal</td><td class="hemo-active">↑↑</td><td class="hemo-dim">↓</td><td class="hemo-dim">Variable</td></tr><tr><td><strong>ScvO₂</strong></td><td class="hemo-dim">↑/Normal</td><td class="hemo-active">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>Extremities</strong></td><td class="hemo-dim">Warm (early)</td><td class="hemo-active">Cool</td><td class="hemo-dim">Cool</td><td class="hemo-dim">Cool</td></tr></table>
+<div class="warn-box">⚠️ <strong>Classic findings [1]:</strong> Cold extremities, rales, elevated JVD, slow capillary refill. "Cold and wet" (cool extremities + pulmonary congestion from LV failure) is the classic presentation; "cold and dry" denotes poor perfusion without congestion and is often diuretic-responsive. Mixed venous saturation is reduced but can also reflect anemia, hypoxemia, or increased O₂ consumption. [1]</div>
+<p class="cite">[1] Khorsand et al. 2023 – Anesthesiol Clin</p></div></div>
+
 <!-- MANAGEMENT -->
-<div class="sub-content" id="sub1-2"><div class="card"><h3>💊 Medical &amp; Pharmacologic Management</h3>
+<div class="sub-content" id="sub1-3"><div class="card"><h3>💊 Medical &amp; Pharmacologic Management</h3>
 
 <div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
 <button class="mini-tab active" onclick="switchCgMgmt(0)" id="cgMgmtBtn0">🚨 Initial Stabilization</button>
@@ -900,290 +872,123 @@ Is vasoactive support adequate and not escalating? <span style="color:var(--gree
 <button class="mini-tab" onclick="switchCgMgmt(2)" id="cgMgmtBtn2">📈 Escalation</button>
 </div>
 
-<!-- INITIAL STABILIZATION -->
 <div class="mgmt-panel active" id="cgMgmtPanel0">
 <h4>Initial Stabilization</h4>
 <div class="param-grid">
-<div class="param-item"><div class="param-name">Diagnose the Phenotype</div><div class="param-def">Immediate bedside echo + 12-lead ECG. Identify AMI vs. HF-CS vs. mechanical vs. RV-predominant. Consider early PAC to characterize CI, PCWP, CVP, and CPO — particularly when phenotype is unclear or mixed shock suspected. [3][9]</div></div>
-<div class="param-item"><div class="param-name">Restore Coronary Flow</div><div class="param-def">For AMI-CS: emergent revascularization of the culprit lesion is the single most important intervention. Do not delay for hemodynamic "optimization." [9]</div></div>
-<div class="param-item"><div class="param-name">Volume — Carefully</div><div class="param-def">Unlike other shock states, most CS patients are NOT volume depleted. Reserve cautious 250–500 mL challenges for the rare under-filled or RV-predominant patient; assess response. Diurese/decongest if PCWP/CVP elevated. [3][5]</div></div>
-<div class="param-item"><div class="param-name">Oxygenation &amp; Ventilation</div><div class="param-def">Treat hypoxemia. Positive-pressure ventilation reduces LV afterload and work of breathing but can impair RV preload — titrate carefully, especially in RV-predominant CS. [9]</div></div>
+<div class="param-item"><div class="param-name">Diagnose &amp; Revascularize</div><div class="param-def">Serial troponins + ECG are essential. If STEMI or ACS changes are present, emergent coronary angiography and revascularization is the mainstay — mortality benefit demonstrated. [1]</div></div>
+<div class="param-item"><div class="param-name">Targets</div><div class="param-def">Keep cardiac index &gt;2.2 L/min/m² and MAP &gt;65 mmHg. RA and PA wedge pressures are poor predictors of fluid response, but trends with echo, exam, and biomarkers may be useful. [1]</div></div>
+<div class="param-item"><div class="param-name">Volume — Judicious</div><div class="param-def">If indicated, judicious 250–500 mL challenges avoid overstressing the failing pump. Conversely, furosemide ± thiazide if congestion/total body volume elevated. [1]</div></div>
+<div class="param-item"><div class="param-name">Respiratory Support</div><div class="param-def">Noninvasive PPV often used first and may avoid intubation. Moderate–high PEEP (5–15 cm H₂O) may improve CO in afterload-dependent LV failure. Low tidal volume (4–6 mL/kg) is lung-protective; minimize sedation and increase mobility. [1]</div></div>
+</div>
+<div class="warn-box">⚠️ Avoid negative inotropes (e.g., beta-blockers). Consider chemical/electrical pacing if bradyarrhythmias contribute to hypoperfusion; urgent cardioversion for new-onset tachyarrhythmias (e.g., atrial fibrillation). [1]</div>
 </div>
 
-<div class="warn-box">⚠️ <strong>Mantra:</strong> "Open the artery, support the pump, offload the ventricle." Pressors and inotropes are a bridge — they buy time for revascularization or mechanical support, not a destination. Every µg of catecholamine raises myocardial O₂ demand. [3][9]</div>
-</div>
-
-<!-- PHARMACOLOGY -->
 <div class="mgmt-panel" id="cgMgmtPanel1">
 <h4>Inotrope &amp; Vasopressor Pharmacology</h4>
-
-<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
-<h4 style="margin-bottom:0.6rem;font-size:0.85rem;color:var(--text1)">🔑 Receptor → Physiologic Effect</h4>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;font-size:0.78rem">
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--red)"><strong style="color:var(--red)">Alpha-1</strong><br><strong>Vasoconstriction</strong><br><span style="color:var(--text2);font-size:0.72rem">Raises SVR/MAP — but raises afterload on the failing LV [1][3]</span></div>
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--blue)"><strong style="color:var(--blue)">Beta-1</strong><br><strong>Inotropy + Chronotropy</strong><br><span style="color:var(--text2);font-size:0.72rem">Raises contractility/CO — at the cost of ↑myocardial O₂ demand [1][3]</span></div>
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;border-left:3px solid var(--green)"><strong style="color:var(--green)">PDE3i / Beta-2</strong><br><strong>Inodilation</strong><br><span style="color:var(--text2);font-size:0.72rem">Inotropy + vasodilation → lowers SVR/PVR, offloads ventricle [5]</span></div>
+<div class="param-grid">
+<div class="param-item"><div class="param-name">Catecholamine Caution</div><div class="param-def">Catecholamines may transiently improve hemodynamics but are associated with worse long-term outcomes in HFrEF — likely from arrhythmogenicity and increased myocardial O₂ consumption. [1]</div></div>
+<div class="param-item"><div class="param-name">Dobutamine vs. Milrinone</div><div class="param-def">A recent RCT found no difference in outcomes between dobutamine and milrinone in cardiogenic shock. Weigh the benefits of a catecholamine-sparing agent against the need for rapid titration and possible concomitant renal failure. [1]</div></div>
+<div class="param-item"><div class="param-name">Inotropic Support in SCM</div><div class="param-def">Inotropic support for septic cardiomyopathy has not been shown to be beneficial, though it is not well-studied in overt sepsis-induced cardiogenic shock. [1]</div></div>
 </div>
+<div class="warn-box">⚠️ Negative inotropes should be avoided in cardiogenic shock. Pacing warranted if bradyarrhythmias contribute to hypoperfusion. [1]</div>
 </div>
 
-<div style="overflow-x:auto">
-<table style="border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:10px;overflow:hidden">
-<thead>
-<tr style="background:var(--bg2)">
-<th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border)">Agent</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--red)">Alpha-1</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--blue)">Beta-1</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--green)">Beta-2</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.78rem;border-bottom:2px solid var(--border);text-align:center;color:var(--purple)">Other</th>
-<th style="padding:0.6rem 0.75rem;font-size:0.78rem;border-bottom:2px solid var(--border)">Role in CS</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Norepinephrine</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--red)">++++</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--blue)">++</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--green)">+</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)"><span style="color:var(--blue)">First-line vasopressor.</span> Preferred over dopamine (lower arrhythmia/mortality, SOAP II subgroup). Restores coronary perfusion pressure. [4][9]</td>
-</tr>
-<tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Dobutamine</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--red)">+</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--blue)">++++</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--green)">++</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)"><span style="color:var(--blue)">First-line inotrope.</span> Raises CO; mild ↓SVR. May cause tachycardia/hypotension. Target CI &gt;2.2. [5]</td>
-</tr>
-<tr style="border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Milrinone</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:600;color:var(--purple)">PDE3i</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)"><span style="color:var(--blue)">Inodilator.</span> Non-adrenergic cAMP pathway — useful if beta-receptor downregulation or chronic beta-blockade. <span style="color:var(--green)">Lowers PVR</span> (favorable in RV failure). Renally cleared; hypotension risk. [5]</td>
-</tr>
-<tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Epinephrine</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--red)">+++</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--blue)">++++</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:700;color:var(--green)">+++</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Potent inopressor for refractory shock. <span style="color:var(--red)">Associated with ↑lactate, arrhythmia, and harm signal in AMI-CS</span> (OptimaCC) — reserve for refractory cases. [9]</td>
-</tr>
-<tr style="border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Dopamine</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--red)">++ <span style="font-size:0.65rem;font-weight:400">(high)</span></td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--blue)">++ <span style="font-size:0.65rem;font-weight:400">(mid)</span></td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:600;color:var(--purple)">D1</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)"><span style="color:var(--red)">Generally avoided</span> in CS — SOAP II showed higher arrhythmia and mortality in cardiogenic subgroup vs. norepinephrine. [4]</td>
-</tr>
-<tr style="background:var(--pill-bg)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.82rem">Levosimendan</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.5rem;text-align:center;font-weight:600;color:var(--purple)">Ca²⁺ sens.</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.78rem;color:var(--text2)">Calcium-sensitizer inodilator; does not raise O₂ demand like catecholamines. Long half-life; hypotension risk. Not available in all regions. [5]</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="good-box" style="margin-top:1rem"><strong>DOREMI (NEJM 2021):</strong> No significant difference between milrinone and dobutamine for the composite primary outcome in cardiogenic shock. Choice can be individualized to patient physiology (e.g., milrinone if RV failure/beta-blockade; dobutamine if renal impairment/hypotension). [5] <em>Citation flagged — verify journal/year against the primary source.</em></div>
-
-<div class="warn-box">⚠️ <strong>The afterload trap:</strong> A pure Alpha-1 agent (phenylephrine) raises MAP but increases afterload on a failing ventricle and can reduce CO — generally avoid in CS. If MAP improves but CO/perfusion worsens with vasoconstriction, the ventricle cannot tolerate the added afterload → consider mechanical unloading. [3]</div>
-</div>
-
-<!-- ESCALATION -->
 <div class="mgmt-panel" id="cgMgmtPanel2">
-<h4>Escalation Pathway [3][5][9]</h4>
+<h4>Escalation Pathway [1]</h4>
 <p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">Mark current step:</p>
 <div class="esc-stepper" id="cgEscStepper">
-<button class="esc-step-btn" onclick="setCgEscStep(0)">Step 1: Optimize</button>
+<button class="esc-step-btn" onclick="setCgEscStep(0)">Step 1: Revascularize/Optimize</button>
 <button class="esc-step-btn" onclick="setCgEscStep(1)">Step 2: Inotrope ± Pressor</button>
 <button class="esc-step-btn" onclick="setCgEscStep(2)">Step 3: tMCS</button>
 <button class="esc-step-btn" onclick="setCgEscStep(3)">De-escalation</button>
 </div>
-<div class="abg-card escalate" id="cgEscCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Diagnose &amp; Optimize</span></div><div class="abg-problem">Echo + ECG, treat the cause (revascularize AMI, correct arrhythmia, address mechanical lesion). Optimize preload (decongest if wet, cautious volume if RV/dry), correct hypoxemia/acidosis. Establish CI, PCWP, CPO baseline. [3][9]</div></div>
-<div class="abg-card escalate" id="cgEscCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Inotrope ± Vasopressor</span></div><div class="abg-problem">Norepinephrine to restore MAP/coronary perfusion + dobutamine or milrinone for inotropy. Use the lowest effective doses — catecholamines raise myocardial O₂ demand and are a bridge, not a destination. Reassess CI/CPO and perfusion. [4][5][9]</div><div class="abg-safety">Escalating doses or rising lactate = SCAI D → do not delay mechanical support evaluation.</div></div>
-<div class="abg-card escalate" id="cgEscCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Temporary Mechanical Circulatory Support</span></div><div class="abg-problem">If pharmacologic support is inadequate (persistent hypoperfusion, CPO ≤0.6 W, rising lactate), escalate early to tMCS rather than maximizing catecholamines. Device choice depends on phenotype (LV vs. RV vs. biventricular, oxygenation needs). See tMCS tab. [3][9]</div><div class="abg-safety">Early tMCS (before profound multi-organ failure) is associated with better outcomes — escalate at SCAI C→D, not E.</div></div>
-<div class="abg-card deescalate" id="cgEscCard3"><div class="abg-header"><span class="abg-direction deescalate">DE-ESCALATION</span><span class="abg-title">Weaning Support</span></div><div class="abg-problem">As contractility recovers (improving CI/CPO, clearing lactate, rising UOP): wean catecholamines first, then wean/decommission tMCS per device protocol with echo guidance. Transition to oral GDMT for HF-CS. [5][9]</div></div>
+<div class="abg-card escalate" id="cgEscCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Revascularize &amp; Optimize</span></div><div class="abg-problem">Restore perfusion to myocardium and end organs while treating the underlying cause. If ACS present, early invasive treatment and reperfusion is the mainstay. Target CI &gt;2.2, MAP &gt;65. [1]</div></div>
+<div class="abg-card escalate" id="cgEscCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Inotrope ± Vasopressor</span></div><div class="abg-problem">Dobutamine or milrinone (no outcome difference). Catecholamines are a bridge — weigh arrhythmogenicity and ↑myocardial O₂ demand. PAC strongly considered to guide decisions. [1]</div><div class="abg-safety">If support inadequate despite maximal medical management → consider temporary MCS. Early initiation may confer survival benefit. [1]</div></div>
+<div class="abg-card escalate" id="cgEscCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Temporary Mechanical Circulatory Support</span></div><div class="abg-problem">If hemodynamic support is inadequate despite maximal medical management, temporary MCS should be considered. Cannulation strategy, physiologic effects, and support level vary by device. Early initiation may confer survival benefit. [1]</div><div class="abg-safety">Shock algorithms and multidisciplinary regional hub expertise enable time-sensitive, patient-centered decisions. [1]</div></div>
+<div class="abg-card deescalate" id="cgEscCard3"><div class="abg-header"><span class="abg-direction deescalate">DE-ESCALATION</span><span class="abg-title">Recovery or Bridge</span></div><div class="abg-problem">If recovery on MCS: wean support. If no recovery: MCS can bridge to advanced therapies (transplant, durable device) or bridge to decision. If neurologic uncertainty or MSOF prohibits advanced therapy candidacy, goals-of-care discussions and consideration of withdrawal are warranted. [1]</div></div>
 </div>
 
 </div></div>
 
 <!-- tMCS -->
-<div class="sub-content" id="sub1-3"><div class="card"><h3>🔧 Temporary Mechanical Circulatory Support</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">tMCS supports circulation while the cause is addressed (bridge to recovery, decision, or durable therapy). Device selection is driven by the failing ventricle(s), oxygenation needs, and the degree of support required. [3][9]</p>
+<div class="sub-content" id="sub1-4"><div class="card"><h3>🔧 Temporary Mechanical Circulatory Support</h3>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">If hemodynamic support is inadequate despite maximal medical management, temporary MCS should be considered. Cannulation strategies, physiologic effects, and amount of support vary based on the type of MCS initiated. Early initiation of MCS may confer survival benefit. [1]</p>
 
-<div style="overflow-x:auto">
-<table style="border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:10px;overflow:hidden">
-<thead>
-<tr style="background:var(--bg2)">
-<th style="padding:0.6rem 0.75rem;font-size:0.76rem;border-bottom:2px solid var(--border)">Device</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.76rem;border-bottom:2px solid var(--border)">Flow</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.76rem;border-bottom:2px solid var(--border)">Afterload</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.76rem;border-bottom:2px solid var(--border)">LV Unloading</th>
-<th style="padding:0.6rem 0.5rem;font-size:0.76rem;border-bottom:2px solid var(--border)">RV Support</th>
-<th style="padding:0.6rem 0.75rem;font-size:0.76rem;border-bottom:2px solid var(--border)">Key Risks</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.8rem">IABP</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">~0.5–1 L/min</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--green)">↓ (mild)</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--amber)">Indirect/mild</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">No</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.76rem;color:var(--text2)">Limb ischemia; modest support. Diastolic augmentation ↑coronary perfusion.</td>
-</tr>
-<tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.8rem">Impella CP</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">~3.5 L/min</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">Neutral</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--green)">Direct (active)</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">No</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.76rem;color:var(--text2)">Hemolysis, limb ischemia, device migration. Trans-aortic LV-to-aorta.</td>
-</tr>
-<tr style="border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.8rem">Impella 5.5</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">~5.5 L/min</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">Neutral</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--green)">Direct (full)</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">No</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.76rem;color:var(--text2)">Surgical (axillary) cutdown; full LV support, ambulation possible.</td>
-</tr>
-<tr style="background:var(--pill-bg);border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.8rem">VA-ECMO</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">~3–7 L/min</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--red)">↑↑ (raises)</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--red)">No (worsens)</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--green)">Yes (full)</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.76rem;color:var(--text2)">Highest support + oxygenation, but ↑LV afterload → distension/pulmonary edema; limb ischemia, Harlequin syndrome.</td>
-</tr>
-<tr style="border-bottom:1px solid var(--border)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.8rem">ECPELLA</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">Combined</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--amber)">Mitigated</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--green)">Yes (vented)</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--green)">Yes</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.76rem;color:var(--text2)">ECMO + Impella to vent the LV — addresses ECMO's afterload penalty. Cumulative access/bleeding risk.</td>
-</tr>
-<tr style="background:var(--pill-bg)">
-<td style="padding:0.6rem 0.75rem;font-weight:700;font-size:0.8rem">Impella RP / ProtekDuo</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">~4 L/min</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">—</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--text2)">No</td>
-<td style="padding:0.6rem 0.5rem;font-size:0.76rem;color:var(--green)">Direct (RV)</td>
-<td style="padding:0.6rem 0.75rem;font-size:0.76rem;color:var(--text2)">RV-specific support (RA→PA). For isolated/predominant RV failure.</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<h4 style="margin-top:1.25rem">🎯 Device Selection Logic</h4>
 <div class="param-grid">
-<div class="param-item"><div class="param-name">Isolated LV failure, no oxygenation problem</div><div class="param-def">Impella (CP or 5.5) provides direct LV unloading without the afterload penalty of VA-ECMO. IABP if only modest support needed and Impella unavailable. [3][9]</div></div>
-<div class="param-item"><div class="param-name">Biventricular failure or respiratory failure</div><div class="param-def">VA-ECMO provides full cardiopulmonary support and oxygenation. Plan for LV venting (ECPELLA or IABP) if LV distension/pulmonary edema develops. [3][9]</div></div>
-<div class="param-item"><div class="param-name">Isolated/predominant RV failure</div><div class="param-def">RV-specific support (Impella RP, ProtekDuo) or VA-ECMO. Avoid raising PVR; optimize RV preload and contractility. [9]</div></div>
-<div class="param-item"><div class="param-name">Timing</div><div class="param-def">Escalate early (SCAI C→D) before profound multi-organ failure. Outcomes are better when tMCS precedes irreversible end-organ injury rather than as a salvage maneuver at SCAI E. [9]</div></div>
+<div class="param-item"><div class="param-name">When to Consider</div><div class="param-def">Inadequate hemodynamic support despite maximal medical therapy. Given high mortality and the risks/costs of MCS, shock algorithms and multidisciplinary expertise at regional hubs allow early involvement of experts and time-sensitive, patient-centered decisions. [1]</div></div>
+<div class="param-item"><div class="param-name">Device Selection</div><div class="param-def">Cannulation strategy, physiologic effects, and degree of support all vary by device type. Echocardiography confirms placement of MCS devices. [1]</div></div>
+<div class="param-item"><div class="param-name">Exit Strategy</div><div class="param-def">If no recovery on MCS, it can bridge to advanced therapies (transplantation, durable support) or bridge to decision while further workup is obtained. [1]</div></div>
 </div>
 
-<div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-top:1rem;margin-bottom:1rem;border:2px solid var(--blue)">
-<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap">
-<span class="badge badge-blue">LANDMARK TRIAL</span>
-<strong style="font-size:0.88rem;color:var(--text1)">DanGer Shock (2024)</strong>
-</div>
-<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.6rem">First adequately powered RCT of a microaxial flow pump (Impella CP) vs. standard care in STEMI-related cardiogenic shock. [9]</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem;text-align:center">
-<strong style="color:var(--green);font-size:0.95rem">↓ 180-day mortality</strong><br>
-<span style="color:var(--text2)">Significant reduction vs. standard care in STEMI-CS [9]</span>
-</div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem;text-align:center">
-<strong style="color:var(--amber);font-size:0.95rem">↑ Adverse events</strong><br>
-<span style="color:var(--text2)">More limb ischemia, bleeding, hemolysis, renal replacement [9]</span>
-</div>
-</div>
-<div style="font-size:0.78rem;color:var(--text1);padding:0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--blue)">
-<strong>Clinical Implication:</strong> Routine Impella CP in selected STEMI-CS patients improved survival but at the cost of more device-related complications — patient selection and complication management are critical. [9] <em>Citation flagged — verify exact mortality figures, n, and NNT against the primary publication before clinical use.</em>
-</div>
-</div>
+<div class="warn-box">⚠️ <strong>No exit strategy [1]:</strong> Neurologic uncertainty or multisystem organ failure prohibits advanced-therapy candidacy. Goals-of-care discussions should occur, and withdrawal of support considered if there is poor chance of recovery without an exit strategy on MCS.</div>
 
-<div class="warn-box">⚠️ <strong>Trials to verify (not in current reference set):</strong> <strong>IABP-SHOCK II</strong> (no mortality benefit of routine IABP in AMI-CS), <strong>ECLS-SHOCK</strong> (no mortality benefit of routine early VA-ECMO in AMI-CS), and <strong>CULPRIT-SHOCK</strong> (culprit-only PCI superior to immediate multivessel). Confirm year, journal, and effect sizes against primary sources before relying on these in clinical decisions.</div>
+<div class="good-box"><strong>Early initiation [1]:</strong> Early initiation of MCS may confer a survival benefit. Regional shock-team models support timely, expert-guided decision-making.</div>
 
 </div></div>
 
 <!-- REHAB -->
-<div class="sub-content" id="sub1-4"><div class="card"><h3>💪 Rehab Considerations</h3>
+<div class="sub-content" id="sub1-5"><div class="card"><h3>💪 Rehab Considerations</h3>
 
-<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> As in all shock, readiness is a trajectory — not a single number. In cardiogenic shock the added layer is mechanical support: a patient on a stable, weaning Impella with clearing lactate is fundamentally different from one on escalating inotropes. Device platform and access site constrain mobility. [5][6]</div>
+<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> Readiness is a trajectory — not a single number. In cardiogenic shock the added layers are mechanical support and the failing pump's intolerance of added stress. The source emphasizes that daily assessments to minimize sedation and increase mobility are important in the ventilated CS patient. [1]</div>
 
 <div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
 <h4 style="font-size:0.92rem;margin-bottom:0.5rem;color:var(--text1)">📋 Structured Readiness Framework</h4>
 <p style="font-size:0.78rem;color:var(--text2);margin-bottom:1rem">Three domains — each requires evaluating the <strong>trajectory</strong>, adapted to cardiogenic physiology</p>
 
-<!-- DOMAIN 1 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--red)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--red);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 1</span>
 <strong style="font-size:0.88rem;color:var(--text1)">Cardiac Recovery &amp; Pump Function</strong>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">CI / CPO</strong><br><span style="color:var(--text2)">CI &gt;2.2? CPO improving toward/above 0.6 W? Trending up?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Filling Pressures</strong><br><span style="color:var(--text2)">PCWP/CVP decongesting? No rising congestion?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">CI / CPO</strong><br><span style="color:var(--text2)">CI &gt;2.2? CPO improving toward/above 0.6? Trending up?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Filling Pressures</strong><br><span style="color:var(--text2)">Congestion resolving? No rising congestion?</span></div>
 <div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Rhythm</strong><br><span style="color:var(--text2)">Stable? No new/unstable arrhythmia? Pacing dependency?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">MAP</strong><br><span style="color:var(--text2)">At target without escalating support? Labile with position?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">MAP</strong><br><span style="color:var(--text2)">At target without escalating support?</span></div>
 </div>
 <div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--red)">
 <strong>Trajectory Question:</strong> Is pump function stable/recovering over the last several hours without escalation of pharmacologic or mechanical support?
 </div>
 </div>
 
-<!-- DOMAIN 2 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--blue)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--blue);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 2</span>
 <strong style="font-size:0.88rem;color:var(--text1)">Markers of End-Organ Perfusion</strong>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div><strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br><span style="color:var(--text2);font-size:0.72rem">Warming? CRT improving?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🧠</div><strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br><span style="color:var(--text2);font-size:0.72rem">Alert? Interactive? Improving?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🩸</div><strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br><span style="color:var(--text2);font-size:0.72rem">≥0.5 mL/kg/hr? Trending up?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div><strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br><span style="color:var(--text2);font-size:0.72rem">Improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🧠</div><strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br><span style="color:var(--text2);font-size:0.72rem">Improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🩸</div><strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br><span style="color:var(--text2);font-size:0.72rem">Trending up?</span></div>
 </div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.6rem;margin-bottom:0.5rem">
 <strong style="font-size:0.8rem;color:var(--text1)">🧪 Lab Biomarkers (Trending)</strong>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.4rem;margin-top:0.4rem">
-<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Lactate</strong><br><span style="color:var(--text2)">Clearing?</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.4rem;margin-top:0.4rem">
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Lactate</strong><br><span style="color:var(--text2)">Clearing? (independently linked to mortality)</span></div>
 <div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Creatinine</strong><br><span style="color:var(--text2)">Stable/improving?</span></div>
-<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>LFTs</strong><br><span style="color:var(--text2)">Congestive injury resolving?</span></div>
-<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>SvO₂</strong><br><span style="color:var(--text2)">Recovering?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>ScvO₂/SvO₂</strong><br><span style="color:var(--text2)">Recovering?</span></div>
 </div>
 </div>
 <div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--blue)">
-<strong>Trajectory Question:</strong> Is end-organ perfusion maintained/improving and are biomarkers trending favorably over the last 6–12+ hours?
+<strong>Trajectory Question:</strong> Is end-organ perfusion maintained/improving with lactate trending favorably? (Note: BNP/proBNP are not recommended to assess treatment response in CS. [1])
 </div>
 </div>
 
-<!-- DOMAIN 3 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--green)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--green);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 3</span>
 <strong style="font-size:0.88rem;color:var(--text1)">Vasoactive &amp; Mechanical Support</strong>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the support?</strong><br><span style="color:var(--text2)">Inotrope/pressor dose (NEE) + device type, level, and access site.</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the trajectory?</strong><br><span style="color:var(--text2)">Weaning device level/catecholamines? Stable? Escalating?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2"><strong style="color:var(--text1)">Device &amp; access constraints</strong><br><span style="color:var(--text2)">Femoral access (Impella CP, VA-ECMO, IABP) often restricts hip flexion and limits mobility; axillary Impella 5.5 may permit ambulation. Confirm cannula stability, anticoagulation, and team/perfusion clearance before any mobility. A "good" MAP on rising support is not readiness.</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the support?</strong><br><span style="color:var(--text2)">Inotrope/pressor dose (NEE) + device type and level.</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the trajectory?</strong><br><span style="color:var(--text2)">Weaning device/catecholamines? Stable? Escalating?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2"><strong style="color:var(--text1)">Device &amp; access constraints</strong><br><span style="color:var(--text2)">Confirm cannula stability, anticoagulation, and team/perfusion clearance before any mobility. The source emphasizes daily assessments to minimize sedation and increase mobility in the ventilated CS patient. A "good" MAP on rising support is not readiness. [1]</span></div>
 </div>
 <div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--green)">
 <strong>Trajectory Question:</strong> Is support achieving adequate perfusion, stable or weaning (not escalating), and does the device/access permit the planned activity safely?
 </div>
 </div>
 
-<!-- INTEGRATION -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;border:2px dashed var(--tab-accent)">
 <h4 style="font-size:0.85rem;color:var(--tab-accent);margin-bottom:0.5rem">🔗 Integration: The Clinical Question</h4>
 <p style="font-size:0.8rem;color:var(--text1);margin-bottom:0.5rem">Readiness is the intersection of all three domains plus device/access safety:</p>
@@ -1193,30 +998,22 @@ Is end-organ perfusion maintained/improving? <span style="color:var(--blue)">+</
 Is support adequate, weaning, and access-compatible? <span style="color:var(--green)">=</span><br>
 <span style="color:var(--tab-accent);font-size:0.9rem">→ Clinical reasoning for mobility decision</span>
 </div>
-<p style="font-size:0.75rem;color:var(--text2);margin-top:0.5rem;text-align:center">A framework for reasoning with the multidisciplinary team — not a pass/fail score. Device protocols and team clearance always supersede.</p>
+<p style="font-size:0.75rem;color:var(--text2);margin-top:0.5rem;text-align:center">A framework for reasoning with the team — not a pass/fail score. Device protocols and team clearance always supersede.</p>
 </div>
 </div>
-
-<h4 style="margin-top:1.25rem;margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);color:var(--text1);font-size:0.92rem">📚 Evidence for Early Rehab in Cardiogenic Shock</h4>
-<div class="good-box"><strong>Ueno et al. 2025:</strong> Early rehabilitation for acute HF requiring IV inotropes was associated with lower mortality (9.9% vs. 13.2%, p&lt;0.001) and shorter length of stay. [6]</div>
-<ul class="checklist">
-<li class="checklist-item"><span class="checklist-icon primary">1</span><div class="checklist-content"><strong>Multidisciplinary coordination is essential</strong><div class="checklist-detail">Rehab on tMCS requires perfusion, nursing, intensivist, and PT alignment in accordance device-specific considerations. [6]</div></div></li>
-<li class="checklist-item"><span class="checklist-icon primary">2</span><div class="checklist-content"><strong>Access site dictates feasibility</strong><div class="checklist-detail">Femoral Impella (CP, RP) generally confer bedrest [6]</div></div></li>
-<li class="checklist-item"><span class="checklist-icon primary">3</span><div class="checklist-content"><strong>Conservative, response-dependent progression</strong><div class="checklist-detail">Advance only with stable hemodynamics on routine (non-escalating) support and favorable perfusion trajectory. [5][6]</div></div></li>
-</ul>
 
 </div></div>
 
-<p class="cite">[1] Vincent &amp; De Backer 2013 – NEJM · [3] Nakata et al. 2023 · [4] Monnet et al. 2025 – ESICM · [5] Khorsand et al. 2023 · [6] CSM Shock 2026 · [9] Bellumkonda 2025</p>
+<p class="cite">[1] Khorsand et al. 2023 – Anesthesiol Clin</p>
 </div>
-
+	
 <!-- TAB 2: HYPOVOLEMIC -->
 <div class="tab-content" id="tab2">
-<div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(2,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(2,1)">Classification</button><button class="sub-tab" onclick="switchSub(2,2)">Management</button><button class="sub-tab" onclick="switchSub(2,3)">Rehab</button></div>
+<div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(2,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(2,1)">Classification</button><button class="sub-tab" onclick="switchSub(2,2)">Hemodynamics</button><button class="sub-tab" onclick="switchSub(2,3)">Management</button><button class="sub-tab" onclick="switchSub(2,4)">Rehab</button></div>
 
 <!-- PATHOPHYSIOLOGY -->
 <div class="sub-content active" id="sub2-0"><div class="card"><h3>🔬 Pathophysiology of Hypovolemic Shock</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Loss of intravascular volume — directly via whole blood (hemorrhagic) or indirectly via extracellular fluid — reduces preload, creating a deficit in perfusion pressure so that macrocirculation and microcirculation both suffer. [1][10]</p>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Loss of intravascular volume — directly from whole blood loss or indirectly from extracellular fluid loss — leads to inadequate organ perfusion. All types decrease preload, creating a deficit in perfusion pressure so that both macrocirculation and microcirculation suffer. [1]</p>
 
 <div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
 
@@ -1224,54 +1021,44 @@ Is support adequate, weaning, and access-compatible? <span style="color:var(--gr
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🩸 Volume Loss → ↓Preload</div>
-<div style="font-size:0.8rem;color:var(--text2)">Whole-blood loss or extracellular fluid loss reduces venous return and ventricular filling → ↓stroke volume → ↓cardiac output → inadequate tissue oxygen delivery. [1][10]</div>
+<div style="font-size:0.8rem;color:var(--text2)">Whole-blood or extracellular fluid loss reduces preload → deficit in perfusion pressure → decreased tissue perfusion and triggering of an inflammatory cascade. [1]</div>
 </div>
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🧬 Compensatory Response</div>
-<div style="font-size:0.8rem;color:var(--text2)">↑Heart rate and contractility, then baroreceptor-driven sympathetic activation → peripheral vasoconstriction. Diastolic pressure rises slightly with <strong>narrowing pulse pressure</strong>; blood is shunted from noncritical organs toward heart and brain. [10]</div>
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🫀 Reflex Vasoconstriction (Tissue Level)</div>
+<div style="font-size:0.8rem;color:var(--text2)">Hemorrhage → hypovolemia → reflex vasoconstriction → decreased blood flow to vital organs → multisystem organ failure in severe cases. [1]</div>
 </div>
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">⚗️ Anaerobic Metabolism &amp; Acidosis</div>
-<div style="font-size:0.8rem;color:var(--text2)">Mitochondria can no longer sustain aerobic metabolism → shift to anaerobic ATP production → pyruvate converted to lactic acid. Shunted tissues are further oxygen-deprived, worsening lactic acidosis. [10]</div>
-</div>
-</div>
-
-<div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
-<div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🌐 Endothelial &amp; Microcirculatory Injury (Hemorrhagic)</div>
+<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🌐 Endothelial Injury (Vascular Level)</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem">
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--red)">Reflex Vasoconstriction</strong><br><span style="color:var(--text2)">↓Blood flow to vital organs → multisystem organ failure in severe cases [1]</span></div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--amber)">Glycocalyx Shedding</strong><br><span style="color:var(--text2)">From catecholamines + oxygen debt → fibrinolysis &amp; autoheparinization → coagulopathy [1]</span></div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--purple)">Capillary Leak</strong><br><span style="color:var(--text2)">Glycocalyx shedding + leukocyte–endothelial interactions → capillary leak syndrome [1]</span></div>
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--teal)">DAMP Release</strong><br><span style="color:var(--text2)">Dying cells release DAMPs/alarmins → activate innate immunity → systemic inflammation [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--green)">Local Thrombus Formation</strong><br><span style="color:var(--text2)">Platelet activation → platelet–thrombin plug at the injury site [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--amber)">Glycocalyx Shedding</strong><br><span style="color:var(--text2)">From ↑catecholamines + oxygen debt → fibrinolysis &amp; autoheparinization → coagulopathy [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--purple)">Capillary Leak Syndrome</strong><br><span style="color:var(--text2)">Glycocalyx shedding + leukocyte–endothelial interactions [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--red)">Compounded Coagulopathy</strong><br><span style="color:var(--text2)">Decreased platelet number &amp; activity; soft-tissue injury accelerates it [1]</span></div>
 </div>
 </div>
 </div>
 
 <div style="position:relative">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">5</div>
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">💀 Decompensation</div>
-<div style="font-size:0.8rem;color:var(--text2)">If uncorrected, worsening acidosis + hypoxemia cause loss of peripheral vasoconstriction → progressive hemodynamic collapse → death. [10]</div>
+<div style="font-weight:700;font-size:0.88rem;color:var(--red);margin-bottom:0.25rem">⚗️ Cellular Failure &amp; Inflammation</div>
+<div style="font-size:0.8rem;color:var(--text2)">Acute ↓RBC quantity → inadequate O₂ delivery → anaerobic metabolism → lactic acid, inorganic phosphates, oxygen radicals → acidosis. Dying cells release DAMPs/alarmins → innate immune activation → systemic inflammatory response. [1]</div>
 </div>
 </div>
 
 </div>
 
-<div class="bad-box" style="margin-top:1.25rem"><strong>The "Lethal Triad" of Trauma:</strong> Acidosis + Hypothermia + Coagulopathy. Each worsens the others — acidosis impairs coagulation factor activity, fibrinogen, and platelets; hypothermia (&lt;34°C) independently impairs coagulation and is an independent risk factor for death. [10]</div>
+<div class="bad-box" style="margin-top:1.25rem"><strong>Compounding factors in trauma [1]:</strong> Hypothermia and acidosis found in trauma patients exacerbate active bleeding. Soft-tissue injury in traumatic hemorrhagic shock contributes to and likely accelerates coagulopathy, possibly through mechanisms that worsen tissue hypoxia.</div>
 
-<div class="warn-box">⚠️ <strong>Trauma-Induced Coagulopathy:</strong> Not solely from hemodilution. A degree of coagulopathy is present in 25–56% of patients <em>before</em> resuscitation begins — recognized as two distinct processes: acute coagulopathy of trauma + resuscitation-induced coagulopathy. [10] Soft-tissue injury in traumatic hemorrhagic shock further accelerates coagulopathy via mechanisms that worsen tissue hypoxia. [1]</div>
-
-<div class="warn-box">⚠️ <strong>Diagnostic Pearl:</strong> Heart rate and blood pressure responses are <strong>extremely variable</strong> — affected by cardiopulmonary comorbidities, age, and vasoactive medications (e.g., beta-blockers blunt tachycardia) — and cannot be relied upon as the sole means of diagnosis. [10]</div>
+<div class="warn-box">⚠️ <strong>Lab nuance [1]:</strong> Elevated lactate and base deficit are characteristic, but acid-base balance depends on the underlying cause (e.g., persistent vomiting can cause metabolic alkalosis). Hemoglobin/hematocrit are usually severely decreased — unless hemoconcentration is present, in which case they are increased.</div>
 
 </div></div>
 
@@ -1279,136 +1066,122 @@ Is support adequate, weaning, and access-compatible? <span style="color:var(--gr
 <div class="sub-content" id="sub2-1"><div class="card"><h3>📊 Classification of Hypovolemic Shock</h3>
 
 <h4 style="margin-bottom:0.5rem">Etiology-Based Classification [1]</h4>
-<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem">Hypovolemic shock is divided by the nature of volume loss. [1]</p>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem">Hypovolemic shock is divided by the nature of volume loss. Traumatic hemorrhagic shock is more common than nontraumatic causes of blood loss. [1]</p>
 <div style="overflow-x:auto">
 <table style="margin-top:0"><tr><th>Category</th><th>Subtype</th><th>Examples</th></tr>
-<tr><td rowspan="2"><strong>Extracellular Fluid Loss</strong></td><td>External (insensible)</td><td>Open abdominal procedures, hyperthermia, respiratory losses [1]</td></tr>
-<tr><td>Internal (GI / renal)</td><td>Prolonged NPO, persistent vomiting/diarrhea, diabetes insipidus, polyuric phase of ATN recovery [1]</td></tr>
+<tr><td rowspan="2"><strong>Extracellular Fluid Loss</strong></td><td>External (insensible)</td><td>Open abdominal procedures, hyperthermia, respiratory system losses [1]</td></tr>
+<tr><td>Internal (GI / renal)</td><td>Prolonged NPO times, persistent vomiting/diarrhea, diabetes insipidus, polyuric phase of ATN recovery [1]</td></tr>
 <tr><td><strong>Hemorrhagic Shock</strong></td><td>Loss of whole blood</td><td>Perioperative (postop bleeding), GI (varices, ulcers), maternal (uterine atony, placental abruption), vascular rupture (aneurysm) [1]</td></tr>
-<tr><td><strong>Traumatic Hemorrhagic Shock</strong></td><td>Blood loss + soft-tissue injury</td><td>e.g., motor vehicle collision. Soft-tissue injury accelerates coagulopathy. More common than nontraumatic blood loss. [1]</td></tr>
+<tr><td><strong>Traumatic Hemorrhagic Shock</strong></td><td>Blood loss + soft-tissue injury</td><td>e.g., motor vehicle collision. Soft-tissue injury accelerates coagulopathy. [1]</td></tr>
 </table>
 </div>
 
-<div class="warn-box">⚠️ <strong>Why the trauma distinction matters [1]:</strong> Soft-tissue injury increases disruption of blood–endothelium interactions and may accelerate coagulopathy through mechanisms that exacerbate tissue hypoxia — so traumatic hemorrhagic shock behaves differently from isolated blood loss.</div>
+<div class="warn-box">⚠️ <strong>Why the trauma distinction matters [1]:</strong> Soft-tissue injury increases the likelihood of disruption of blood–endothelium interactions and may accelerate coagulopathy through mechanisms that exacerbate tissue hypoxia.</div>
 
-<h4 style="margin-top:1.25rem;margin-bottom:0.5rem">ATLS Hemorrhage Classification (Class I–IV) [10]</h4>
-<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem">Links estimated blood loss to expected physiologic response in a <strong>healthy 70 kg patient</strong> (~5 L total blood volume, ~7% of body weight). [10]</p>
-<div style="overflow-x:auto">
-<table><tr><th>Class</th><th>Blood Loss</th><th>HR</th><th>BP / Pulse Pressure</th><th>RR</th><th>Mental Status / UOP</th></tr>
-<tr class="severity-low"><td><strong>I</strong></td><td>&lt;15% (≤750 mL)</td><td>Normal / min ↑</td><td>Normal BP &amp; pulse pressure</td><td>Normal</td><td>Normal</td></tr>
-<tr class="severity-low"><td><strong>II</strong></td><td>15–30% (750–1500 mL)</td><td>100–120</td><td>SBP unchanged–slightly ↓; PP narrows</td><td>20–24</td><td>Mildly anxious</td></tr>
-<tr class="severity-mid"><td><strong>III</strong></td><td>30–40% (1500–2000 mL)</td><td>&gt;120</td><td>Significant BP drop</td><td>&gt;120 elevated</td><td>Altered MS; UOP declines; delayed CRT</td></tr>
-<tr class="severity-high"><td><strong>IV</strong></td><td>&gt;40%</td><td>&gt;120 (pronounced)</td><td>Hypotension; PP &lt;25 mmHg</td><td>Markedly elevated</td><td>Increasingly altered; UOP minimal/absent; delayed CRT</td></tr>
-</table>
-</div>
-
-<div class="warn-box">⚠️ <strong>Apply with caution [10]:</strong> Thresholds assume a healthy 70 kg adult. Beta-blockers blunt the tachycardic response; patients with baseline hypertension may be functionally hypotensive at SBP 110. Tachycardia is typically the <em>first</em> abnormal vital sign. [10]</div>
+<h4 style="margin-top:1.25rem;margin-bottom:0.5rem">Diabetes Insipidus — A Profound Sensible Loss [1]</h4>
+<p style="font-size:0.8rem;color:var(--text2)">DI is a defect in production (central) or utilization (nephrogenic) of ADH. Both types release large volumes of dilute urine; if untreated, patients are at risk for hypovolemic shock. Insensible losses alone are estimated up to 800 mL/d via skin, stool, and the respiratory system. [1]</p>
 
 </div></div>
 
+<!-- HEMODYNAMICS -->
+<div class="sub-content" id="sub2-2"><div class="card"><h3>📊 Hemodynamic Profile</h3><table class="hemo-table" id="hemoTable2" data-active-col="3"><tr><th>Parameter</th><th class="hemo-dim">Distributive</th><th class="hemo-dim">Cardiogenic</th><th class="hemo-active">Hypovolemic</th><th class="hemo-dim">Obstructive</th></tr><tr><td><strong>CO</strong></td><td class="hemo-dim">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-active">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>SVR</strong></td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↑↑</td><td class="hemo-active">↑</td><td class="hemo-dim">↑</td></tr><tr><td><strong>CVP</strong></td><td class="hemo-dim">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-active">↓↓</td><td class="hemo-dim">↑</td></tr><tr><td><strong>PCWP</strong></td><td class="hemo-dim">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-active">↓</td><td class="hemo-dim">Variable</td></tr><tr><td><strong>ScvO₂</strong></td><td class="hemo-dim">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-active">↓</td><td class="hemo-dim">↓</td></tr><tr><td><strong>Extremities</strong></td><td class="hemo-dim">Warm (early)</td><td class="hemo-dim">Cool</td><td class="hemo-active">Cool</td><td class="hemo-dim">Cool</td></tr></table>
+<div class="warn-box">⚠️ <strong>Classic findings [1]:</strong> Hemorrhage or insensible losses, low JVD, dry mucous membranes. Low preload (CVP) is the defining feature, distinguishing hypovolemic from cardiogenic and obstructive shock. PPV is a useful measure of volume responsiveness in appropriately ventilated patients in sinus rhythm (compromised by elevated RR, RV failure, decreased chest wall compliance); CVP trends and IVC ultrasound also aid volume assessment. [1]</div>
+<p class="cite">[1] Khorsand et al. 2023 – Anesthesiol Clin</p></div></div>
+
 <!-- MANAGEMENT -->
-<div class="sub-content" id="sub2-2"><div class="card"><h3>💊 Medical Management</h3>
+<div class="sub-content" id="sub2-3"><div class="card"><h3>💊 Medical Management</h3>
 
 <div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
-<button class="mini-tab active" onclick="switchHvMgmt(0)" id="hvMgmtBtn0">🩹 Damage Control</button>
+<button class="mini-tab active" onclick="switchHvMgmt(0)" id="hvMgmtBtn0">🩹 Stop the Bleed</button>
 <button class="mini-tab" onclick="switchHvMgmt(1)" id="hvMgmtBtn1">💉 Resuscitation</button>
 <button class="mini-tab" onclick="switchHvMgmt(2)" id="hvMgmtBtn2">📈 Escalation</button>
 </div>
 
-<!-- DAMAGE CONTROL -->
 <div class="mgmt-panel active" id="hvMgmtPanel0">
-<h4>Damage Control Resuscitation [10]</h4>
-<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem">A comprehensive strategy built on three principles to combat the lethal triad. [10]</p>
+<h4>"Stop the Bleed" — Definitive Source Control [1]</h4>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem">Successful treatment ultimately depends on definitive correction of the underlying cause, plus the ability to temporize with balanced resuscitation and vasopressors in the interim. [1]</p>
 <div class="param-grid">
-<div class="param-item"><div class="param-name">1. Permissive (Hypotensive) Resuscitation</div><div class="param-def">Target SBP ~90 mmHg in patients <strong>without head trauma</strong> — maintains perfusion without dislodging fresh clot. Restricts fluid until hemorrhage controlled, accepting brief suboptimal end-organ perfusion. Evidence is mixed; weigh injury type (penetrating vs. blunt), intracranial injury likelihood, severity, and proximity to definitive control. [10]</div></div>
-<div class="param-item"><div class="param-name">2. Hemostatic Resuscitation</div><div class="param-def">Early blood products over abundant crystalloid — minimizes metabolic derangement, resuscitation-induced coagulopathy, and hemodilution. [10]</div></div>
-<div class="param-item"><div class="param-name">3. Hemorrhage Control / Damage Control Surgery</div><div class="param-def">"Stop the Bleed" — definitive correction of the source is the cornerstone. Surgery, endoscopy, or IR. Runs in conjunction with resuscitation, not after it. [1][10]</div></div>
+<div class="param-item"><div class="param-name">Definitive Bleeding Control</div><div class="param-def">In the hospital, definitive bleeding control is the priority, alongside adequate restoration of euvolemia via balanced resuscitation. [1]</div></div>
+<div class="param-item"><div class="param-name">STOP THE BLEED Campaign</div><div class="param-def">ACS initiative educating laypersons on hemorrhage-control tactics; improved confidence/willingness to render aid and increased tourniquet use after rollout. [1]</div></div>
+<div class="param-item"><div class="param-name">Thromboelastography</div><div class="param-def">An excellent tool for monitoring clot formation that can help guide transfusion decision-making. INR/PT/aPTT may be elevated and fibrinogen decreased. [1]</div></div>
 </div>
-<div class="bad-box">⚠️ The three principles directly target the <strong>lethal triad</strong> (coagulopathy, acidosis, hypothermia). Active rewarming and correction of acidosis are integral. [10]</div>
 </div>
 
-<!-- RESUSCITATION -->
 <div class="mgmt-panel" id="hvMgmtPanel1">
-<h4>Fluid, Blood Products &amp; Adjuncts</h4>
+<h4>Fluid, Blood Products &amp; Vasopressors</h4>
 <div class="param-grid">
-<div class="param-item"><div class="param-name">Avoid Aggressive Crystalloid</div><div class="param-def">En route / early, avoid large-volume crystalloid to prevent clotting-factor dilution, hemodilution, and worsened hypoxia. Note: normal saline → hyperchloremic non-anion-gap acidosis; lactated Ringer's → metabolic alkalosis as lactate regenerates bicarbonate. [1][10]</div></div>
-<div class="param-item"><div class="param-name">Balanced Transfusion (1:1:1)</div><div class="param-def">Transfuse in ratios resembling whole blood — 1:1:1 PRBC : FFP : platelets. Massive transfusion at this ratio improves morbidity/mortality in trauma. [1]</div></div>
-<div class="param-item"><div class="param-name">TEG-Guided Transfusion</div><div class="param-def">Thromboelastography monitors clot formation in real time and helps guide product selection. INR/PT/aPTT may be elevated and fibrinogen decreased. [1]</div></div>
-<div class="param-item"><div class="param-name">Antifibrinolytics (TXA)</div><div class="param-def">Tranexamic acid prevents fibrin breakdown. The <strong>CRASH-2</strong> RCT showed reduced overall mortality when given within the first 8 hours of injury, with additional benefit when given within the first 3 hours. [10] <em>(Exact effect sizes to be added later.)</em></div></div>
+<div class="param-item"><div class="param-name">Avoid Aggressive Crystalloid</div><div class="param-def">En route to hospital, it is preferable to avoid aggressive crystalloid resuscitation to avoid clotting-factor dilution, hemodilution, and consequent exacerbation of hypoxia. [1]</div></div>
+<div class="param-item"><div class="param-name">Balanced Transfusion (1:1:1)</div><div class="param-def">Blood products transfused in ratios resembling whole blood — usually 1:1:1 PRBC : FFP : platelets. Massive transfusion protocols at this rate improve morbidity and mortality of trauma patients in hemorrhagic shock. [1]</div></div>
+<div class="param-item"><div class="param-name">Vasopressors — Norepinephrine First-Line</div><div class="param-def">If fluid alone is insufficient to restore perfusion (SBP &lt;80 mmHg), temporize with vasopressors. Norepinephrine is suggested first-line — sympathomimetic with splanchnic venoconstriction shifting blood volume centrally → ↑venous return and CO. [1]</div></div>
+<div class="param-item"><div class="param-name">Phenylephrine Caution</div><div class="param-def">Phenylephrine, though often used, may have opposing effects on the splanchnic pre-portal and hepatic veins → decreasing venous return and consequent downstream effects. [1]</div></div>
 </div>
-<div class="good-box"><strong>PROPPR finding [10]:</strong> No significant difference in 24-hour or 30-day mortality between 1:1:1 and 1:1:2 ratios — but the 1:1:1 group was less likely to die of exsanguination at 24h and more likely to achieve hemostasis. Reduced time to first plasma also reduces mortality. <em>(Trial name/exact numbers to be added later.)</em></div>
 </div>
 
-<!-- ESCALATION -->
 <div class="mgmt-panel" id="hvMgmtPanel2">
-<h4>Escalation Pathway [1][10]</h4>
+<h4>Escalation Pathway [1]</h4>
 <p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">Mark current step:</p>
 <div class="esc-stepper" id="hvEscStepper">
 <button class="esc-step-btn" onclick="setHvEscStep(0)">Step 1: Recognize</button>
-<button class="esc-step-btn" onclick="setHvEscStep(1)">Step 2: Hemostatic Resus</button>
+<button class="esc-step-btn" onclick="setHvEscStep(1)">Step 2: Balanced Resus</button>
 <button class="esc-step-btn" onclick="setHvEscStep(2)">Step 3: Vasopressors</button>
 <button class="esc-step-btn" onclick="setHvEscStep(3)">De-escalation</button>
 </div>
-<div class="abg-card escalate" id="hvEscCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Recognize &amp; Localize</span></div><div class="abg-problem">Recognition ideally before hypotension — tachycardia, tachypnea, narrowing pulse pressure, cool extremities, delayed CRT are early signs. In trauma, ATLS primary/secondary survey + FAST (specificity &gt;99%, but negative scan does not rule out intra-abdominal pathology). [10]</div></div>
-<div class="abg-card escalate" id="hvEscCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Hemorrhage Control + Hemostatic Resuscitation</span></div><div class="abg-problem">Definitive source control (surgery/endoscopy/IR) is priority. Begin balanced 1:1:1 transfusion, TXA within 3h (benefit up to 8h), TEG-guided products, active rewarming. Avoid crystalloid excess. [1][10]</div><div class="abg-safety">Target SBP ~90 if no head trauma (permissive hypotension). With TBI, this target does not apply.</div></div>
-<div class="abg-card escalate" id="hvEscCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Vasopressors (Temporizing)</span></div><div class="abg-problem">If fluid/blood alone is insufficient to restore adequate perfusion (SBP &lt;80 mmHg), temporize with vasopressors. <strong>Norepinephrine is suggested first-line</strong> — sympathomimetic with splanchnic venoconstriction shifting blood volume centrally → ↑venous return and CO. [1]</div><div class="abg-safety">Phenylephrine may have opposing effects on splanchnic pre-portal/hepatic veins → ↓venous return. Vasopressors are a bridge to hemorrhage control, not a substitute. [1]</div></div>
-<div class="abg-card deescalate" id="hvEscCard3"><div class="abg-header"><span class="abg-direction deescalate">DE-ESCALATION</span><span class="abg-title">Restore Euvolemia &amp; Wean</span></div><div class="abg-problem">Once bleeding controlled and euvolemia restored via balanced resuscitation: wean vasopressors, normalize lactate/base deficit, correct coagulopathy, and continue rewarming. Reassess H&amp;H (may be falsely high with hemoconcentration). [1]</div></div>
+<div class="abg-card escalate" id="hvEscCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Recognize &amp; Assess Volume</span></div><div class="abg-problem">Elevated lactate and base deficit are characteristic. Assess volume responsiveness: PPV (sinus rhythm, appropriately ventilated), CVP trends interpreted with ventilator settings, IVC ultrasound through the respiratory cycle. Pre-renal injury markers: ↑BUN/creatinine/urine osmolality, FENa &lt;1%. [1]</div></div>
+<div class="abg-card escalate" id="hvEscCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Source Control + Balanced Resuscitation</span></div><div class="abg-problem">Definitive bleeding control is priority. Restore euvolemia with balanced resuscitation — 1:1:1 PRBC:FFP:platelets via massive transfusion protocol. Avoid aggressive crystalloid (dilution, hemodilution, hypoxia). TEG-guided product selection. [1]</div></div>
+<div class="abg-card escalate" id="hvEscCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Vasopressors (Temporizing)</span></div><div class="abg-problem">If fluid/blood is insufficient (SBP &lt;80 mmHg), temporize with vasopressors. Norepinephrine is suggested first-line — splanchnic venoconstriction shifts volume centrally → ↑venous return and CO. [1]</div><div class="abg-safety">Phenylephrine may oppose this via splanchnic pre-portal/hepatic vein effects → ↓venous return. Vasopressors are a bridge to definitive hemorrhage control. [1]</div></div>
+<div class="abg-card deescalate" id="hvEscCard3"><div class="abg-header"><span class="abg-direction deescalate">DE-ESCALATION</span><span class="abg-title">Restore Euvolemia &amp; Wean</span></div><div class="abg-problem">Once bleeding is controlled and euvolemia restored via balanced resuscitation, wean vasopressors. Reassess H&amp;H (may be falsely elevated with hemoconcentration), lactate/base deficit, and coagulation status. [1]</div></div>
 </div>
 
 </div></div>
 
 <!-- REHAB -->
-<div class="sub-content" id="sub2-3"><div class="card"><h3>💪 Rehab Considerations</h3>
+<div class="sub-content" id="sub2-4"><div class="card"><h3>💪 Rehab Considerations</h3>
 
-<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> As in all shock, readiness is a trajectory — not a single number. In hypovolemic/hemorrhagic shock the key added layers are <em>hemostasis</em> (is the bleeding definitively controlled?) and <em>coagulation status</em>. Mobilizing a patient with ongoing or recently controlled hemorrhage carries re-bleeding risk.</div>
+<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> Readiness is a trajectory — not a single number. In hypovolemic/hemorrhagic shock the key added layers are <em>hemostasis</em> (is the bleeding definitively controlled?) and <em>coagulation status</em>. Mobilizing a patient with ongoing or recently controlled hemorrhage carries re-bleeding risk.</div>
 
 <div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
 <h4 style="font-size:0.92rem;margin-bottom:0.5rem;color:var(--text1)">📋 Structured Readiness Framework</h4>
 <p style="font-size:0.78rem;color:var(--text2);margin-bottom:1rem">Three domains — each requires evaluating the <strong>trajectory</strong>, adapted to hypovolemic physiology</p>
 
-<!-- DOMAIN 1 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--red)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--red);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 1</span>
 <strong style="font-size:0.88rem;color:var(--text1)">Volume &amp; Hemostasis Stability</strong>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Bleeding Controlled?</strong><br><span style="color:var(--text2)">Source definitively addressed? Any signs of ongoing/recurrent bleeding?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Hemoglobin / Hematocrit</strong><br><span style="color:var(--text2)">Stable on serial checks? (Caution: hemoconcentration can falsely elevate.)</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Coagulation Status</strong><br><span style="color:var(--text2)">INR/PT/aPTT, fibrinogen, TEG normalizing? Lethal triad resolved?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">HR / BP / Pulse Pressure</strong><br><span style="color:var(--text2)">Stable with routine care? Pulse pressure no longer narrowing?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Bleeding Controlled?</strong><br><span style="color:var(--text2)">Source definitively addressed? Signs of ongoing/recurrent bleeding?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Hemoglobin / Hematocrit</strong><br><span style="color:var(--text2)">Stable on serial checks? (Caution: hemoconcentration can falsely elevate. [1])</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Coagulation Status</strong><br><span style="color:var(--text2)">INR/PT/aPTT, fibrinogen, TEG normalizing?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem"><strong style="color:var(--text1)">Volume Status</strong><br><span style="color:var(--text2)">Euvolemia restored? PPV/CVP/IVC reassuring?</span></div>
 </div>
 <div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--red)">
 <strong>Trajectory Question:</strong> Is hemorrhage definitively controlled with stable H&amp;H and resolving coagulopathy — no transfusion requirement over the last several hours?
 </div>
 </div>
 
-<!-- DOMAIN 2 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--blue)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--blue);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 2</span>
 <strong style="font-size:0.88rem;color:var(--text1)">Markers of End-Organ Perfusion</strong>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div><strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br><span style="color:var(--text2);font-size:0.72rem">Warming? CRT improving?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🧠</div><strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br><span style="color:var(--text2);font-size:0.72rem">Alert? Improving?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🩸</div><strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br><span style="color:var(--text2);font-size:0.72rem">Recovering? Pre-renal indices improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div><strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br><span style="color:var(--text2);font-size:0.72rem">Improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🧠</div><strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br><span style="color:var(--text2);font-size:0.72rem">Improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🩸</div><strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br><span style="color:var(--text2);font-size:0.72rem">Pre-renal indices improving?</span></div>
 </div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.6rem;margin-bottom:0.5rem">
 <strong style="font-size:0.8rem;color:var(--text1)">🧪 Lab Biomarkers (Trending)</strong>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.4rem;margin-top:0.4rem">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.4rem;margin-top:0.4rem">
 <div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Lactate</strong><br><span style="color:var(--text2)">Clearing?</span></div>
 <div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Base Deficit</strong><br><span style="color:var(--text2)">Correcting?</span></div>
-<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Creatinine/BUN</strong><br><span style="color:var(--text2)">Pre-renal AKI resolving?</span></div>
-<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Temp</strong><br><span style="color:var(--text2)">Rewarmed?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>BUN/Cr</strong><br><span style="color:var(--text2)">Pre-renal AKI resolving?</span></div>
 </div>
 </div>
 <div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--blue)">
-<strong>Trajectory Question:</strong> Is end-organ perfusion maintained/improving with lactate and base deficit trending toward normal over the last 6–12+ hours?
+<strong>Trajectory Question:</strong> Is end-organ perfusion maintained/improving with lactate and base deficit trending toward normal? [1]
 </div>
 </div>
 
-<!-- DOMAIN 3 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--green)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--green);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 3</span>
@@ -1417,14 +1190,13 @@ Is support adequate, weaning, and access-compatible? <span style="color:var(--gr
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
 <div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the requirement?</strong><br><span style="color:var(--text2)">Ongoing transfusion needs? Current vasopressor (NEE) dose, if any?</span></div>
 <div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the trajectory?</strong><br><span style="color:var(--text2)">Transfusion-free interval? Vasopressors weaning, stable, or escalating?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2"><strong style="color:var(--text1)">Is perfusion adequate?</strong><br><span style="color:var(--text2)">MAP at target is necessary but not sufficient — pair with Domain 2. Remember vasopressors here are a bridge to hemorrhage control; a "good" MAP on rising support with ongoing transfusion is not readiness. [1]</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2"><strong style="color:var(--text1)">Is perfusion adequate?</strong><br><span style="color:var(--text2)">Vasopressors here are a bridge to hemorrhage control [1]; a "good" MAP on rising support with ongoing transfusion is not readiness. Pair with Domain 2.</span></div>
 </div>
 <div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--green)">
 <strong>Trajectory Question:</strong> Is the patient off (or weaning) vasopressors with no active transfusion requirement, and is perfusion adequate?
 </div>
 </div>
 
-<!-- INTEGRATION -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;border:2px dashed var(--tab-accent)">
 <h4 style="font-size:0.85rem;color:var(--tab-accent);margin-bottom:0.5rem">🔗 Integration: The Clinical Question</h4>
 <p style="font-size:0.8rem;color:var(--text1);margin-bottom:0.5rem">Readiness is the intersection of all three domains, gated by hemostasis:</p>
@@ -1440,16 +1212,16 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 
 </div></div>
 
-<p class="cite">[1] Khorsand et al. 2023 – Anesthesiol Clin · [10] Hooper &amp; Armstrong – Hemorrhagic Shock, StatPearls (NBK470382)</p>
+<p class="cite">[1] Khorsand et al. 2023 – Anesthesiol Clin</p>
 </div>
-
+	
 <!-- TAB 3: OBSTRUCTIVE -->
 <div class="tab-content" id="tab3">
-<div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(3,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(3,1)">Etiologies &amp; Tx</button><button class="sub-tab" onclick="switchSub(3,2)">Rehab (PE)</button></div>
+<div class="sub-tabs"><button class="sub-tab active" onclick="switchSub(3,0)">Pathophysiology</button><button class="sub-tab" onclick="switchSub(3,1)">Hemodynamics</button><button class="sub-tab" onclick="switchSub(3,2)">Etiologies &amp; Tx</button><button class="sub-tab" onclick="switchSub(3,3)">Rehab (PE)</button></div>
 
 <!-- PATHOPHYSIOLOGY -->
 <div class="sub-content active" id="sub3-0"><div class="card"><h3>🔬 Pathophysiology of Obstructive Shock</h3>
-<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">A physical impediment to blood flow in the cardiovascular system. The least common shock type (~2% of all shock states). Intravascular volume and cardiac contractility are usually <em>preserved</em> — the problem is mechanical. [1]</p>
+<p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">A physical impediment of blood flow in the cardiovascular system. The least common shock type, constituting about 2% of all shock states. Tension pneumothorax, cardiac tamponade, and PE comprise the majority of cases. [1]</p>
 
 <div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
 
@@ -1457,7 +1229,7 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🚧 Mechanical Impediment</div>
-<div style="font-size:0.8rem;color:var(--text2)">Any obstruction that restricts venous return, prevents diastolic filling, or severely elevates afterload can cause obstructive shock. Tension pneumothorax, cardiac tamponade, and PE comprise the majority of cases. [1]</div>
+<div style="font-size:0.8rem;color:var(--text2)">Any obstruction that restricts venous return, prevents diastolic filling, or severely elevates afterload can result in obstructive shock. Categorization centered on effects on ventricular preload and afterload is most intuitive. [1]</div>
 </div>
 </div>
 
@@ -1466,7 +1238,7 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🧭 Two Mechanistic Categories</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem">
-<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--blue)">Impaired Preload / Diastolic Filling</strong><br><span style="color:var(--text2)">Tension pneumothorax, tamponade, SVC syndrome, massive PE (effect on LV), abdominal compartment syndrome, auto-PEEP [1]</span></div>
+<div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--blue)">Impaired Preload / Diastolic Filling</strong><br><span style="color:var(--text2)">Tension pneumo/hemothorax, tamponade, SVC syndrome, mediastinal tumors, massive PE (effect on LV), abdominal compartment syndrome, auto-PEEP [1]</span></div>
 <div style="background:var(--card);border-radius:6px;padding:0.5rem;border:1px solid var(--border);font-size:0.78rem"><strong style="color:var(--red)">Elevated Afterload</strong><br><span style="color:var(--text2)">Massive PE (effect on RV), severe pulmonary hypertension, aortic occlusion, coarctation [1]</span></div>
 </div>
 </div>
@@ -1476,33 +1248,31 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">📉 Low-Output Physiology</div>
-<div style="font-size:0.8rem;color:var(--text2)">As obstruction progresses, hemodynamic indices resemble low-output states: CO, stroke volume, and MAP fall while laboratory values reflect oxygen supply–demand mismatch. [1]</div>
+<div style="font-size:0.8rem;color:var(--text2)">Intravascular volume and cardiac contractility are usually preserved, yet CO, stroke volume, and MAP fall. SVR and CVP are usually increased; wedge pressure varies by etiology. [1]</div>
 </div>
 </div>
 
 <div style="position:relative">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
+<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
-<div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">⚠️ Compensation Then Collapse</div>
-<div style="font-size:0.8rem;color:var(--text2)">Early signs may be limited to compensatory tachycardia and tachypnea. Once compensation fails, decompensation can be rapid — for patients in extremis, diagnosis is clinical and treatment must not be delayed for diagnostics. [1]</div>
+<div style="font-weight:700;font-size:0.88rem;color:var(--red);margin-bottom:0.25rem">⚠️ Compensation Then Collapse</div>
+<div style="font-size:0.8rem;color:var(--text2)">Initially symptoms may be nonspecific (dyspnea, chest pain) and perturbations limited to compensatory tachycardia and tachypnea. For patients in extremis, diagnosis is clinical and treatment should not be delayed for diagnostics. [1]</div>
 </div>
 </div>
 
 </div>
 
-<h4 style="margin-top:1.25rem">📊 Hemodynamic Signature [1]</h4>
-<div class="param-grid">
-<div class="param-item"><div class="param-name">↓ CO / SV / MAP</div><div class="param-def">Decreased despite preserved contractility and intravascular volume. [1]</div></div>
-<div class="param-item"><div class="param-name">↑ SVR &amp; ↑ CVP</div><div class="param-def">Systemic vascular resistance and central venous pressure are usually increased. [1]</div></div>
-<div class="param-item"><div class="param-name">Variable Wedge Pressure</div><div class="param-def">Wedge pressure varies based on the specific etiology. [1]</div></div>
-</div>
-
-<div class="warn-box">⚠️ <strong>Exam clues [1]:</strong> Jugular venous distention, abnormal auscultatory findings, and cool extremities are frequent. Initial symptoms (shortness of breath, chest pain) may be nonspecific — maintain a high index of suspicion.</div>
+<div class="warn-box" style="margin-top:1.25rem">⚠️ <strong>Exam clues [1]:</strong> Physical examination frequently reveals jugular venous distention, abnormal auscultatory findings, and cool extremities. Therapies most often consist of pharmacotherapy followed in quick succession by percutaneous or surgical relief of the obstruction.</div>
 
 </div></div>
 
+<!-- HEMODYNAMICS -->
+<div class="sub-content" id="sub3-1"><div class="card"><h3>📊 Hemodynamic Profile</h3><table class="hemo-table" id="hemoTable3" data-active-col="4"><tr><th>Parameter</th><th class="hemo-dim">Distributive</th><th class="hemo-dim">Cardiogenic</th><th class="hemo-dim">Hypovolemic</th><th class="hemo-active">Obstructive</th></tr><tr><td><strong>CO</strong></td><td class="hemo-dim">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-active">↓</td></tr><tr><td><strong>SVR</strong></td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↑</td><td class="hemo-active">↑</td></tr><tr><td><strong>CVP</strong></td><td class="hemo-dim">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↓↓</td><td class="hemo-active">↑</td></tr><tr><td><strong>PCWP</strong></td><td class="hemo-dim">↓/Normal</td><td class="hemo-dim">↑↑</td><td class="hemo-dim">↓</td><td class="hemo-active">Variable</td></tr><tr><td><strong>ScvO₂</strong></td><td class="hemo-dim">↑/Normal</td><td class="hemo-dim">↓↓</td><td class="hemo-dim">↓</td><td class="hemo-active">↓</td></tr><tr><td><strong>Extremities</strong></td><td class="hemo-dim">Warm (early)</td><td class="hemo-dim">Cool</td><td class="hemo-dim">Cool</td><td class="hemo-active">Cool</td></tr></table>
+<div class="warn-box">⚠️ <strong>Signature [1]:</strong> Intravascular volume and cardiac contractility are usually preserved, yet CO, stroke volume, and MAP fall. SVR and CVP are usually increased; wedge pressure varies by etiology. Exam: elevated JVD, tachycardia, distant heart sounds, pulsus paradoxus, electrical alternans, cool extremities. [1]</div>
+<p class="cite">[1] Khorsand et al. 2023 – Anesthesiol Clin</p></div></div>
+
 <!-- ETIOLOGIES & TX -->
-<div class="sub-content" id="sub3-1"><div class="card"><h3>🔍 Etiologies &amp; Treatment</h3>
+<div class="sub-content" id="sub3-2"><div class="card"><h3>🔍 Etiologies &amp; Treatment</h3>
 
 <div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap">
 <button class="mini-tab active" onclick="switchObMgmt(0)" id="obMgmtBtn0">🫁 Tension PTX</button>
@@ -1510,35 +1280,33 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 <button class="mini-tab" onclick="switchObMgmt(2)" id="obMgmtBtn2">🩸 Massive PE</button>
 </div>
 
-<!-- TENSION PNEUMOTHORAX -->
 <div class="mgmt-panel active" id="obMgmtPanel0">
 <h4>Tension Pneumothorax</h4>
-<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> Trapped air accumulates in the pleural space, raising intrapleural pressure above atmospheric → ipsilateral lung collapse and mediastinal compression with contralateral shift. Most common in trauma, ARDS, and mechanically ventilated patients; a simple pneumothorax can convert to tension physiology if a one-way valve exists between alveolus and pleura. [1]</p>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> Trapped air accumulates in the pleural space, increasing intrapleural pressure above atmospheric → ipsilateral lung collapse and mediastinal compression with contralateral shift. Most common in trauma, ARDS, and mechanically ventilated populations; a simple pneumothorax can convert to tension physiology if a one-way valve exists between alveolus and pleura. [1]</p>
 <div class="param-grid">
-<div class="param-item"><div class="param-name">Clinical Signs</div><div class="param-def">Cyanosis, tracheal deviation, decreased breath sounds, percussion hyperresonance, subcutaneous emphysema. On ventilator: elevated peak/plateau airway pressures with decreasing compliance. [1]</div></div>
+<div class="param-item"><div class="param-name">Clinical Signs</div><div class="param-def">Cyanosis, tracheal deviation, decreased breath sounds, percussion hyperresonance, subcutaneous emphysema. On ventilator: elevated peak/plateau airway pressures with decreasing lung compliance. [1]</div></div>
 <div class="param-item"><div class="param-name">POCUS</div><div class="param-def">Higher sensitivity than chest radiography (79% vs. 40%), similar specificity (98% vs. 99%). Findings: absent lung sliding and lung pulse, presence of lung point, barcode sign on M-mode. [1]</div></div>
 </div>
-<div class="bad-box">⚠️ Pneumothorax developing <strong>during mechanical ventilation progresses to hemodynamic instability in up to 70% of cases.</strong> TP is a <strong>clinical diagnosis</strong> — do not delay treatment for imaging. [1]</div>
-<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TREATMENT</span><span class="abg-title">Decompression</span></div><div class="abg-problem">Emergent large-bore needle into the anterior 2nd intercostal space, midclavicular line → followed by a percutaneous small-bore thoracostomy catheter. [1]</div></div>
+<div class="bad-box">⚠️ Pneumothorax developing during mechanical ventilation <strong>progresses to hemodynamic instability in up to 70% of cases.</strong> TP is a <strong>clinical diagnosis</strong> — treatment should not be delayed to obtain imaging. [1]</div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TREATMENT</span><span class="abg-title">Decompression</span></div><div class="abg-problem">Emergent placement of a large-bore needle into the anterior second intercostal space in the midclavicular line, followed by a percutaneous small-bore thoracostomy catheter. [1]</div></div>
 </div>
 
-<!-- CARDIAC TAMPONADE -->
 <div class="mgmt-panel" id="obMgmtPanel1">
 <h4>Cardiac Tamponade</h4>
-<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> Restriction of cardiac filling from elevated intrapericardial pressure (blood, clot, pus, chyle, or gas). Compensatory ↑systemic/pulmonary venous pressures + tachycardia. As diastolic, right atrial, and wedge pressures equalize, the Y-descent fades; with progression, pulsus paradoxus results from ventricular interdependence. [1]</p>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> Restriction of cardiac filling from elevated intrapericardial pressure (blood, clot, pus, chyle, or gas). Compensatory ↑systemic/pulmonary venous pressures + tachycardia. As LV/RV diastolic, right atrial, and wedge pressures equalize, the Y-descent fades; with progression, pulsus paradoxus results from ventricular interdependence. [1]</p>
 <div class="param-grid">
 <div class="param-item"><div class="param-name">Classic Exam</div><div class="param-def">Muffled heart tones, JVD, systolic inspiratory variation &gt;10 mmHg (pulsus paradoxus). ECG: microvoltage and electrical alternans with large effusions. [1]</div></div>
 <div class="param-item"><div class="param-name">Echocardiography</div><div class="param-def">Diastolic collapse of the RV (highly specific), systolic collapse of the RA (early sign), plethoric IVC with hepatic flow reversal, respiratory variation of mitral/tricuspid inflow velocities. [1]</div></div>
 </div>
-<div class="warn-box">⚠️ <strong>Post-cardiac-surgery tamponade [1]:</strong> Requires high suspicion. Because the pericardium is often open to the pleural spaces, a <em>localized clot</em> on one chamber causes an insidious picture — gradually worsening hypotension, low CO, rising filling pressures, and escalating pressor/inotrope needs, often <strong>without</strong> classic pressure equalization. TEE is useful but may miss regional clots.</div>
-<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TREATMENT</span><span class="abg-title">Pericardial Decompression</span></div><div class="abg-problem">Evacuate the pressurized pericardial content — percutaneous or surgical. [1]</div></div>
-<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TEMPORIZE</span><span class="abg-title">While Awaiting Definitive Treatment</span></div><div class="abg-problem">Enhance venous return (volume administration, leg elevation); promote chronotropy/inotropy and systemic venous pressure with epinephrine boluses; reduce intrathoracic pressure by limiting tidal volume and PEEP. [1]</div></div>
+<div class="warn-box">⚠️ <strong>Post-cardiac-surgery tamponade [1]:</strong> Requires high suspicion. Because the pericardial sac is often left open to the pleural spaces, a localized clot on one chamber causes an insidious picture — gradually worsening hypotension, low CO, increasing filling pressures, and escalating inotrope/pressor support, often without classic pressure equalization. TEE is useful but may miss regional clots.</div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TREATMENT</span><span class="abg-title">Pericardial Decompression</span></div><div class="abg-problem">Evacuation of the pressurized pericardial content — percutaneous or surgical. [1]</div></div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">TEMPORIZE</span><span class="abg-title">While Awaiting Definitive Treatment</span></div><div class="abg-problem">Enhance venous return (volume administration or leg elevation); promote chronotropy/inotropy and systemic venous pressure with epinephrine boluses; reduce intrathoracic pressure by limiting tidal volume and PEEP. [1]</div></div>
 </div>
 
-<!-- MASSIVE PE -->
 <div class="mgmt-panel" id="obMgmtPanel2">
 <h4>Massive Pulmonary Embolism</h4>
-<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> Obstructive shock results when ≥2 lobar arteries and at least 50–60% of the vascular bed are affected, elevating pulmonary vascular resistance. Acute ↑RV afterload → RV enlargement and myocardial failure → ↓LV early diastolic filling and preload → ↓SV and CO. <strong>Massive PE</strong> = hypotension with SBP &lt;90 mmHg for &gt;15 minutes. [1]</p>
+<p style="font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem"><strong>Pathophysiology:</strong> PE results in obstructive shock when ≥2 lobar arteries and at least 50–60% of the vascular bed are affected, elevating pulmonary vascular resistance. <strong>Massive PE</strong> = hypotension with SBP &lt;90 mmHg for &gt;15 minutes. [1]</p>
+
 <div style="background:var(--bg2);border-radius:10px;padding:1rem;margin:0.75rem 0;border:1px solid var(--border)">
 <h4 style="font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem;text-align:center">🌀 The RV Spiral of Death</h4>
 <p style="font-size:0.75rem;color:var(--text2);text-align:center;margin-bottom:0.75rem">Acute RV afterload triggers a self-reinforcing cascade [1]</p>
@@ -1546,37 +1314,37 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 
 <div style="position:relative;margin-bottom:0.9rem">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--red)">↑ RV Afterload</strong><br><span style="font-size:0.78rem;color:var(--text2)">≥50–60% of vascular bed obstructed → elevated pulmonary vascular resistance [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--red)">↑ RV Afterload</strong><br><span style="font-size:0.78rem;color:var(--text2)">≥2 lobar arteries and 50–60% of vascular bed obstructed → elevated pulmonary vascular resistance [1]</span></div>
 </div>
 
 <div style="position:relative;margin-bottom:0.9rem">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--text1)">RV Dilatation &amp; Myocardial Failure</strong><br><span style="font-size:0.78rem;color:var(--text2)">RV chamber enlargement and failure as the ventricle cannot overcome the load [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--text1)">RV Chamber Enlargement &amp; Myocardial Failure</strong><br><span style="font-size:0.78rem;color:var(--text2)">Acute elevation of RV afterload leads to chamber enlargement and myocardial failure [1]</span></div>
 </div>
 
 <div style="position:relative;margin-bottom:0.9rem">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--text1)">↓ LV Diastolic Filling &amp; Preload</strong><br><span style="font-size:0.78rem;color:var(--text2)">Dilated RV impairs LV early diastolic filling, reducing LV preload [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--text1)">↓ LV Early Diastolic Filling &amp; Preload</strong><br><span style="font-size:0.78rem;color:var(--text2)">The enlarged, failing RV decreases early diastolic filling and preload of the LV [1]</span></div>
 </div>
 
 <div style="position:relative">
 <div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
-<div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--red)"><strong style="font-size:0.82rem;color:var(--red)">↓ Stroke Volume &amp; Cardiac Output</strong><br><span style="font-size:0.78rem;color:var(--text2)">Reduced SV and CO → systemic hypotension → ↓coronary perfusion of the RV → worsening RV ischemia, which feeds back to step 2 [1]</span></div>
+<div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--red)"><strong style="font-size:0.82rem;color:var(--red)">↓ Stroke Volume &amp; Cardiac Output</strong><br><span style="font-size:0.78rem;color:var(--text2)">Reduced LV preload produces a reduction in stroke volume and cardiac output [1]</span></div>
 </div>
 
 </div>
-<div class="bad-box" style="margin-top:0.75rem;margin-bottom:0">⚠️ <strong>The vicious cycle:</strong> Falling CO lowers coronary perfusion to the already-strained RV, worsening RV failure → further ↓CO. Without relief of the obstruction, the spiral converges on circulatory collapse. [1]</div>
+<div class="bad-box" style="margin-top:0.75rem;margin-bottom:0">⚠️ <strong>The vicious cycle:</strong> Falling cardiac output reduces perfusion to the already-strained, failing RV — without relief of the obstruction, the spiral converges on circulatory collapse. [1]</div>
 </div>
+
 <div class="param-grid">
 <div class="param-item"><div class="param-name">Risk Stratification</div><div class="param-def">Altered mental status, hypotension, elevated troponins, and BNP mark increased mortality/adverse outcomes. PESI / simplified PESI (sPESI) aid risk stratification and therapy selection. [1]</div></div>
-<div class="param-item"><div class="param-name">POCUS (rule-in)</div><div class="param-def">High specificity, low sensitivity; relies on indirect evidence: RV dysfunction (TAPSE, S′, 60/60 sign), septal flattening in systole, RV:LV size, McConnell's sign (acute RV strain, not PE-specific). Thrombus-in-transit is the only pathognomonic finding. CT pulmonary angiography remains the gold standard. [1]</div></div>
+<div class="param-item"><div class="param-name">POCUS (rule-in)</div><div class="param-def">High specificity, low sensitivity; relies on indirect evidence: RV dysfunction (TAPSE, S′, 60/60 sign), septal flattening in systole, RV:LV size, McConnell's sign (acute RV strain, not PE-specific). Thrombus-in-transit is the only pathognomonic finding. CT pulmonary angiography is the gold standard. [1]</div></div>
 </div>
-<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">FIRST-LINE</span><span class="abg-title">Systemic Thrombolysis</span></div><div class="abg-problem">For patients with hypotension/shock, myocardial dysfunction, and low bleeding risk → systemic thrombolytic therapy. [1]</div></div>
+<div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">FIRST-LINE</span><span class="abg-title">Systemic Thrombolysis</span></div><div class="abg-problem">Patients with hypotension, shock, myocardial dysfunction, and low risk of bleeding should undergo systemic thrombolytic therapy. [1]</div></div>
 <div class="abg-card escalate"><div class="abg-header"><span class="abg-direction escalate">ALTERNATIVES</span><span class="abg-title">Catheter-Based / Surgical</span></div><div class="abg-problem">Catheter-based thrombus removal for high bleeding risk or failed systemic thrombolysis. Surgical embolectomy may also be of benefit. [1]</div></div>
-<div class="good-box"><strong>PERT:</strong> Pulmonary Embolism Response Teams improve quality, efficiency, and multidisciplinary communication, resulting in improved outcomes. Standardization of in-hospital care is now recommended given therapy depends on local expertise. [1]</div>
+<div class="good-box"><strong>PERT:</strong> Because therapies frequently depend on local expertise, standardization of in-hospital care is recommended. Pulmonary Embolism Response Teams improve quality, efficiency, and multidisciplinary communication, resulting in improved outcomes. [1]</div>
 </div>
 
-<!-- ESCALATION STEPPER -->
 <h4 style="margin-top:1.25rem">📈 General Obstructive Approach</h4>
 <p style="font-size:0.75rem;color:var(--text2);margin-bottom:0.5rem">Mark current step:</p>
 <div class="esc-stepper" id="obEscStepper">
@@ -1585,23 +1353,22 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 <button class="esc-step-btn" onclick="setObEscStep(2)">Step 3: Relieve Obstruction</button>
 <button class="esc-step-btn" onclick="setObEscStep(3)">Reassess</button>
 </div>
-<div class="abg-card escalate" id="obEscCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Recognize</span></div><div class="abg-problem">Nonspecific early symptoms (dyspnea, chest pain) + compensatory tachycardia/tachypnea. Look for JVD, abnormal auscultation, cool extremities, ↑SVR, ↑CVP. POCUS for rapid bedside differentiation. For patients in extremis, diagnosis is clinical. [1]</div></div>
-<div class="abg-card escalate" id="obEscCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Temporize (Pharmacotherapy)</span></div><div class="abg-problem">Support perfusion while preparing definitive relief. Therapies most often consist of pharmacotherapy followed in quick succession by percutaneous or surgical relief of the obstruction. [1]</div></div>
-<div class="abg-card escalate" id="obEscCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Relieve the Obstruction</span></div><div class="abg-problem">Etiology-specific: needle/thoracostomy decompression (TP), pericardial evacuation (tamponade), thrombolysis/catheter/surgical embolectomy (PE). This is the definitive treatment. [1]</div></div>
-<div class="abg-card deescalate" id="obEscCard3"><div class="abg-header"><span class="abg-direction deescalate">REASSESS</span><span class="abg-title">Confirm Resolution</span></div><div class="abg-problem">Reassess hemodynamics after obstruction relief — CO/SV/MAP should recover as the mechanical impediment resolves. Continue monitoring for recurrence and for conversion to or coexistence of another shock state. [1]</div></div>
+<div class="abg-card escalate" id="obEscCard0"><div class="abg-header"><span class="abg-direction escalate">STEP 1</span><span class="abg-title">Recognize</span></div><div class="abg-problem">Nonspecific early symptoms (dyspnea, chest pain) + compensatory tachycardia/tachypnea. Look for JVD, abnormal auscultation, cool extremities; SVR and CVP usually increased. For patients in extremis, diagnosis is clinical. [1]</div></div>
+<div class="abg-card escalate" id="obEscCard1"><div class="abg-header"><span class="abg-direction escalate">STEP 2</span><span class="abg-title">Temporize (Pharmacotherapy)</span></div><div class="abg-problem">Therapies most often consist of pharmacotherapy followed in quick succession by percutaneous or surgical relief of the obstruction. [1]</div></div>
+<div class="abg-card escalate" id="obEscCard2"><div class="abg-header"><span class="abg-direction escalate">STEP 3</span><span class="abg-title">Relieve the Obstruction</span></div><div class="abg-problem">Etiology-specific: needle/thoracostomy decompression (TP), pericardial evacuation (tamponade), systemic thrombolysis / catheter removal / surgical embolectomy (PE). This is the definitive treatment. [1]</div></div>
+<div class="abg-card deescalate" id="obEscCard3"><div class="abg-header"><span class="abg-direction deescalate">REASSESS</span><span class="abg-title">Confirm Resolution</span></div><div class="abg-problem">Reassess hemodynamics after obstruction relief — CO/SV/MAP should recover as the mechanical impediment resolves. A single patient may transition from one shock state to another, so continual re-evaluation is necessary. [1]</div></div>
 
 </div></div>
 
 <!-- REHAB (PE) -->
-<div class="sub-content" id="sub3-2"><div class="card"><h3>💪 Rehab Considerations — Pulmonary Embolism</h3>
+<div class="sub-content" id="sub3-3"><div class="card"><h3>💪 Rehab Considerations — Pulmonary Embolism</h3>
 
-<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> As in all shock, readiness is a trajectory — not a single number. For obstructive shock, the gating questions are whether the <em>obstruction has been definitively relieved</em> and whether the <strong>right ventricle</strong> has recovered. Positional changes can be hazardous in RV-dependent physiology.</div>
+<div class="bad-box" style="margin-bottom:1.25rem"><strong>Core Principle:</strong> Readiness is a trajectory — not a single number. For obstructive shock, the gating questions are whether the <em>obstruction has been definitively relieved</em> and whether the <strong>right ventricle</strong> has recovered. Positional changes can be hazardous in RV-dependent physiology.</div>
 
 <div style="background:var(--bg2);border-radius:10px;padding:1rem;margin-bottom:1.25rem;border:1px solid var(--border)">
 <h4 style="font-size:0.92rem;margin-bottom:0.5rem;color:var(--text1)">📋 Structured Readiness Framework</h4>
 <p style="font-size:0.78rem;color:var(--text2);margin-bottom:1rem">Three domains — each requires evaluating the <strong>trajectory</strong>, adapted to obstructive/PE physiology</p>
 
-<!-- DOMAIN 1 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--red)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--red);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 1</span>
@@ -1618,31 +1385,28 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 </div>
 </div>
 
-<!-- DOMAIN 2 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--blue)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--blue);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 2</span>
 <strong style="font-size:0.88rem;color:var(--text1)">Markers of End-Organ Perfusion</strong>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div><strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br><span style="color:var(--text2);font-size:0.72rem">Warming? CRT improving?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🧠</div><strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br><span style="color:var(--text2);font-size:0.72rem">Alert? Improving?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🩸</div><strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br><span style="color:var(--text2);font-size:0.72rem">≥0.5 mL/kg/hr? Trending up?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🖐️</div><strong style="color:var(--text1);font-size:0.75rem">Cap Refill</strong><br><span style="color:var(--text2);font-size:0.72rem">Improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🧠</div><strong style="color:var(--text1);font-size:0.75rem">Mental Status</strong><br><span style="color:var(--text2);font-size:0.72rem">Improving?</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.5rem;font-size:0.78rem;text-align:center;border-top:2px solid var(--purple)"><div style="font-size:1rem;margin-bottom:0.2rem">🩸</div><strong style="color:var(--text1);font-size:0.75rem">Urine Output</strong><br><span style="color:var(--text2);font-size:0.72rem">Trending up?</span></div>
 </div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.6rem;margin-bottom:0.5rem">
 <strong style="font-size:0.8rem;color:var(--text1)">🧪 Lab Biomarkers (Trending)</strong>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.4rem;margin-top:0.4rem">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-top:0.4rem">
 <div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Lactate</strong><br><span style="color:var(--text2)">Clearing?</span></div>
-<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>SvO₂</strong><br><span style="color:var(--text2)">Recovering?</span></div>
-<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Creatinine</strong><br><span style="color:var(--text2)">Stable/improving?</span></div>
+<div style="background:var(--card);border-radius:4px;padding:0.35rem;font-size:0.72rem;text-align:center;border:1px solid var(--border)"><strong>Troponin / BNP</strong><br><span style="color:var(--text2)">RV strain resolving?</span></div>
 </div>
 </div>
 <div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--blue)">
-<strong>Trajectory Question:</strong> Is end-organ perfusion maintained/improving with biomarkers trending favorably over the last 6–12+ hours?
+<strong>Trajectory Question:</strong> Is end-organ perfusion maintained/improving with biomarkers trending favorably?
 </div>
 </div>
 
-<!-- DOMAIN 3 -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;margin-bottom:0.75rem;border:2px solid var(--border);border-left:4px solid var(--green)">
 <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
 <span style="background:var(--green);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px">DOMAIN 3</span>
@@ -1651,14 +1415,13 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
 <div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the requirement?</strong><br><span style="color:var(--text2)">Vasopressor (NEE) dose, if any? Ventilatory/oxygen support level?</span></div>
 <div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem"><strong style="color:var(--text1)">What is the trajectory?</strong><br><span style="color:var(--text2)">Support weaning, stable, or escalating?</span></div>
-<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2"><strong style="color:var(--text1)">Is perfusion adequate?</strong><br><span style="color:var(--text2)">MAP at target is necessary but not sufficient — pair with Domain 2. In RV-dependent PE physiology, positional changes can reduce RV preload and precipitate hypotension; confirm hemodynamic stability across position changes before mobility.</span></div>
+<div style="background:var(--pill-bg);border-radius:6px;padding:0.6rem;font-size:0.78rem;grid-column:span 2"><strong style="color:var(--text1)">Is perfusion adequate?</strong><br><span style="color:var(--text2)">In RV-dependent PE physiology, positional changes can reduce RV preload and precipitate hypotension; confirm hemodynamic stability across position changes before mobility. Pair with Domain 2.</span></div>
 </div>
 <div style="font-size:0.75rem;color:var(--text2);padding:0.4rem 0.5rem;background:var(--pill-bg);border-radius:6px;border-left:3px solid var(--green)">
 <strong>Trajectory Question:</strong> Is support minimal and not escalating, with adequate perfusion maintained across position changes?
 </div>
 </div>
 
-<!-- INTEGRATION -->
 <div style="background:var(--card);border-radius:10px;padding:1rem;border:2px dashed var(--tab-accent)">
 <h4 style="font-size:0.85rem;color:var(--tab-accent);margin-bottom:0.5rem">🔗 Integration: The Clinical Question</h4>
 <p style="font-size:0.8rem;color:var(--text1);margin-bottom:0.5rem">Readiness is the intersection of all three domains, gated by obstruction relief:</p>
