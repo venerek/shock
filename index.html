@@ -177,6 +177,9 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 .mgmt-panel{display:none}.mgmt-panel.active{display:block}
 .mini-tab{padding:0.4rem 0.75rem;border-radius:20px;font-size:0.72rem;font-weight:600;cursor:pointer;background:var(--pill-bg);color:var(--text2);border:none;transition:all 0.2s;white-space:nowrap}
 .mini-tab.active{background:var(--pill-active);color:var(--pill-active-text)}
+.timeline{position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)}
+.timeline-node{position:absolute;left:calc(-1.5rem - 8.5px);top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700}
+.timeline-node.node-end{background:var(--red)}
 </style>
 </head>
 <body>
@@ -205,10 +208,10 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 <div class="sub-content active" id="sub0-0"><div class="card"><h3>🔬 Pathophysiology of Distributive Shock</h3>
 <p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">The primary defect is in the periphery — inappropriate vasodilation with maldistribution of blood flow, decreased SVR, and impaired oxygen utilization despite preserved or elevated cardiac output. [1]</p>
 
-<div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
+<div class="timeline">
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
+<div class="timeline-node">1</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🔥 Inflammatory Trigger</div>
 <div style="font-size:0.8rem;color:var(--text2)">Infection/injury activates immune response → proinflammatory mediators enter systemic circulation → vasoplegia and organ dysfunction. [1][2]</div>
@@ -216,7 +219,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
+<div class="timeline-node">2</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🧬 Mediator Cascade</div>
 <div style="font-size:0.8rem;color:var(--text2)"><strong>Cytokines:</strong> TNF-alpha, IL-1, IL-6 drive endothelial activation, capillary leak, microcirculatory dysfunction, and coagulation activation. [2]</div>
@@ -225,7 +228,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
+<div class="timeline-node">3</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🫀 Vascular Consequences</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem">
@@ -238,7 +241,7 @@ th{background:var(--bg2);font-weight:600;color:var(--text1)}
 </div>
 
 <div style="position:relative">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">4</div>
+<div class="timeline-node">4</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">💔 Myocardial Depression (Late)</div>
 <div style="font-size:0.8rem;color:var(--text2)">Circulating depressant factors (TNF-alpha, IL-1-beta, NO) → biventricular dilation with reduced EF. Often reversible. Contributes to "cold"/late septic shock phenotype. [5]</div>
@@ -777,10 +780,10 @@ Is vasoactive support adequate and not escalating? <span style="color:var(--gree
 <div class="sub-content active" id="sub1-0"><div class="card"><h3>🔬 Pathophysiology of Cardiogenic Shock</h3>
 <p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">A low-output state due to primary cardiac dysfunction leading to systemic decompensation, end-organ dysfunction, and secondary myocardial injury. [1]</p>
 
-<div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
+<div class="timeline">
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
+<div class="timeline-node">1</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">💔 Primary Cardiac Dysfunction</div>
 <div style="font-size:0.8rem;color:var(--text2)">Most commonly acute coronary syndrome with LV dysfunction (up to 81% of cases), followed by acute decompensated heart failure. SBP &lt;80–90 mmHg, CI &lt;1.8 L/min/m² without support (&lt;2.2 with support), plus signs of tissue hypoperfusion. [1]</div>
@@ -788,7 +791,7 @@ Is vasoactive support adequate and not escalating? <span style="color:var(--gree
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
+<div class="timeline-node">2</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🫀 Compensatory Vasoconstriction</div>
 <div style="font-size:0.8rem;color:var(--text2)">Compensatory peripheral vasoconstriction raises afterload — often poorly tolerated by a struggling pump. This produces the "cold and wet" profile (cool extremities + pulmonary congestion from LV failure). [1]</div>
@@ -796,7 +799,7 @@ Is vasoactive support adequate and not escalating? <span style="color:var(--gree
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
+<div class="timeline-node">3</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🔥 Underappreciated Inflammatory Response</div>
 <div style="font-size:0.8rem;color:var(--text2)">A systemic inflammatory response can predominate with peripheral vasodilation — described as "wet and warm." Septic cardiomyopathy can produce a mixed-shock state, better elucidated with a PAC. [1]</div>
@@ -1016,10 +1019,10 @@ Is support adequate, weaning, and access-compatible? <span style="color:var(--gr
 <div class="sub-content active" id="sub2-0"><div class="card"><h3>🔬 Pathophysiology of Hypovolemic Shock</h3>
 <p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">Loss of intravascular volume — directly from whole blood loss or indirectly from extracellular fluid loss — leads to inadequate organ perfusion. All types decrease preload, creating a deficit in perfusion pressure so that both macrocirculation and microcirculation suffer. [1]</p>
 
-<div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
+<div class="timeline">
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
+<div class="timeline-node">1</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🩸 Volume Loss → ↓Preload</div>
 <div style="font-size:0.8rem;color:var(--text2)">Whole-blood or extracellular fluid loss reduces preload → deficit in perfusion pressure → decreased tissue perfusion and triggering of an inflammatory cascade. [1]</div>
@@ -1027,7 +1030,7 @@ Is support adequate, weaning, and access-compatible? <span style="color:var(--gr
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
+<div class="timeline-node">2</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🫀 Reflex Vasoconstriction (Tissue Level)</div>
 <div style="font-size:0.8rem;color:var(--text2)">Hemorrhage → hypovolemia → reflex vasoconstriction → decreased blood flow to vital organs → multisystem organ failure in severe cases. [1]</div>
@@ -1035,7 +1038,7 @@ Is support adequate, weaning, and access-compatible? <span style="color:var(--gr
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
+<div class="timeline-node">3</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🌐 Endothelial Injury (Vascular Level)</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem">
@@ -1224,10 +1227,10 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 <div class="sub-content active" id="sub3-0"><div class="card"><h3>🔬 Pathophysiology of Obstructive Shock</h3>
 <p style="font-size:0.82rem;color:var(--text2);margin-bottom:1rem">A physical impediment of blood flow in the cardiovascular system. The least common shock type, constituting about 2% of all shock states. Tension pneumothorax, cardiac tamponade, and PE comprise the majority of cases. [1]</p>
 
-<div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
+<div class="timeline">
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
+<div class="timeline-node">1</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🚧 Mechanical Impediment</div>
 <div style="font-size:0.8rem;color:var(--text2)">Any obstruction that restricts venous return, prevents diastolic filling, or severely elevates afterload can result in obstructive shock. Categorization centered on effects on ventricular preload and afterload is most intuitive. [1]</div>
@@ -1235,7 +1238,7 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
+<div class="timeline-node">2</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">🧭 Two Mechanistic Categories</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.4rem">
@@ -1246,7 +1249,7 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 </div>
 
 <div style="position:relative;margin-bottom:1.25rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
+<div class="timeline-node">3</div>
 <div style="background:var(--pill-bg);border-radius:8px;padding:0.75rem;margin-left:0.5rem">
 <div style="font-weight:700;font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem">📉 Low-Output Physiology</div>
 <div style="font-size:0.8rem;color:var(--text2)">Intravascular volume and cardiac contractility are usually preserved, yet CO, stroke volume, and MAP fall. SVR and CVP are usually increased; wedge pressure varies by etiology. [1]</div>
@@ -1311,20 +1314,20 @@ Is transfusion/vasoactive support minimal and not escalating? <span style="color
 <div style="background:var(--bg2);border-radius:10px;padding:1rem;margin:0.75rem 0;border:1px solid var(--border)">
 <h4 style="font-size:0.88rem;color:var(--text1);margin-bottom:0.25rem;text-align:center">🌀 The RV Spiral of Death</h4>
 <p style="font-size:0.75rem;color:var(--text2);text-align:center;margin-bottom:0.75rem">Acute RV afterload triggers a self-reinforcing cascade [1]</p>
-<div style="position:relative;padding-left:1.5rem;border-left:3px solid var(--tab-accent)">
+<div class="timeline">
 
 <div style="position:relative;margin-bottom:0.9rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
+<div class="timeline-node">1</div>
 <div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--red)">↑ RV Afterload</strong><br><span style="font-size:0.78rem;color:var(--text2)">≥2 lobar arteries and 50–60% of vascular bed obstructed → elevated pulmonary vascular resistance [1]</span></div>
 </div>
 
 <div style="position:relative;margin-bottom:0.9rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
+<div class="timeline-node">2</div>
 <div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--text1)">RV Chamber Enlargement &amp; Myocardial Failure</strong><br><span style="font-size:0.78rem;color:var(--text2)">Acute elevation of RV afterload leads to chamber enlargement and myocardial failure [1]</span></div>
 </div>
 
 <div style="position:relative;margin-bottom:0.9rem">
-<div style="position:absolute;left:-1.85rem;top:0.1rem;width:20px;height:20px;border-radius:50%;background:var(--tab-accent);color:#fff;font-size:0.65rem;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
+<div class="timeline-node">3</div>
 <div style="background:var(--card);border-radius:8px;padding:0.6rem;margin-left:0.5rem;border:1px solid var(--border)"><strong style="font-size:0.82rem;color:var(--text1)">↓ LV Early Diastolic Filling &amp; Preload</strong><br><span style="font-size:0.78rem;color:var(--text2)">The enlarged, failing RV decreases early diastolic filling and preload of the LV [1]</span></div>
 </div>
 
